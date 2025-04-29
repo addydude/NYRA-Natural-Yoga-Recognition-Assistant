@@ -50,6 +50,9 @@ However, without proper knowledge about correct posture, people may suffer from 
 - HTML5
 - CSS3
 - JavaScript
+- React 18 with TypeScript (UI Wizard)
+- Tailwind CSS with Shadcn UI components
+- Vite build system
 
 ### Back-End
 - Python 3.10+
@@ -63,6 +66,7 @@ However, without proper knowledge about correct posture, people may suffer from 
 
 ### Prerequisites
 - Python 3.10 or higher
+- Node.js (v16+) and npm for UI enhancements
 - Webcam
 
 ### Setup Instructions
@@ -82,19 +86,38 @@ However, without proper knowledge about correct posture, people may suffer from 
    - Windows: `venv\Scripts\activate`
    - Mac/Linux: `source venv/bin/activate`
 
-4. Install dependencies
+4. Install Python dependencies
    ```bash
    pip install -r requirements.txt
    ```
 
-5. Run the application
+5. Set up UI components (optional but recommended)
+   ```bash
+   cd ui-wizard-enhancements
+   npm install
+   npm run build
+   cd ..
+   ```
+
+6. Run the application
    ```bash
    python app.py
    ```
 
-6. Open your browser and go to `http://127.0.0.1:5000`
+7. Open your browser and go to `http://127.0.0.1:5000`
 
 For Python 3.12 users, please refer to [PYTHON312.md](./PYTHON312.md) for specific instructions.
+
+### UI Development Mode
+
+To work on the UI components in development mode:
+
+```bash
+cd ui-wizard-enhancements
+npm run dev
+```
+
+This will start the Vite development server with hot module replacement.
 
 ## Screenshots
 

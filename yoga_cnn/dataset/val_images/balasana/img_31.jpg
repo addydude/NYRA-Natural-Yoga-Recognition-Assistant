@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if IE 9]><html class="ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+
+<head><meta name="p:domain_verify" content="a40549aa45551a09f448698dea4406cd"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="1.2.6",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this.t.bind(this),this.touchStartHandler=this.i.bind(this),this.touchMoveHandler=this.o.bind(this),this.touchEndHandler=this.h.bind(this),this.clickHandler=this.u.bind(this),this.interceptedClicks=[],this.interceptedClickListeners=[],this.l(this),window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.everythingLoaded&&this.m()})),this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))})),document.addEventListener("DOMContentLoaded",(()=>{this.k()})),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}p(t){document.hidden?t.t():(this.triggerEvents.forEach((e=>window.addEventListener(e,t.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler))}_(){this.triggerEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}i(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this.L(t.target,!0),this.S(t.target,"onclick","rocket-onclick"),this.C())}o(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.S(t.target,"rocket-onclick","onclick"),this.M()}h(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}u(t){t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.S(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this.M()}O(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))}))}l(t){EventTarget.prototype.addEventListenerWPRocketBase=EventTarget.prototype.addEventListener,EventTarget.prototype.addEventListener=function(e,i,o){"click"!==e||t.windowLoaded||i===t.clickHandler||t.interceptedClickListeners.push({target:this,func:i,options:o}),(this||window).addEventListenerWPRocketBase(e,i,o)}}L(t,e){this.interceptedClickListeners.forEach((i=>{i.target===t&&(e?t.removeEventListener("click",i.func,i.options):t.addEventListener("click",i.func,i.options))})),t.parentNode!==document.documentElement&&this.L(t.parentNode,e)}D(){return new Promise((t=>{this.P?this.M=t:t()}))}C(){this.P=!0}M(){this.P=!1}S(t,e,i){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(i,event.target.getAttribute(e)),event.target.removeAttribute(e))}t(){this._(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this.R.bind(this)):this.R()}k(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){0===i.indexOf("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.T(t,"preconnect")}async R(){this.lastBreath=Date.now(),this.j(this),this.F(this),this.I(),this.W(),this.q(),await this.A(this.delayedScripts.normal),await this.A(this.delayedScripts.defer),await this.A(this.delayedScripts.async);try{await this.U(),await this.H(this),await this.J()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.D().then((()=>{this.O()})),this.N()}W(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async B(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),i.hasAttribute("src")?(i.addEventListener("load",o),i.addEventListener("error",(function(){i.setAttribute("data-rocket-status","failed-network"),e()})),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: data-uri blocked by CSP -> fallback"),t.removeAttribute("src"),this.B(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())})),s?(t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async A(t){const e=t.shift();return e&&e.isConnected?(await this.B(e),this.A(t)):Promise.resolve()}q(){this.T([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}T(t,e){var i=document.createDocumentFragment();t.forEach((t=>{const o=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(o&&!o.startsWith("data:")){const s=document.createElement("link");s.href=o,s.rel=e,"preconnect"!==e&&(s.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(s.crossOrigin=!0),t.crossOrigin&&(s.crossOrigin=t.crossOrigin),t.integrity&&(s.integrity=t.integrity),i.appendChild(s),this.trash.push(s)}})),document.head.appendChild(i)}j(t){let e={};function i(i,o){return e[o].eventsToRewrite.indexOf(i)>=0&&!t.everythingLoaded?"rocket-"+i:i}function o(t,o){!function(t){e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(o)}function s(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o||function(){},set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}o(document,"DOMContentLoaded"),o(window,"DOMContentLoaded"),o(window,"load"),o(window,"pageshow"),o(document,"readystatechange"),s(document,"onreadystatechange"),s(window,"onload"),s(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}F(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(t){const e=o.fn[t];o.fn[t]=o.fn.init.prototype[t]=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),e.apply(this,arguments),this}}o&&o.fn&&!t.allJQueries.includes(o)&&(o.fn.ready=o.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(o):document.addEventListener("rocket-DOMContentLoaded",(()=>e.bind(document)(o))),o([])},s("on"),s("one"),t.allJQueries.push(o)),e=o}o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}async H(t){const e=document.querySelector("script[data-webpack]");e&&(await async function(){return new Promise((t=>{e.addEventListener("load",t),e.addEventListener("error",t)}))}(),await t.K(),await t.H(t))}async U(){this.domReadyFired=!0;try{document.readyState="interactive"}catch(t){}await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}async J(){try{document.readyState="complete"}catch(t){}await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted}),this.windowLoaded=!0}m(){document.onreadystatechange&&document.onreadystatechange(),window.onload&&window.onload(),window.onpageshow&&window.onpageshow({persisted:this.persisted})}I(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+e);const o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async G(){Date.now()-this.lastBreath>45&&(await this.K(),this.lastBreath=Date.now())}async K(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}N(){this.trash.forEach((t=>t.remove()))}static run(){const t=new RocketLazyLoadScripts;t.p(t)}}RocketLazyLoadScripts.run()})();</script>
+
+<meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+
+<!--[if lt IE 9]>
+	<script src="https://www.newszii.com/wp-content/themes/voice/js/html5.js"></script>
+<![endif]-->
+
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+	<!-- This site is optimized with the Yoast SEO plugin v24.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Page Not Found - 404 Error | Newszii.com</title><link rel="preload" data-rocket-preload as="style" href="https://fonts.googleapis.com/css?family=Poppins%3A400%7COswald%3A400%7CRoboto%3A400%2C500&#038;subset=latin%2Clatin-ext&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A400%7COswald%3A400%7CRoboto%3A400%2C500&#038;subset=latin%2Clatin-ext&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A400%7COswald%3A400%7CRoboto%3A400%2C500&#038;subset=latin%2Clatin-ext&#038;display=swap" /></noscript><link rel="preload" data-rocket-preload as="image" href="https://www.newszii.com/wp-content/uploads/2018/07/logo1.jpg" media="(min-width: 1024px)" fetchpriority="high"><link rel="preload" data-rocket-preload as="image" href="https://www.newszii.com/wp-content/uploads/2018/07/logo1.jpg" fetchpriority="high">
+	<meta name="description" content="Oops! The page you’re looking for on Newszii.com can’t be found. It might have been moved or deleted. Return to our homepage for the latest updates and articles." />
+	<link rel="canonical" href="https://www.newszii.com/page-not-found/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Page Not Found - 404 Error | Newszii.com" />
+	<meta property="og:description" content="Oops! The page you’re looking for on Newszii.com can’t be found. It might have been moved or deleted. Return to our homepage for the latest updates and articles." />
+	<meta property="og:url" content="https://www.newszii.com/page-not-found/" />
+	<meta property="og:site_name" content="Newszii.com" />
+	<meta property="article:publisher" content="https://www.facebook.com/Newsziimedia/" />
+	<meta property="article:modified_time" content="2024-09-09T12:03:35+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@NewsziiMedia" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.newszii.com/page-not-found/","url":"https://www.newszii.com/page-not-found/","name":"Page Not Found - 404 Error | Newszii.com","isPartOf":{"@id":"https://www.newszii.com/#website"},"datePublished":"2024-09-09T11:49:31+00:00","dateModified":"2024-09-09T12:03:35+00:00","description":"Oops! The page you’re looking for on Newszii.com can’t be found. It might have been moved or deleted. Return to our homepage for the latest updates and articles.","breadcrumb":{"@id":"https://www.newszii.com/page-not-found/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.newszii.com/page-not-found/"]}]},{"@type":"BreadcrumbList","@id":"https://www.newszii.com/page-not-found/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.newszii.com/"},{"@type":"ListItem","position":2,"name":"Page Not Found"}]},{"@type":"WebSite","@id":"https://www.newszii.com/#website","url":"https://www.newszii.com/","name":"Newszii.com","description":"Trending News, Viral Stories And Videos","publisher":{"@id":"https://www.newszii.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.newszii.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.newszii.com/#organization","name":"Newszii.com","url":"https://www.newszii.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.newszii.com/#/schema/logo/image/","url":"https://www.newszii.com/wp-content/uploads/2019/08/Newszii_Logo.png","contentUrl":"https://www.newszii.com/wp-content/uploads/2019/08/Newszii_Logo.png","width":4099,"height":928,"caption":"Newszii.com"},"image":{"@id":"https://www.newszii.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/Newsziimedia/","https://x.com/NewsziiMedia","https://www.instagram.com/newsziinews/","https://in.pinterest.com/Newszii/","https://www.youtube.com/channel/UCrEUCAPPcZd6epVFjobG2gA"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Newszii.com &raquo; Feed" href="https://www.newszii.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Newszii.com &raquo; Comments Feed" href="https://www.newszii.com/comments/feed/" />
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.newszii.com/wp-includes/css/dist/block-library/style.min.css?ver=6.7.2' type='text/css' media='all' />
+<style id='feedzy-rss-feeds-loop-style-inline-css' type='text/css'>
+.wp-block-feedzy-rss-feeds-loop{display:grid;gap:24px;grid-template-columns:repeat(1,1fr)}@media(min-width:782px){.wp-block-feedzy-rss-feeds-loop.feedzy-loop-columns-2,.wp-block-feedzy-rss-feeds-loop.feedzy-loop-columns-3,.wp-block-feedzy-rss-feeds-loop.feedzy-loop-columns-4,.wp-block-feedzy-rss-feeds-loop.feedzy-loop-columns-5{grid-template-columns:repeat(2,1fr)}}@media(min-width:960px){.wp-block-feedzy-rss-feeds-loop.feedzy-loop-columns-2{grid-template-columns:repeat(2,1fr)}.wp-block-feedzy-rss-feeds-loop.feedzy-loop-columns-3{grid-template-columns:repeat(3,1fr)}.wp-block-feedzy-rss-feeds-loop.feedzy-loop-columns-4{grid-template-columns:repeat(4,1fr)}.wp-block-feedzy-rss-feeds-loop.feedzy-loop-columns-5{grid-template-columns:repeat(5,1fr)}}.wp-block-feedzy-rss-feeds-loop .wp-block-image.is-style-rounded img{border-radius:9999px}
+
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='animate-css' href='https://www.newszii.com/wp-content/cache/min/1/wp-content/plugins/wp-quiz/assets/frontend/css/animate.css?ver=1744796853' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='wp-quiz-css' href='https://www.newszii.com/wp-content/cache/min/1/wp-content/plugins/wp-quiz/assets/frontend/css/wp-quiz.css?ver=1744796853' type='text/css' media='all' />
+<link rel='stylesheet' id='crp-style-rounded-thumbs-css' href='https://www.newszii.com/wp-content/plugins/contextual-related-posts/css/rounded-thumbs.min.css?ver=4.0.1' type='text/css' media='all' />
+<style id='crp-style-rounded-thumbs-inline-css' type='text/css'>
+
+			.crp_related.crp-rounded-thumbs a {
+				width: 150px;
+                height: 150px;
+				text-decoration: none;
+			}
+			.crp_related.crp-rounded-thumbs img {
+				max-width: 150px;
+				margin: auto;
+			}
+			.crp_related.crp-rounded-thumbs .crp_title {
+				width: 100%;
+			}
+			
+</style>
+
+
+
+<link data-minify="1" rel='stylesheet' id='vce_style-css' href='https://www.newszii.com/wp-content/cache/min/1/wp-content/themes/voice/css/min.css?ver=1744796853' type='text/css' media='screen, print' />
+<style id='vce_style-inline-css' type='text/css'>
+body, button, input, select, textarea {font-size: 1.8rem;}.vce-single .entry-headline p{font-size: 2.2rem;}.main-navigation a{font-size: 1.6rem;}.sidebar .widget-title{font-size: 1.8rem;}.sidebar .widget, .vce-lay-c .entry-content, .vce-lay-h .entry-content {font-size: 1.4rem;}.vce-featured-link-article{font-size: 5.2rem;}.vce-featured-grid-big.vce-featured-grid .vce-featured-link-article{font-size: 3.4rem;}.vce-featured-grid .vce-featured-link-article{font-size: 2.2rem;}h1 { font-size: 4.5rem; }h2 { font-size: 3.0rem; }h3 { font-size: 2.5rem; }h4 { font-size: 2.5rem; }h5 { font-size: 2.0rem; }h6 { font-size: 1.2rem; }.comment-reply-title, .main-box-title{font-size: 2.2rem;}h1.entry-title{font-size: 4.5rem;}.vce-lay-a .entry-title a{font-size: 3.4rem;}.vce-lay-b .entry-title{font-size: 2.4rem;}.vce-lay-c .entry-title, .vce-sid-none .vce-lay-c .entry-title{font-size: 2.2rem;}.vce-lay-d .entry-title{font-size: 1.5rem;}.vce-lay-e .entry-title{font-size: 1.4rem;}.vce-lay-f .entry-title{font-size: 1.4rem;}.vce-lay-g .entry-title a, .vce-lay-g .entry-title a:hover{font-size: 3.0rem;}.vce-lay-h .entry-title{font-size: 2.4rem;}.entry-meta div,.entry-meta div a,.vce-lay-g .meta-item,.vce-lay-c .meta-item{font-size: 1.4rem;}.vce-lay-d .meta-category a,.vce-lay-d .entry-meta div,.vce-lay-d .entry-meta div a,.vce-lay-e .entry-meta div,.vce-lay-e .entry-meta div a,.vce-lay-e .fn,.vce-lay-e .meta-item{font-size: 1.3rem;}body {background-color:#f0f0f0;}body,.mks_author_widget h3,.site-description,.meta-category a,textarea {font-family: 'Poppins';font-weight: 400;}h1,h2,h3,h4,h5,h6,blockquote,.vce-post-link,.site-title,.site-title a,.main-box-title,.comment-reply-title,.entry-title a,.vce-single .entry-headline p,.vce-prev-next-link,.author-title,.mks_pullquote,.widget_rss ul li .rsswidget,#bbpress-forums .bbp-forum-title,#bbpress-forums .bbp-topic-permalink {font-family: 'Oswald';font-weight: 400;}.main-navigation a,.sidr a{font-family: 'Roboto';font-weight: 500;}.vce-single .entry-content,.vce-single .entry-headline,.vce-single .entry-footer{width: 700px;}.vce-lay-a .lay-a-content{width: 700px;max-width: 700px;}.vce-page .entry-content,.vce-page .entry-title-page {width: 600px;}.vce-sid-none .vce-single .entry-content,.vce-sid-none .vce-single .entry-headline,.vce-sid-none .vce-single .entry-footer {width: 700px;}.vce-sid-none .vce-page .entry-content,.vce-sid-none .vce-page .entry-title-page,.error404 .entry-content {width: 600px;max-width: 600px;}body, button, input, select, textarea{color: #444444;}h1,h2,h3,h4,h5,h6,.entry-title a,.prev-next-nav a,#bbpress-forums .bbp-forum-title, #bbpress-forums .bbp-topic-permalink,.woocommerce ul.products li.product .price .amount{color: #232323;}a,.entry-title a:hover,.vce-prev-next-link:hover,.vce-author-links a:hover,.required,.error404 h4,.prev-next-nav a:hover,#bbpress-forums .bbp-forum-title:hover, #bbpress-forums .bbp-topic-permalink:hover,.woocommerce ul.products li.product h3:hover,.woocommerce ul.products li.product h3:hover mark,.main-box-title a:hover{color: #cf4d35;}.vce-square,.vce-main-content .mejs-controls .mejs-time-rail .mejs-time-current,button,input[type="button"],input[type="reset"],input[type="submit"],.vce-button,.pagination-wapper a,#vce-pagination .next.page-numbers,#vce-pagination .prev.page-numbers,#vce-pagination .page-numbers,#vce-pagination .page-numbers.current,.vce-link-pages a,#vce-pagination a,.vce-load-more a,.vce-slider-pagination .owl-nav > div,.vce-mega-menu-posts-wrap .owl-nav > div,.comment-reply-link:hover,.vce-featured-section a,.vce-lay-g .vce-featured-info .meta-category a,.vce-404-menu a,.vce-post.sticky .meta-image:before,#vce-pagination .page-numbers:hover,#bbpress-forums .bbp-pagination .current,#bbpress-forums .bbp-pagination a:hover,.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button,.woocommerce ul.products li.product .added_to_cart,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce ul.products li.product .added_to_cart:hover,.woocommerce #respond input#submit.alt,.woocommerce a.button.alt,.woocommerce button.button.alt,.woocommerce input.button.alt,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover,.woocommerce span.onsale,.woocommerce .widget_price_filter .ui-slider .ui-slider-range,.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,.comments-holder .navigation .page-numbers.current,.vce-lay-a .vce-read-more:hover,.vce-lay-c .vce-read-more:hover{background-color: #cf4d35;}#vce-pagination .page-numbers,.comments-holder .navigation .page-numbers{background: transparent;color: #cf4d35;border: 1px solid #cf4d35;}.comments-holder .navigation .page-numbers:hover{background: #cf4d35;border: 1px solid #cf4d35;}.bbp-pagination-links a{background: transparent;color: #cf4d35;border: 1px solid #cf4d35 !important;}#vce-pagination .page-numbers.current,.bbp-pagination-links span.current,.comments-holder .navigation .page-numbers.current{border: 1px solid #cf4d35;}.widget_categories .cat-item:before,.widget_categories .cat-item .count{background: #cf4d35;}.comment-reply-link,.vce-lay-a .vce-read-more,.vce-lay-c .vce-read-more{border: 1px solid #cf4d35;}.entry-meta div,.entry-meta-count,.entry-meta div a,.comment-metadata a,.meta-category span,.meta-author-wrapped,.wp-caption .wp-caption-text,.widget_rss .rss-date,.sidebar cite,.site-footer cite,.sidebar .vce-post-list .entry-meta div,.sidebar .vce-post-list .entry-meta div a,.sidebar .vce-post-list .fn,.sidebar .vce-post-list .fn a,.site-footer .vce-post-list .entry-meta div,.site-footer .vce-post-list .entry-meta div a,.site-footer .vce-post-list .fn,.site-footer .vce-post-list .fn a,#bbpress-forums .bbp-topic-started-by,#bbpress-forums .bbp-topic-started-in,#bbpress-forums .bbp-forum-info .bbp-forum-content,#bbpress-forums p.bbp-topic-meta,span.bbp-admin-links a,.bbp-reply-post-date,#bbpress-forums li.bbp-header,#bbpress-forums li.bbp-footer,.woocommerce .woocommerce-result-count,.woocommerce .product_meta{color: #9b9b9b;}.main-box-title, .comment-reply-title, .main-box-head{background: #ffffff;color: #232323;}.main-box-title a{color: #232323;}.sidebar .widget .widget-title a{color: #232323;}.main-box,.comment-respond,.prev-next-nav{background: #f9f9f9;}.vce-post,ul.comment-list > li.comment,.main-box-single,.ie8 .vce-single,#disqus_thread,.vce-author-card,.vce-author-card .vce-content-outside,.mks-bredcrumbs-container,ul.comment-list > li.pingback{background: #ffffff;}.mks_tabs.horizontal .mks_tab_nav_item.active{border-bottom: 1px solid #ffffff;}.mks_tabs.horizontal .mks_tab_item,.mks_tabs.vertical .mks_tab_nav_item.active,.mks_tabs.horizontal .mks_tab_nav_item.active{background: #ffffff;}.mks_tabs.vertical .mks_tab_nav_item.active{border-right: 1px solid #ffffff;}#vce-pagination,.vce-slider-pagination .owl-controls,.vce-content-outside,.comments-holder .navigation{background: #f3f3f3;}.sidebar .widget-title{background: #ffffff;color: #232323;}.sidebar .widget{background: #f9f9f9;}.sidebar .widget,.sidebar .widget li a,.sidebar .mks_author_widget h3 a,.sidebar .mks_author_widget h3,.sidebar .vce-search-form .vce-search-input,.sidebar .vce-search-form .vce-search-input:focus{color: #444444;}.sidebar .widget li a:hover,.sidebar .widget a,.widget_nav_menu li.menu-item-has-children:hover:after,.widget_pages li.page_item_has_children:hover:after{color: #cf4d35;}.sidebar .tagcloud a {border: 1px solid #cf4d35;}.sidebar .mks_author_link,.sidebar .tagcloud a:hover,.sidebar .mks_themeforest_widget .more,.sidebar button,.sidebar input[type="button"],.sidebar input[type="reset"],.sidebar input[type="submit"],.sidebar .vce-button,.sidebar .bbp_widget_login .button{background-color: #cf4d35;}.sidebar .mks_author_widget .mks_autor_link_wrap,.sidebar .mks_themeforest_widget .mks_read_more,.widget .meks-instagram-follow-link {background: #f3f3f3;}.sidebar #wp-calendar caption,.sidebar .recentcomments,.sidebar .post-date,.sidebar #wp-calendar tbody{color: rgba(68,68,68,0.7);}.site-footer{background: #373941;}.site-footer .widget-title{color: #ffffff;}.site-footer,.site-footer .widget,.site-footer .widget li a,.site-footer .mks_author_widget h3 a,.site-footer .mks_author_widget h3,.site-footer .vce-search-form .vce-search-input,.site-footer .vce-search-form .vce-search-input:focus{color: #f9f9f9;}.site-footer .widget li a:hover,.site-footer .widget a,.site-info a{color: #cf4d35;}.site-footer .tagcloud a {border: 1px solid #cf4d35;}.site-footer .mks_author_link,.site-footer .mks_themeforest_widget .more,.site-footer button,.site-footer input[type="button"],.site-footer input[type="reset"],.site-footer input[type="submit"],.site-footer .vce-button,.site-footer .tagcloud a:hover{background-color: #cf4d35;}.site-footer #wp-calendar caption,.site-footer .recentcomments,.site-footer .post-date,.site-footer #wp-calendar tbody,.site-footer .site-info{color: rgba(249,249,249,0.7);}.top-header,.top-nav-menu li .sub-menu{background: #3a3a3a;}.top-header,.top-header a{color: #ffffff;}.top-header .vce-search-form .vce-search-input,.top-header .vce-search-input:focus,.top-header .vce-search-submit{color: #ffffff;}.top-header .vce-search-form .vce-search-input::-webkit-input-placeholder { color: #ffffff;}.top-header .vce-search-form .vce-search-input:-moz-placeholder { color: #ffffff;}.top-header .vce-search-form .vce-search-input::-moz-placeholder { color: #ffffff;}.top-header .vce-search-form .vce-search-input:-ms-input-placeholder { color: #ffffff;}.header-1-wrapper{height: 130px;padding-top: 15px;}.header-2-wrapper,.header-3-wrapper{height: 130px;}.header-2-wrapper .site-branding,.header-3-wrapper .site-branding{top: 15px;left: 0px;}.site-title a, .site-title a:hover{color: #232323;}.site-description{color: #aaaaaa;}.main-header{background-color: #ffffff;}.header-bottom-wrapper{background: #fcfcfc;}.vce-header-ads{margin: 20px 0;}.header-3-wrapper .nav-menu > li > a{padding: 55px 15px;}.header-sticky,.sidr{background: rgba(252,252,252,0.95);}.ie8 .header-sticky{background: #ffffff;}.main-navigation a,.nav-menu .vce-mega-menu > .sub-menu > li > a,.sidr li a,.vce-menu-parent{color: #4a4a4a;}.nav-menu > li:hover > a,.nav-menu > .current_page_item > a,.nav-menu > .current-menu-item > a,.nav-menu > .current-menu-ancestor > a,.main-navigation a.vce-item-selected,.main-navigation ul ul li:hover > a,.nav-menu ul .current-menu-item a,.nav-menu ul .current_page_item a,.vce-menu-parent:hover,.sidr li a:hover,.sidr li.sidr-class-current_page_item > a,.main-navigation li.current-menu-item.fa:before,.vce-responsive-nav{color: #cf4d35;}#sidr-id-vce_main_navigation_menu .soc-nav-menu li a:hover {color: #ffffff;}.nav-menu > li:hover > a,.nav-menu > .current_page_item > a,.nav-menu > .current-menu-item > a,.nav-menu > .current-menu-ancestor > a,.main-navigation a.vce-item-selected,.main-navigation ul ul,.header-sticky .nav-menu > .current_page_item:hover > a,.header-sticky .nav-menu > .current-menu-item:hover > a,.header-sticky .nav-menu > .current-menu-ancestor:hover > a,.header-sticky .main-navigation a.vce-item-selected:hover{background-color: #ffffff;}.search-header-wrap ul {border-top: 2px solid #cf4d35;}.vce-cart-icon a.vce-custom-cart span,.sidr-class-vce-custom-cart .sidr-class-vce-cart-count {background: #cf4d35;font-family: 'Poppins';}.vce-border-top .main-box-title{border-top: 2px solid #cf4d35;}.tagcloud a:hover,.sidebar .widget .mks_author_link,.sidebar .widget.mks_themeforest_widget .more,.site-footer .widget .mks_author_link,.site-footer .widget.mks_themeforest_widget .more,.vce-lay-g .entry-meta div,.vce-lay-g .fn,.vce-lay-g .fn a{color: #FFF;}.vce-featured-header .vce-featured-header-background{opacity: 0.5}.vce-featured-grid .vce-featured-header-background,.vce-post-big .vce-post-img:after,.vce-post-slider .vce-post-img:after{opacity: 0.5}.vce-featured-grid .owl-item:hover .vce-grid-text .vce-featured-header-background,.vce-post-big li:hover .vce-post-img:after,.vce-post-slider li:hover .vce-post-img:after {opacity: 0.8}.vce-featured-grid.vce-featured-grid-big .vce-featured-header-background,.vce-post-big .vce-post-img:after,.vce-post-slider .vce-post-img:after{opacity: 0.5}.vce-featured-grid.vce-featured-grid-big .owl-item:hover .vce-grid-text .vce-featured-header-background,.vce-post-big li:hover .vce-post-img:after,.vce-post-slider li:hover .vce-post-img:after {opacity: 0.8}#back-top {background: #323232}.sidr input[type=text]{background: rgba(74,74,74,0.1);color: rgba(74,74,74,0.5);}.is-style-default{border-color: #cf4d35;}.is-style-solid-color{background-color: #cf4d35;color: #ffffff;}.wp-block-image figcaption{color: #9b9b9b;}.wp-block-cover .wp-block-cover-image-text, .wp-block-cover .wp-block-cover-text, .wp-block-cover h2, .wp-block-cover-image .wp-block-cover-image-text, .wp-block-cover-image .wp-block-cover-text, .wp-block-cover-image h2,p.has-drop-cap:not(:focus)::first-letter,p.wp-block-subhead{font-family: 'Oswald';font-weight: 400;}.wp-block-cover .wp-block-cover-image-text, .wp-block-cover .wp-block-cover-text, .wp-block-cover h2, .wp-block-cover-image .wp-block-cover-image-text, .wp-block-cover-image .wp-block-cover-text, .wp-block-cover-image h2{font-size: 2.5rem;}p.wp-block-subhead{font-size: 2.2rem;}.wp-block-button__link{background: #cf4d35}.meta-image:hover a img,.vce-lay-h .img-wrap:hover .meta-image > img,.img-wrp:hover img,.vce-gallery-big:hover img,.vce-gallery .gallery-item:hover img,.wp-block-gallery .blocks-gallery-item:hover img,.vce_posts_widget .vce-post-big li:hover img,.vce-featured-grid .owl-item:hover img,.vce-post-img:hover img,.mega-menu-img:hover img{-webkit-transform: scale(1.1);-moz-transform: scale(1.1);-o-transform: scale(1.1);-ms-transform: scale(1.1);transform: scale(1.1);}
+</style>
+<link rel='stylesheet' id='vce_child_load_scripts-css' href='https://www.newszii.com/wp-content/themes/voice-child/style.css?ver=2.8.4' type='text/css' media='screen' />
+<style id='akismet-widget-style-inline-css' type='text/css'>
+
+			.a-stats {
+				--akismet-color-mid-green: #357b49;
+				--akismet-color-white: #fff;
+				--akismet-color-light-grey: #f6f7f7;
+
+				max-width: 350px;
+				width: auto;
+			}
+
+			.a-stats * {
+				all: unset;
+				box-sizing: border-box;
+			}
+
+			.a-stats strong {
+				font-weight: 600;
+			}
+
+			.a-stats a.a-stats__link,
+			.a-stats a.a-stats__link:visited,
+			.a-stats a.a-stats__link:active {
+				background: var(--akismet-color-mid-green);
+				border: none;
+				box-shadow: none;
+				border-radius: 8px;
+				color: var(--akismet-color-white);
+				cursor: pointer;
+				display: block;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+				font-weight: 500;
+				padding: 12px;
+				text-align: center;
+				text-decoration: none;
+				transition: all 0.2s ease;
+			}
+
+			/* Extra specificity to deal with TwentyTwentyOne focus style */
+			.widget .a-stats a.a-stats__link:focus {
+				background: var(--akismet-color-mid-green);
+				color: var(--akismet-color-white);
+				text-decoration: none;
+			}
+
+			.a-stats a.a-stats__link:hover {
+				filter: brightness(110%);
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 0 2px rgba(0, 0, 0, 0.16);
+			}
+
+			.a-stats .count {
+				color: var(--akismet-color-white);
+				display: block;
+				font-size: 1.5em;
+				line-height: 1.4;
+				padding: 0 13px;
+				white-space: nowrap;
+			}
+		
+</style>
+<link data-minify="1" rel='stylesheet' id='newsletter-css' href='https://www.newszii.com/wp-content/cache/min/1/wp-content/plugins/newsletter/style.css?ver=1744796853' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.newszii.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.newszii.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.newszii.com/wp-content/plugins/sticky-menu-or-anything-on-scroll/assets/js/jq-sticky-anything.min.js?ver=2.1.1" id="stickyAnythingLib-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.newszii.com/wp-content/cache/min/1/wp-content/plugins/wp-hide-post/public/js/wp-hide-post-public.js?ver=1744796853" id="wp-hide-post-js" data-rocket-defer defer></script>
+<link rel="https://api.w.org/" href="https://www.newszii.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.newszii.com/wp-json/wp/v2/pages/169172" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.newszii.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.7.2" />
+<link rel='shortlink' href='https://www.newszii.com/?p=169172' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.newszii.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.newszii.com%2Fpage-not-found%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.newszii.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.newszii.com%2Fpage-not-found%2F&#038;format=xml" />
+<style type="text/css">
+.feedzy-rss-link-icon:after {
+	content: url("https://www.newszii.com/wp-content/plugins/feedzy-rss-feeds/img/external-link.png");
+	margin-left: 3px;
+}
+</style>
+		<!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-LGNKNYVYQK"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LGNKNYVYQK');
+</script>
+<!-- Meta Pixel Code -->
+<script type="rocketlazyloadscript">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '646891816703711');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=646891816703711&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code --><meta name="generator" content="Elementor 3.28.3; features: additional_custom_breakpoints, e_local_google_fonts; settings: css_print_method-external, google_font-enabled, font_display-auto">
+      <meta name="onesignal" content="wordpress-plugin"/>
+            <script type="rocketlazyloadscript">
+
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+
+      OneSignalDeferred.push(function(OneSignal) {
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['serviceWorkerParam'] = { scope: '/' };
+oneSignal_options['serviceWorkerPath'] = 'OneSignalSDKWorker.js.php';
+
+        OneSignal.Notifications.setDefaultUrl("https://www.newszii.com");
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '965d50af-aee4-4514-a1e2-0c367511f087';
+oneSignal_options['allowLocalhostAsSecureOrigin'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "Welcome to Newszii Notification";
+oneSignal_options['welcomeNotification']['message'] = "Thanks for subscribing";
+oneSignal_options['path'] = "https://www.newszii.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['persistNotification'] = true;
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['notifyButton'] = { };
+oneSignal_options['notifyButton']['enable'] = true;
+oneSignal_options['notifyButton']['position'] = 'bottom-right';
+oneSignal_options['notifyButton']['theme'] = 'default';
+oneSignal_options['notifyButton']['size'] = 'large';
+oneSignal_options['notifyButton']['showCredit'] = true;
+              OneSignal.init(window._oneSignalInitOptions);
+              OneSignal.Slidedown.promptPush()      });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.Notifications.requestPermission(); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<style type="text/css">.saboxplugin-wrap{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;border:1px solid #eee;width:100%;clear:both;display:block;overflow:hidden;word-wrap:break-word;position:relative}.saboxplugin-wrap .saboxplugin-gravatar{float:left;padding:0 20px 20px 20px}.saboxplugin-wrap .saboxplugin-gravatar img{max-width:100px;height:auto;border-radius:0;}.saboxplugin-wrap .saboxplugin-authorname{font-size:18px;line-height:1;margin:20px 0 0 20px;display:block}.saboxplugin-wrap .saboxplugin-authorname a{text-decoration:none}.saboxplugin-wrap .saboxplugin-authorname a:focus{outline:0}.saboxplugin-wrap .saboxplugin-desc{display:block;margin:5px 20px}.saboxplugin-wrap .saboxplugin-desc a{text-decoration:underline}.saboxplugin-wrap .saboxplugin-desc p{margin:5px 0 12px}.saboxplugin-wrap .saboxplugin-web{margin:0 20px 15px;text-align:left}.saboxplugin-wrap .sab-web-position{text-align:right}.saboxplugin-wrap .saboxplugin-web a{color:#ccc;text-decoration:none}.saboxplugin-wrap .saboxplugin-socials{position:relative;display:block;background:#fcfcfc;padding:5px;border-top:1px solid #eee}.saboxplugin-wrap .saboxplugin-socials a svg{width:20px;height:20px}.saboxplugin-wrap .saboxplugin-socials a svg .st2{fill:#fff; transform-origin:center center;}.saboxplugin-wrap .saboxplugin-socials a svg .st1{fill:rgba(0,0,0,.3)}.saboxplugin-wrap .saboxplugin-socials a:hover{opacity:.8;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;box-shadow:none!important;-webkit-box-shadow:none!important}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color{box-shadow:none;padding:0;border:0;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;display:inline-block;color:#fff;font-size:0;text-decoration:inherit;margin:5px;-webkit-border-radius:0;-moz-border-radius:0;-ms-border-radius:0;-o-border-radius:0;border-radius:0;overflow:hidden}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-grey{text-decoration:inherit;box-shadow:none;position:relative;display:-moz-inline-stack;display:inline-block;vertical-align:middle;zoom:1;margin:10px 5px;color:#444;fill:#444}.clearfix:after,.clearfix:before{content:' ';display:table;line-height:0;clear:both}.ie7 .clearfix{zoom:1}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitch{border-color:#38245c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-addthis{border-color:#e91c00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-behance{border-color:#003eb0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-delicious{border-color:#06c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-deviantart{border-color:#036824}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-digg{border-color:#00327c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-dribbble{border-color:#ba1655}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-facebook{border-color:#1e2e4f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-flickr{border-color:#003576}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-github{border-color:#264874}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-google{border-color:#0b51c5}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-googleplus{border-color:#96271a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-html5{border-color:#902e13}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-instagram{border-color:#1630aa}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-linkedin{border-color:#00344f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-pinterest{border-color:#5b040e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-reddit{border-color:#992900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-rss{border-color:#a43b0a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-sharethis{border-color:#5d8420}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-skype{border-color:#00658a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-soundcloud{border-color:#995200}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-spotify{border-color:#0f612c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stackoverflow{border-color:#a95009}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-steam{border-color:#006388}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-user_email{border-color:#b84e05}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stumbleUpon{border-color:#9b280e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-tumblr{border-color:#10151b}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitter{border-color:#0967a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vimeo{border-color:#0d7091}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-windows{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-whatsapp{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-wordpress{border-color:#0f3647}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-yahoo{border-color:#14002d}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-youtube{border-color:#900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-xing{border-color:#000202}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mixcloud{border-color:#2475a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vk{border-color:#243549}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-medium{border-color:#00452c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-quora{border-color:#420e00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-meetup{border-color:#9b181c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-goodreads{border-color:#000}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-snapchat{border-color:#999700}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-500px{border-color:#00557f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mastodont{border-color:#185886}.sabox-plus-item{margin-bottom:20px}@media screen and (max-width:480px){.saboxplugin-wrap{text-align:center}.saboxplugin-wrap .saboxplugin-gravatar{float:none;padding:20px 0;text-align:center;margin:0 auto;display:block}.saboxplugin-wrap .saboxplugin-gravatar img{float:none;display:inline-block;display:-moz-inline-stack;vertical-align:middle;zoom:1}.saboxplugin-wrap .saboxplugin-desc{margin:0 10px 20px;text-align:center}.saboxplugin-wrap .saboxplugin-authorname{text-align:center;margin:10px 0 20px}}body .saboxplugin-authorname a,body .saboxplugin-authorname a:hover{box-shadow:none;-webkit-box-shadow:none}a.sab-profile-edit{font-size:16px!important;line-height:1!important}.sab-edit-settings a,a.sab-profile-edit{color:#0073aa!important;box-shadow:none!important;-webkit-box-shadow:none!important}.sab-edit-settings{margin-right:15px;position:absolute;right:0;z-index:2;bottom:10px;line-height:20px}.sab-edit-settings i{margin-left:5px}.saboxplugin-socials{line-height:1!important}.rtl .saboxplugin-wrap .saboxplugin-gravatar{float:right}.rtl .saboxplugin-wrap .saboxplugin-authorname{display:flex;align-items:center}.rtl .saboxplugin-wrap .saboxplugin-authorname .sab-profile-edit{margin-right:10px}.rtl .sab-edit-settings{right:auto;left:0}img.sab-custom-avatar{max-width:75px;}.saboxplugin-wrap .saboxplugin-gravatar img {-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;border-radius:50%;}.saboxplugin-wrap .saboxplugin-gravatar img {-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;border-radius:50%;}.saboxplugin-wrap {margin-top:0px; margin-bottom:0px; padding: 0px 0px }.saboxplugin-wrap .saboxplugin-authorname {font-size:18px; line-height:25px;}.saboxplugin-wrap .saboxplugin-desc p, .saboxplugin-wrap .saboxplugin-desc {font-size:14px !important; line-height:21px !important;}.saboxplugin-wrap .saboxplugin-web {font-size:14px;}.saboxplugin-wrap .saboxplugin-socials a svg {width:18px;height:18px;}</style><link rel="shortcut icon" href="https://www.newszii.com/wp-content/uploads/2018/07/favicon.jpg" type="image/x-icon" /><style type="text/css">#main-box-3 .main-box-inside,#text-13 .textwidget,#text-7 .textwidget,#text-9 .textwidget,#text-2 .textwidget{padding:0px;} .btn { margin-left:5px; background: #FF6600; background-image: -webkit-linear-gradient(top, #FF6600, #BF4D00); background-image: -moz-linear-gradient(top, #FF6600, #BF4D00); background-image: -ms-linear-gradient(top, #FF6600, #BF4D00); background-image: -o-linear-gradient(top, #FF6600, #BF4D00); background-image: linear-gradient(to bottom, #FF6600, #BF4D00); -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 4px; color: #FFFFFF!important; padding: 7px; box-shadow: 1px 1px 9px 0px #000000; -webkit-box-shadow: 1px 1px 9px 0px #000000; -moz-box-shadow: 1px 1px 9px 0px #000000; border: solid #337FED 1px; text-decoration: none; display: inline-block; cursor: pointer; } .btn:hover { background: #B54800; background-image: -webkit-linear-gradient(top, #B54800, #D95700); background-image: -moz-linear-gradient(top, #B54800, #D95700); background-image: -ms-linear-gradient(top, #B54800, #D95700); background-image: -o-linear-gradient(top, #B54800, #D95700); background-image: linear-gradient(to bottom, #B54800, #D95700); text-decoration: none; } .videobtn { -webkit-border-radius: 12px; -moz-border-radius: 12px; border-radius: 12px; line-height: 50px; color: #EE4723; width: 95%; font-size: 21px; font-weight: 400; padding: 22px 10px 10px 80px; background: url(/video-player.png) no-repeat; width: 100px; height: 100px; border: solid #FFFFFF 1px; text-decoration: none; cursor: pointer; } .videobtn span{margin-top:-20px;} .videobtn:hover { background: #EE4723 url(/video-player.png) no-repeat; text-decoration: none; color:#FFF; } .home #main-box-5 .main-box-inside p,.home #main-box-4 .main-box-inside p,.vce-main-content .entry-meta .date,.main-box-inside .entry-content .last-updated{display:none;} .home #main-box-5 .main-box-inside{padding:0px;} .home #main-box-7 .main-box-inside p{margin-bottom:20px;} .home #main-box-7 .main-box-inside p img{width:100%;} .menu-item-69206 .vce-social-name{opacity: inherit;display: inherit;background-color: #B9452F; padding: 0px 10px;} .menu-item-69206 a{height:auto;width:auto;} .site-footer .vce-wrap-left{margin-top: 8px;} .category-community .main-box-head .main-box-subtitle{width:100%;} #main-box-1 .entry-content{text-align:left;} #main-box-2 .entry-content{text-align:left;} #main-box-3 .entry-content{text-align:left;} .page-id-96457 p.last-updated, .page-id-96457 .entry-header{display:none;} .page-template-template-no-title .entry-content .last-updated{display:none !important}</style>		<style type="text/css" id="wp-custom-css">
+			.page-id-145688 .last-updated, .page-id-169465 .last-updated {
+	display: none;
+}
+
+.page-id-145688 {
+	background: #fff;
+}
+
+.quotation li {
+	margin-bottom: 30px;
+}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+
+
+  ga('create', 'UA-59279731-1', 'auto');
+
+  ga('send', 'pageview');
+
+
+
+</script>
+	
+	
+</head>
+
+<body data-rsssl=1 class="page-template page-template-template-no-title page-template-template-no-title-php page page-id-169172 safari iphone vce-sid-none voice-v_2_8_4 elementor-default elementor-kit-133210">
+
+<div  id="vce-main">
+
+<header  id="header" class="main-header">
+	<div  class="top-header">
+	<div  class="container">
+
+				
+					<div class="vce-wrap-right">
+					<div class="menu-social-menu-container"><ul id="vce_social_menu" class="soc-nav-menu"><li id="menu-item-66903" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-66903"><a href="https://www.facebook.com/Newsziimedia/"><span class="vce-social-name">Facebook</span></a></li>
+<li id="menu-item-66904" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-66904"><a href="https://twitter.com/NewsziiMedia"><span class="vce-social-name">Twitter</span></a></li>
+<li id="menu-item-66906" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-66906"><a href="https://www.youtube.com/channel/UCrEUCAPPcZd6epVFjobG2gA/videos"><span class="vce-social-name">Youtube</span></a></li>
+<li id="menu-item-66907" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-66907"><a href="https://www.instagram.com/newszii/"><span class="vce-social-name">Instagram</span></a></li>
+</ul></div>			</div>
+		
+		
+
+
+	</div>
+</div><div  class="container header-1-wrapper header-main-area">	
+		<div class="vce-res-nav">
+	<a class="vce-responsive-nav" href="#sidr-main"><i class="fa fa-bars"></i></a>
+</div>
+<div class="site-branding">
+	<span class="site-title"><a href="https://www.newszii.com/" rel="home" class="has-logo"><picture class="vce-logo"><source media="(min-width: 1024px)" srcset="https://www.newszii.com/wp-content/uploads/2018/07/logo1.jpg"><source srcset="https://www.newszii.com/wp-content/uploads/2018/07/logo1.jpg"><img fetchpriority="high" src="https://www.newszii.com/wp-content/uploads/2018/07/logo1.jpg" alt="Newszii.com"></picture></a></span></div></div>
+
+<div  class="header-bottom-wrapper">
+	<div class="container">
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+	<ul id="vce_main_navigation_menu" class="nav-menu"><li id="menu-item-289" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-289"><a href="/">Home</a><li id="menu-item-29125" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29125 vce-mega-cat vce-cat-6"><a href="https://www.newszii.com/category/tech/" data-mega_cat_id="6">Technology</a><ul class="vce-mega-menu-wrapper"><li class="vce-mega-menu-posts-wrap " data-numposts="5"><ul><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/how-to-share-instagram-stories-to-whatsapp-status/" title="How to Share Instagram Stories to WhatsApp Status Automatically">
+			<img fetchpriority="high" width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="How to Share Instagram Stories to WhatsApp Status" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/04/How-to-Share-Instagram-Stories-to-WhatsApp-Status-375x195.webp" /><noscript><img fetchpriority="high" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/04/How-to-Share-Instagram-Stories-to-WhatsApp-Status-375x195.webp" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="How to Share Instagram Stories to WhatsApp Status" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/how-to-share-instagram-stories-to-whatsapp-status/" title="How to Share Instagram Stories to WhatsApp Status Automatically">How to Share Instagram Stories to WhatsApp Status Automatically</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/meta-webinar-facebook-instagram-reels-tips/" title="Meta Launches Webinar Focused On Instagram And Facebook Reels Tactics">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Meta Announces Upcoming Webinar on Reels Tips and Tactics" decoding="async" data-lazy-srcset="https://www.newszii.com/wp-content/uploads/2025/04/Meta-Announces-Upcoming-Webinar-on-Reels-Tips-and-Tactics-375x195.png 375w, https://www.newszii.com/wp-content/uploads/2025/04/Meta-Announces-Upcoming-Webinar-on-Reels-Tips-and-Tactics-300x155.png 300w" data-lazy-sizes="(max-width: 375px) 100vw, 375px" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/04/Meta-Announces-Upcoming-Webinar-on-Reels-Tips-and-Tactics-375x195.png" /><noscript><img width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/04/Meta-Announces-Upcoming-Webinar-on-Reels-Tips-and-Tactics-375x195.png" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Meta Announces Upcoming Webinar on Reels Tips and Tactics" decoding="async" srcset="https://www.newszii.com/wp-content/uploads/2025/04/Meta-Announces-Upcoming-Webinar-on-Reels-Tips-and-Tactics-375x195.png 375w, https://www.newszii.com/wp-content/uploads/2025/04/Meta-Announces-Upcoming-Webinar-on-Reels-Tips-and-Tactics-300x155.png 300w" sizes="(max-width: 375px) 100vw, 375px" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/meta-webinar-facebook-instagram-reels-tips/" title="Meta Launches Webinar Focused On Instagram And Facebook Reels Tactics">Meta Launches Webinar Focused On Instagram And Facebook Reels Tactics</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/x-launches-nba-portal-to-boost-sports-engagement/" title="X Launches NBA Portal To Boost Sports Engagement And Compete With Threads">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="X Launches NBA Portal To Boost Sports Engagement And Compete With Threads" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/04/X-Launches-NBA-Portal-To-Boost-Sports-Engagement-And-Compete-With-Threads-375x195.jpeg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/04/X-Launches-NBA-Portal-To-Boost-Sports-Engagement-And-Compete-With-Threads-375x195.jpeg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="X Launches NBA Portal To Boost Sports Engagement And Compete With Threads" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/x-launches-nba-portal-to-boost-sports-engagement/" title="X Launches NBA Portal To Boost Sports Engagement And Compete With Threads">X Launches NBA Portal To Boost Sports Engagement And Compete With Threads</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/youtube-ai-music-tools-monetization-verification/" title="YouTube Rolls Out AI Music Tools And Smarter Monetization Verification">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="YouTube Monetization Verification" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/04/YouTube-Monetization-Verification-375x195.webp" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/04/YouTube-Monetization-Verification-375x195.webp" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="YouTube Monetization Verification" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/youtube-ai-music-tools-monetization-verification/" title="YouTube Rolls Out AI Music Tools And Smarter Monetization Verification">YouTube Rolls Out AI Music Tools And Smarter Monetization Verification</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/how-to-grow-your-instagram-profile-key-insights-from-instagram-chief-adam-mosseri/" title="How To Grow Your Instagram Profile In 2025: Key Insights From Instagram Chief Adam Mosseri">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Instagram Chief Answers Key Creator Questions on How to Grow Your Profile in 2025" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/04/Instagram-Chief-Answers-Key-Creator-Questions-on-How-to-Grow-Your-Profile-in-2025-375x195.jpg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/04/Instagram-Chief-Answers-Key-Creator-Questions-on-How-to-Grow-Your-Profile-in-2025-375x195.jpg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Instagram Chief Answers Key Creator Questions on How to Grow Your Profile in 2025" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/how-to-grow-your-instagram-profile-key-insights-from-instagram-chief-adam-mosseri/" title="How To Grow Your Instagram Profile In 2025: Key Insights From Instagram Chief Adam Mosseri">How To Grow Your Instagram Profile In 2025: Key Insights From Instagram Chief Adam Mosseri</a>
+	
+</li></ul></li></ul><li id="menu-item-96510" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-96510 vce-mega-cat vce-cat-12576"><a href="https://www.newszii.com/category/fintech/" data-mega_cat_id="12576">Fintech</a><ul class="vce-mega-menu-wrapper"><li class="vce-mega-menu-posts-wrap " data-numposts="5"><ul><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/why-traders-choose-bydfi-no-kyc-exchange/" title="Why More Traders Are Choosing BYDFi: A No-KYC Exchange With Global Access">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="A No-KYC Exchange With Global Access" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/02/A-No-KYC-Exchange-With-Global-Access-375x195.png" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/02/A-No-KYC-Exchange-With-Global-Access-375x195.png" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="A No-KYC Exchange With Global Access" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/why-traders-choose-bydfi-no-kyc-exchange/" title="Why More Traders Are Choosing BYDFi: A No-KYC Exchange With Global Access">Why More Traders Are Choosing BYDFi: A No-KYC Exchange With Global Access</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/btc-hit-50k-usd/" title="BTC Hit $50K USD! Trader Predicts $50K BTC Surge Post 20% ETF Dip">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="BTC Hit $50K USD" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2024/02/BTC-Hit-50K-USD-375x195.jpg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2024/02/BTC-Hit-50K-USD-375x195.jpg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="BTC Hit $50K USD" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/btc-hit-50k-usd/" title="BTC Hit $50K USD! Trader Predicts $50K BTC Surge Post 20% ETF Dip">BTC Hit $50K USD! Trader Predicts $50K BTC Surge Post 20% ETF Dip</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/instant-bank-transfers-nz/" title="How Instant Transfers Are Revolutionizing Online Casinos In New Zealand">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Instant Bank Transfers In NZ" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2023/11/How-Instant-Transfers-375x195.png" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2023/11/How-Instant-Transfers-375x195.png" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Instant Bank Transfers In NZ" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/instant-bank-transfers-nz/" title="How Instant Transfers Are Revolutionizing Online Casinos In New Zealand">How Instant Transfers Are Revolutionizing Online Casinos In New Zealand</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/decoding-nasdaq-100-futures-sentiments/" title="The Market’s Mood Ring: Decoding NASDAQ 100 Futures Sentiments">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Decoding NASDAQ 100 Futures Sentiments" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2023/11/Decoding-NASDAQ-100-Futures-Sentiments-375x195.jpg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2023/11/Decoding-NASDAQ-100-Futures-Sentiments-375x195.jpg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Decoding NASDAQ 100 Futures Sentiments" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/decoding-nasdaq-100-futures-sentiments/" title="The Market’s Mood Ring: Decoding NASDAQ 100 Futures Sentiments">The Market’s Mood Ring: Decoding NASDAQ 100 Futures Sentiments</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/apple-pay-later-launch/" title="Apple Pay Later Launch: A Game-Changer In Payment Solutions">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Apple Pay Later Launch" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2023/10/Apple-Pay-Later-Launch-375x195.png" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2023/10/Apple-Pay-Later-Launch-375x195.png" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Apple Pay Later Launch" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/apple-pay-later-launch/" title="Apple Pay Later Launch: A Game-Changer In Payment Solutions">Apple Pay Later Launch: A Game-Changer In Payment Solutions</a>
+	
+</li></ul></li></ul><li id="menu-item-96511" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-96511 vce-cat-12577"><a href="https://www.newszii.com/category/blockchain/">Blockchain</a><li id="menu-item-292" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-292 vce-mega-cat vce-cat-19"><a href="https://www.newszii.com/category/lifestyle/" data-mega_cat_id="19">Lifestyle</a><ul class="vce-mega-menu-wrapper"><li class="vce-mega-menu-posts-wrap " data-numposts="5"><ul><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/alternatives-to-a-hair-transplant/" title="Alternatives To A Hair Transplant: Exploring Non-Surgical Solutions For Hair Loss">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Alternatives To A Hair Transplant" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/02/Alternatives-To-A-Hair-Transplant-375x195.jpg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/02/Alternatives-To-A-Hair-Transplant-375x195.jpg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Alternatives To A Hair Transplant" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/alternatives-to-a-hair-transplant/" title="Alternatives To A Hair Transplant: Exploring Non-Surgical Solutions For Hair Loss">Alternatives To A Hair Transplant: Exploring Non-Surgical Solutions For Hair Loss</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/nike-gen-z-favorite-brand/" title="Why Nike Is Gen Z’s Favorite Sneaker Brand">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Why Nike is the favorite sneaker brand for Gen Z" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/01/Nike-Is-Gen-Zs-Favorite-Sneaker-Brand-375x195.jpeg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/01/Nike-Is-Gen-Zs-Favorite-Sneaker-Brand-375x195.jpeg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Why Nike is the favorite sneaker brand for Gen Z" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/nike-gen-z-favorite-brand/" title="Why Nike Is Gen Z’s Favorite Sneaker Brand">Why Nike Is Gen Z’s Favorite Sneaker Brand</a>
+	
+</li><li>	
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/create-space-for-emotional-healing/" title="How To Create Space For Healing Emotional Wounds">How To Create Space For Healing Emotional Wounds</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/customizable-diamond-engagement-rings/" title="The Rise Of Customizable Diamond Engagement Rings: A Modern Twist On Timeless Tradition">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Customizable Diamond Engagement Rings" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2024/10/Customizable-Diamond-Engagement-Rings-375x195.jpg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2024/10/Customizable-Diamond-Engagement-Rings-375x195.jpg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Customizable Diamond Engagement Rings" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/customizable-diamond-engagement-rings/" title="The Rise Of Customizable Diamond Engagement Rings: A Modern Twist On Timeless Tradition">The Rise Of Customizable Diamond Engagement Rings: A Modern Twist On Timeless Tradition</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/cybersigilism/" title="Why Gen Z Loves Cybersigilism Tattoos">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Cybersigilism tattoo trend among GenZs" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2024/10/Cybersigilism-Tattoos-375x195.jpg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2024/10/Cybersigilism-Tattoos-375x195.jpg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Cybersigilism tattoo trend among GenZs" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/cybersigilism/" title="Why Gen Z Loves Cybersigilism Tattoos">Why Gen Z Loves Cybersigilism Tattoos</a>
+	
+</li></ul></li></ul><li id="menu-item-69473" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-69473"><a target="_blank" href="/marketing/">Marketing</a><li id="menu-item-42467" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42467"><a href="/category/celebrities/">Celebrities</a><li id="menu-item-170967" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-170967"><a href="https://newsziinewsletter.beehiiv.com/">Newsletter</a>
+<ul class="sub-menu">
+	<li id="menu-item-171214" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-171214 vce-cat-15913"><a href="https://www.newszii.com/category/newsletter-archive/">Newsletter Archive</a></ul>
+<li id="menu-item-346" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-346"><a href="#">More</a>
+<ul class="sub-menu">
+	<li id="menu-item-89245" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-89245 vce-cat-1053"><a href="https://www.newszii.com/category/quotes/">Quotes</a>	<li id="menu-item-3451" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3451 vce-cat-28"><a target="_blank" href="https://www.newszii.com/category/travel/">Travel</a>	<li id="menu-item-21802" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21802 vce-cat-989"><a href="https://www.newszii.com/category/relationships/">Relationships</a>	<li id="menu-item-72158" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-72158 vce-cat-8538"><a href="https://www.newszii.com/category/community/">Community</a>	<li id="menu-item-290" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-290 vce-cat-4"><a href="https://www.newszii.com/category/entertainment/">Entertainment</a>	<li id="menu-item-293" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-293 vce-cat-20"><a href="https://www.newszii.com/category/news/">News</a>	<li id="menu-item-294" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-294 vce-cat-21"><a href="https://www.newszii.com/category/videos/">Videos</a>	<li id="menu-item-3449" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3449 vce-cat-27"><a href="https://www.newszii.com/category/food/">Food</a>	<li id="menu-item-3450" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3450 vce-cat-29"><a href="https://www.newszii.com/category/health/">Health</a>	<li id="menu-item-66479" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-66479 vce-cat-6619"><a href="https://www.newszii.com/category/articles/">Articles</a></ul>
+<li class="search-header-wrap"><a class="search_header" href="javascript:void(0)"><i class="fa fa-search"></i></a><ul class="search-header-form-ul"><li><form class="vce-search-form" action="https://www.newszii.com/search-posts/" method="get">
+	<input name="query" class="vce-search-input" size="20" type="text" value="Type here to search..." onfocus="(this.value == 'Type here to search...') && (this.value = '')" onblur="(this.value == '') && (this.value = 'Type here to search...')" placeholder="Type here to search..." />
+		<button type="submit" class="vce-search-submit"><i class="fa fa-search"></i></button> 
+</form></li></ul></li></ul></nav>	</div>
+</div></header>
+
+	<div  id="sticky_header" class="header-sticky">
+	<div class="container">
+		<div class="vce-res-nav">
+	<a class="vce-responsive-nav" href="#sidr-main"><i class="fa fa-bars"></i></a>
+</div>
+<div class="site-branding">
+	<span class="site-title"><a href="https://www.newszii.com/" rel="home" class="has-logo"><picture class="vce-logo"><source media="(min-width: 1024px)" srcset="https://www.newszii.com/wp-content/uploads/2018/07/logo1.jpg"><source srcset="https://www.newszii.com/wp-content/uploads/2018/07/logo1.jpg"><img src="https://www.newszii.com/wp-content/uploads/2018/07/logo1.jpg" alt="Newszii.com"></picture></a></span></div>		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<ul id="vce_main_navigation_menu" class="nav-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-289"><a href="/">Home</a><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29125 vce-mega-cat vce-cat-6"><a href="https://www.newszii.com/category/tech/" data-mega_cat_id="6">Technology</a><ul class="vce-mega-menu-wrapper"><li class="vce-mega-menu-posts-wrap " data-numposts="5"><ul><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/how-to-share-instagram-stories-to-whatsapp-status/" title="How to Share Instagram Stories to WhatsApp Status Automatically">
+			<img fetchpriority="high" width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="How to Share Instagram Stories to WhatsApp Status" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/04/How-to-Share-Instagram-Stories-to-WhatsApp-Status-375x195.webp" /><noscript><img fetchpriority="high" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/04/How-to-Share-Instagram-Stories-to-WhatsApp-Status-375x195.webp" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="How to Share Instagram Stories to WhatsApp Status" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/how-to-share-instagram-stories-to-whatsapp-status/" title="How to Share Instagram Stories to WhatsApp Status Automatically">How to Share Instagram Stories to WhatsApp Status Automatically</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/meta-webinar-facebook-instagram-reels-tips/" title="Meta Launches Webinar Focused On Instagram And Facebook Reels Tactics">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Meta Announces Upcoming Webinar on Reels Tips and Tactics" decoding="async" data-lazy-srcset="https://www.newszii.com/wp-content/uploads/2025/04/Meta-Announces-Upcoming-Webinar-on-Reels-Tips-and-Tactics-375x195.png 375w, https://www.newszii.com/wp-content/uploads/2025/04/Meta-Announces-Upcoming-Webinar-on-Reels-Tips-and-Tactics-300x155.png 300w" data-lazy-sizes="(max-width: 375px) 100vw, 375px" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/04/Meta-Announces-Upcoming-Webinar-on-Reels-Tips-and-Tactics-375x195.png" /><noscript><img width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/04/Meta-Announces-Upcoming-Webinar-on-Reels-Tips-and-Tactics-375x195.png" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Meta Announces Upcoming Webinar on Reels Tips and Tactics" decoding="async" srcset="https://www.newszii.com/wp-content/uploads/2025/04/Meta-Announces-Upcoming-Webinar-on-Reels-Tips-and-Tactics-375x195.png 375w, https://www.newszii.com/wp-content/uploads/2025/04/Meta-Announces-Upcoming-Webinar-on-Reels-Tips-and-Tactics-300x155.png 300w" sizes="(max-width: 375px) 100vw, 375px" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/meta-webinar-facebook-instagram-reels-tips/" title="Meta Launches Webinar Focused On Instagram And Facebook Reels Tactics">Meta Launches Webinar Focused On Instagram And Facebook Reels Tactics</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/x-launches-nba-portal-to-boost-sports-engagement/" title="X Launches NBA Portal To Boost Sports Engagement And Compete With Threads">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="X Launches NBA Portal To Boost Sports Engagement And Compete With Threads" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/04/X-Launches-NBA-Portal-To-Boost-Sports-Engagement-And-Compete-With-Threads-375x195.jpeg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/04/X-Launches-NBA-Portal-To-Boost-Sports-Engagement-And-Compete-With-Threads-375x195.jpeg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="X Launches NBA Portal To Boost Sports Engagement And Compete With Threads" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/x-launches-nba-portal-to-boost-sports-engagement/" title="X Launches NBA Portal To Boost Sports Engagement And Compete With Threads">X Launches NBA Portal To Boost Sports Engagement And Compete With Threads</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/youtube-ai-music-tools-monetization-verification/" title="YouTube Rolls Out AI Music Tools And Smarter Monetization Verification">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="YouTube Monetization Verification" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/04/YouTube-Monetization-Verification-375x195.webp" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/04/YouTube-Monetization-Verification-375x195.webp" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="YouTube Monetization Verification" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/youtube-ai-music-tools-monetization-verification/" title="YouTube Rolls Out AI Music Tools And Smarter Monetization Verification">YouTube Rolls Out AI Music Tools And Smarter Monetization Verification</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/how-to-grow-your-instagram-profile-key-insights-from-instagram-chief-adam-mosseri/" title="How To Grow Your Instagram Profile In 2025: Key Insights From Instagram Chief Adam Mosseri">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Instagram Chief Answers Key Creator Questions on How to Grow Your Profile in 2025" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/04/Instagram-Chief-Answers-Key-Creator-Questions-on-How-to-Grow-Your-Profile-in-2025-375x195.jpg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/04/Instagram-Chief-Answers-Key-Creator-Questions-on-How-to-Grow-Your-Profile-in-2025-375x195.jpg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Instagram Chief Answers Key Creator Questions on How to Grow Your Profile in 2025" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/how-to-grow-your-instagram-profile-key-insights-from-instagram-chief-adam-mosseri/" title="How To Grow Your Instagram Profile In 2025: Key Insights From Instagram Chief Adam Mosseri">How To Grow Your Instagram Profile In 2025: Key Insights From Instagram Chief Adam Mosseri</a>
+	
+</li></ul></li></ul><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-96510 vce-mega-cat vce-cat-12576"><a href="https://www.newszii.com/category/fintech/" data-mega_cat_id="12576">Fintech</a><ul class="vce-mega-menu-wrapper"><li class="vce-mega-menu-posts-wrap " data-numposts="5"><ul><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/why-traders-choose-bydfi-no-kyc-exchange/" title="Why More Traders Are Choosing BYDFi: A No-KYC Exchange With Global Access">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="A No-KYC Exchange With Global Access" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/02/A-No-KYC-Exchange-With-Global-Access-375x195.png" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/02/A-No-KYC-Exchange-With-Global-Access-375x195.png" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="A No-KYC Exchange With Global Access" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/why-traders-choose-bydfi-no-kyc-exchange/" title="Why More Traders Are Choosing BYDFi: A No-KYC Exchange With Global Access">Why More Traders Are Choosing BYDFi: A No-KYC Exchange With Global Access</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/btc-hit-50k-usd/" title="BTC Hit $50K USD! Trader Predicts $50K BTC Surge Post 20% ETF Dip">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="BTC Hit $50K USD" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2024/02/BTC-Hit-50K-USD-375x195.jpg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2024/02/BTC-Hit-50K-USD-375x195.jpg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="BTC Hit $50K USD" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/btc-hit-50k-usd/" title="BTC Hit $50K USD! Trader Predicts $50K BTC Surge Post 20% ETF Dip">BTC Hit $50K USD! Trader Predicts $50K BTC Surge Post 20% ETF Dip</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/instant-bank-transfers-nz/" title="How Instant Transfers Are Revolutionizing Online Casinos In New Zealand">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Instant Bank Transfers In NZ" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2023/11/How-Instant-Transfers-375x195.png" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2023/11/How-Instant-Transfers-375x195.png" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Instant Bank Transfers In NZ" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/instant-bank-transfers-nz/" title="How Instant Transfers Are Revolutionizing Online Casinos In New Zealand">How Instant Transfers Are Revolutionizing Online Casinos In New Zealand</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/decoding-nasdaq-100-futures-sentiments/" title="The Market’s Mood Ring: Decoding NASDAQ 100 Futures Sentiments">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Decoding NASDAQ 100 Futures Sentiments" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2023/11/Decoding-NASDAQ-100-Futures-Sentiments-375x195.jpg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2023/11/Decoding-NASDAQ-100-Futures-Sentiments-375x195.jpg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Decoding NASDAQ 100 Futures Sentiments" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/decoding-nasdaq-100-futures-sentiments/" title="The Market’s Mood Ring: Decoding NASDAQ 100 Futures Sentiments">The Market’s Mood Ring: Decoding NASDAQ 100 Futures Sentiments</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/apple-pay-later-launch/" title="Apple Pay Later Launch: A Game-Changer In Payment Solutions">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Apple Pay Later Launch" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2023/10/Apple-Pay-Later-Launch-375x195.png" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2023/10/Apple-Pay-Later-Launch-375x195.png" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Apple Pay Later Launch" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/apple-pay-later-launch/" title="Apple Pay Later Launch: A Game-Changer In Payment Solutions">Apple Pay Later Launch: A Game-Changer In Payment Solutions</a>
+	
+</li></ul></li></ul><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-96511 vce-cat-12577"><a href="https://www.newszii.com/category/blockchain/">Blockchain</a><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-292 vce-mega-cat vce-cat-19"><a href="https://www.newszii.com/category/lifestyle/" data-mega_cat_id="19">Lifestyle</a><ul class="vce-mega-menu-wrapper"><li class="vce-mega-menu-posts-wrap " data-numposts="5"><ul><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/alternatives-to-a-hair-transplant/" title="Alternatives To A Hair Transplant: Exploring Non-Surgical Solutions For Hair Loss">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Alternatives To A Hair Transplant" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/02/Alternatives-To-A-Hair-Transplant-375x195.jpg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/02/Alternatives-To-A-Hair-Transplant-375x195.jpg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Alternatives To A Hair Transplant" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/alternatives-to-a-hair-transplant/" title="Alternatives To A Hair Transplant: Exploring Non-Surgical Solutions For Hair Loss">Alternatives To A Hair Transplant: Exploring Non-Surgical Solutions For Hair Loss</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/nike-gen-z-favorite-brand/" title="Why Nike Is Gen Z’s Favorite Sneaker Brand">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Why Nike is the favorite sneaker brand for Gen Z" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2025/01/Nike-Is-Gen-Zs-Favorite-Sneaker-Brand-375x195.jpeg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2025/01/Nike-Is-Gen-Zs-Favorite-Sneaker-Brand-375x195.jpeg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Why Nike is the favorite sneaker brand for Gen Z" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/nike-gen-z-favorite-brand/" title="Why Nike Is Gen Z’s Favorite Sneaker Brand">Why Nike Is Gen Z’s Favorite Sneaker Brand</a>
+	
+</li><li>	
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/create-space-for-emotional-healing/" title="How To Create Space For Healing Emotional Wounds">How To Create Space For Healing Emotional Wounds</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/customizable-diamond-engagement-rings/" title="The Rise Of Customizable Diamond Engagement Rings: A Modern Twist On Timeless Tradition">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Customizable Diamond Engagement Rings" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2024/10/Customizable-Diamond-Engagement-Rings-375x195.jpg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2024/10/Customizable-Diamond-Engagement-Rings-375x195.jpg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Customizable Diamond Engagement Rings" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/customizable-diamond-engagement-rings/" title="The Rise Of Customizable Diamond Engagement Rings: A Modern Twist On Timeless Tradition">The Rise Of Customizable Diamond Engagement Rings: A Modern Twist On Timeless Tradition</a>
+	
+</li><li>	
+				
+		<a class="mega-menu-img" href="https://www.newszii.com/cybersigilism/" title="Why Gen Z Loves Cybersigilism Tattoos">
+			<img width="375" height="195" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20195'%3E%3C/svg%3E" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Cybersigilism tattoo trend among GenZs" decoding="async" data-lazy-src="https://www.newszii.com/wp-content/uploads/2024/10/Cybersigilism-Tattoos-375x195.jpg" /><noscript><img loading="lazy" width="375" height="195" src="https://www.newszii.com/wp-content/uploads/2024/10/Cybersigilism-Tattoos-375x195.jpg" class="attachment-vce-lay-b size-vce-lay-b wp-post-image" alt="Cybersigilism tattoo trend among GenZs" decoding="async" /></noscript>					</a>
+		
+
+	<a class="mega-menu-link" href="https://www.newszii.com/cybersigilism/" title="Why Gen Z Loves Cybersigilism Tattoos">Why Gen Z Loves Cybersigilism Tattoos</a>
+	
+</li></ul></li></ul><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-69473"><a target="_blank" href="/marketing/">Marketing</a><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42467"><a href="/category/celebrities/">Celebrities</a><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-170967"><a href="https://newsziinewsletter.beehiiv.com/">Newsletter</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-171214 vce-cat-15913"><a href="https://www.newszii.com/category/newsletter-archive/">Newsletter Archive</a></ul>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-346"><a href="#">More</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-89245 vce-cat-1053"><a href="https://www.newszii.com/category/quotes/">Quotes</a>	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3451 vce-cat-28"><a target="_blank" href="https://www.newszii.com/category/travel/">Travel</a>	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21802 vce-cat-989"><a href="https://www.newszii.com/category/relationships/">Relationships</a>	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-72158 vce-cat-8538"><a href="https://www.newszii.com/category/community/">Community</a>	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-290 vce-cat-4"><a href="https://www.newszii.com/category/entertainment/">Entertainment</a>	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-293 vce-cat-20"><a href="https://www.newszii.com/category/news/">News</a>	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-294 vce-cat-21"><a href="https://www.newszii.com/category/videos/">Videos</a>	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3449 vce-cat-27"><a href="https://www.newszii.com/category/food/">Food</a>	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3450 vce-cat-29"><a href="https://www.newszii.com/category/health/">Health</a>	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-66479 vce-cat-6619"><a href="https://www.newszii.com/category/articles/">Articles</a></ul>
+<li class="search-header-wrap"><a class="search_header" href="javascript:void(0)"><i class="fa fa-search"></i></a><ul class="search-header-form-ul"><li><form class="vce-search-form" action="https://www.newszii.com/search-posts/" method="get">
+	<input name="query" class="vce-search-input" size="20" type="text" value="Type here to search..." onfocus="(this.value == 'Type here to search...') && (this.value = '')" onblur="(this.value == '') && (this.value = 'Type here to search...')" placeholder="Type here to search..." />
+		<button type="submit" class="vce-search-submit"><i class="fa fa-search"></i></button> 
+</form></li></ul></li></ul></nav>	</div>
+</div>
+<div  id="main-wrapper">
+
+
+	<div  id="mks-breadcrumbs" class="container mks-bredcrumbs-container"><p id="breadcrumbs"><span><span><a href="https://www.newszii.com/">Home</a></span> » <span class="breadcrumb_last" aria-current="page">Page Not Found</span></span></p></div>
+<div  id="content" class="container site-content">
+
+		
+	<div id="primary" class="vce-main-content">
+
+		<main id="main" class="main-box main-box-single">
+
+		
+			<article id="post-169172" class="vce-page post-169172 page type-page status-publish hentry">
+
+	
+	<div class="entry-content page-content">
+		<!-- date start--><p class="last-updated" style="font-size:14px;">Published on September 9th, 2024</p><!-- date end--><h4><span style="color: #993300;">404 error: Page not found</span></h4>
+<h2 class="entry-title">It seems that you got lost, but we are here to help</h2>
+<p>The page that you are looking for doesn’t exist on this website. You may have accidentally mistype the page address, or followed an expired link. Anyway, we will help you get back on track.</p>
+<ul>
+<li><strong><a href="https://www.newszii.com/">Home</a></strong></li>
+<li><strong><a href="https://www.newszii.com/category/tech/" data-mega_cat_id="6">Technology</a></strong></li>
+<li><strong><a href="https://www.newszii.com/category/fintech/" data-mega_cat_id="12576">Fintech</a></strong></li>
+<li><strong><a href="https://www.newszii.com/category/blockchain/">Blockchain</a></strong></li>
+<li><strong><a href="https://www.newszii.com/category/lifestyle/" data-mega_cat_id="19">Lifestyle</a></strong></li>
+<li><strong><a href="https://www.newszii.com/marketing/" target="_blank" rel="noopener">Marketing</a></strong></li>
+<li><strong><a href="https://www.newszii.com/category/celebrities/">Celebrities</a></strong></li>
+<li><a href="https://www.newszii.com/category/shopping/"><strong>Shopping</strong></a></li>
+<li><a href="https://www.newszii.com/category/health/"><strong>Health</strong></a></li>
+<li><a href="https://www.newszii.com/category/articles/"><strong>Articles</strong></a></li>
+</ul>
+	</div>
+
+	
+	
+</article>
+		
+		</main>
+
+		
+	</div>
+
+	
+</div>
+
+
+
+	<footer  id="footer" class="site-footer">
+
+				<div class="container">
+			<div class="container-fix">
+										<div class="bit-2">
+									</div>
+							<div class="bit-2">
+									</div>
+						</div>
+		</div>
+		
+					<div class="container-full site-info">
+				<div class="container">
+											<div class="vce-wrap-left">
+							<p>Newszii.com , copyright &copy; 2025.</p>						</div>
+					
+											<div class="vce-wrap-right">
+								<ul id="vce_footer_menu" class="bottom-nav-menu"><li id="menu-item-69235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-69235"><a href="https://www.newszii.com/about-us/">About Us</a></li>
+<li id="menu-item-69234" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-69234"><a href="https://www.newszii.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-69237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-69237"><a href="https://www.newszii.com/advertise-with-us/">Advertise With Newszii</a></li>
+<li id="menu-item-119957" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-119957"><a href="https://www.newszii.com/affiliate-disclosure/">Affiliate Disclosure</a></li>
+<li id="menu-item-155962" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-155962"><a href="https://www.newszii.com/write-for-us/">Write For US</a></li>
+</ul>						</div>
+						
+
+					
+			
+				</div>
+			</div>
+		
+
+	</footer>
+
+
+</div>
+</div>
+
+<a href="javascript:void(0)" id="back-top"><i class="fa fa-angle-up"></i></a>
+
+			<script type="rocketlazyloadscript">
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<script type="text/javascript" id="stickThis-js-extra">
+/* <![CDATA[ */
+var sticky_anything_engage = {"element":"#stickybar","topspace":"0","minscreenwidth":"0","maxscreenwidth":"999999","zindex":"1","legacymode":"","dynamicmode":"","debugmode":"","pushup":".sign","adminbar":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.newszii.com/wp-content/cache/min/1/wp-content/plugins/sticky-menu-or-anything-on-scroll/assets/js/stickThis.js?ver=1744796853" id="stickThis-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/online-social-media-jobs\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.newszii.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="text/javascript" id="vce_custom-js-extra">
+/* <![CDATA[ */
+var vce_js_settings = {"sticky_header":"1","sticky_header_offset":"700","sticky_header_logo":"","logo":"https:\/\/www.newszii.com\/wp-content\/uploads\/2018\/07\/logo1.jpg","logo_retina":"","logo_mobile":"","logo_mobile_retina":"","rtl_mode":"0","ajax_url":"https:\/\/www.newszii.com\/wp-admin\/admin-ajax.php","ajax_wpml_current_lang":null,"ajax_mega_menu":"","mega_menu_slider":"","mega_menu_subcats":"","lay_fa_grid_center":"","full_slider_autoplay":"","grid_slider_autoplay":"","grid_big_slider_autoplay":"","fa_big_opacity":{"1":"0.5","2":"0.7"},"top_bar_mobile":"1","top_bar_mobile_group":"","top_bar_more_link":"More"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.newszii.com/wp-content/cache/min/1/wp-content/themes/voice/js/min.js?ver=1744796853" id="vce_custom-js" data-rocket-defer defer></script>
+<script type="text/javascript" id="q2w3_fixed_widget-js-extra">
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"vce_default_sidebar","use_sticky_position":false,"margin_top":0,"margin_bottom":0,"stop_elements_selectors":"","screen_max_width":0,"screen_max_height":0,"widgets":["#widget_crp-3"]}];
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.newszii.com/wp-content/plugins/q2w3-fixed-widget/js/frontend.min.js?ver=6.2.3" id="q2w3_fixed_widget-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.google.com/recaptcha/api.js?render=6LcNIhEqAAAAALZ3_EVX-EAreX4pf3cixTNEfpBh&amp;ver=3.0" id="google-recaptcha-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.newszii.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="wpcf7-recaptcha-js-before">
+/* <![CDATA[ */
+var wpcf7_recaptcha = {
+    "sitekey": "6LcNIhEqAAAAALZ3_EVX-EAreX4pf3cixTNEfpBh",
+    "actions": {
+        "homepage": "homepage",
+        "contactform": "contactform"
+    }
+};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.newszii.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=1744796853" id="wpcf7-recaptcha-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.newszii.com/wp-content/cache/min/1/sdks/web/v16/OneSignalSDK.page.js?ver=1744796853" id="remote_sdk-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+				/* <![CDATA[ */
+					jQuery(document).ready(function(){ jQuery('#marketinghub').load('marketing/get_marketing_posts.php'); });
+				/* ]]> */
+				});</script><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.newszii.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><div  id="amzn-assoc-ad-3f06ba8c-57ae-44d7-b9c5-705266217218"></div><script type="rocketlazyloadscript" async data-rocket-src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=3f06ba8c-57ae-44d7-b9c5-705266217218"></script>
+<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode-wpr",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1745030176 -->

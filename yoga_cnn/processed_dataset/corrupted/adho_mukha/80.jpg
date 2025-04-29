@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="nl-NL">
+<head>
+	<meta charset="UTF-8">
+	    <style>
+        #wpadminbar #wp-admin-bar-p404_free_top_button .ab-icon:before {
+            content: "\f103";
+            color: red;
+            top: 2px;
+        }
+    </style>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- This site is optimized with the Yoast SEO plugin v24.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>home - Yoga Maastricht</title><link rel="preload" data-rocket-preload as="image" href="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur1_a.jpg" fetchpriority="high"><link rel="preload" data-rocket-preload as="style" href="https://fonts.googleapis.com/css?family=Alegreya%20Sans%3A100%2C100italic%2C300%2Cregular%2Citalic%2C500%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya%20Sans%3A100%2C100italic%2C300%2Cregular%2Citalic%2C500%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya%20Sans%3A100%2C100italic%2C300%2Cregular%2Citalic%2C500%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" /></noscript>
+	<link rel="canonical" href="https://www.yogamaastricht.nl/" />
+	<meta property="og:locale" content="nl_NL" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="home - Yoga Maastricht" />
+	<meta property="og:description" content="Welkom bij Yoga Maastricht! De enige Iyengar yogastudio in Limburg met meer dan 20 lessen per week, puur Iyengar yoga! Een vast team van Iyengar-gecertificeerde leraren staat dagelijks voor je klaar om je op weg te helpen met alle ins en outs op het gebied van yoga. We bieden lessen op 6 verschillende niveaus om ... lees meer &gt;" />
+	<meta property="og:url" content="https://www.yogamaastricht.nl/" />
+	<meta property="og:site_name" content="Yoga Maastricht" />
+	<meta property="article:modified_time" content="2025-03-25T16:16:18+00:00" />
+	<meta property="og:image" content="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.yogamaastricht.nl/","url":"https://www.yogamaastricht.nl/","name":"home - Yoga Maastricht","isPartOf":{"@id":"https://www.yogamaastricht.nl/#website"},"about":{"@id":"https://www.yogamaastricht.nl/#organization"},"primaryImageOfPage":{"@id":"https://www.yogamaastricht.nl/#primaryimage"},"image":{"@id":"https://www.yogamaastricht.nl/#primaryimage"},"thumbnailUrl":"https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b.jpg","datePublished":"2019-10-23T10:49:53+00:00","dateModified":"2025-03-25T16:16:18+00:00","breadcrumb":{"@id":"https://www.yogamaastricht.nl/#breadcrumb"},"inLanguage":"nl-NL","potentialAction":[{"@type":"ReadAction","target":["https://www.yogamaastricht.nl/"]}]},{"@type":"ImageObject","inLanguage":"nl-NL","@id":"https://www.yogamaastricht.nl/#primaryimage","url":"https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b.jpg","contentUrl":"https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b.jpg","width":1200,"height":800,"caption":"foto: Philip Driessen - YogaMaastricht"},{"@type":"BreadcrumbList","@id":"https://www.yogamaastricht.nl/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"home"}]},{"@type":"WebSite","@id":"https://www.yogamaastricht.nl/#website","url":"https://www.yogamaastricht.nl/","name":"Yoga Maastricht","description":"","publisher":{"@id":"https://www.yogamaastricht.nl/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.yogamaastricht.nl/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"nl-NL"},{"@type":"Organization","@id":"https://www.yogamaastricht.nl/#organization","name":"Yoga Maastricht","url":"https://www.yogamaastricht.nl/","logo":{"@type":"ImageObject","inLanguage":"nl-NL","@id":"https://www.yogamaastricht.nl/#/schema/logo/image/","url":"https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2019/10/logo.png","contentUrl":"https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2019/10/logo.png","width":130,"height":130,"caption":"Yoga Maastricht"},"image":{"@id":"https://www.yogamaastricht.nl/#/schema/logo/image/"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link href='https://fonts.googleapis.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Yoga Maastricht &raquo; feed" href="https://www.yogamaastricht.nl/feed/" />
+<link rel="preload" href="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.yogamaastricht.nl/nieuw/wp-includes/css/dist/block-library/style.min.css?ver=6.8' media='all' />
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--contrast: var(--contrast);--wp--preset--color--contrast-2: var(--contrast-2);--wp--preset--color--contrast-3: var(--contrast-3);--wp--preset--color--base: var(--base);--wp--preset--color--base-2: var(--base-2);--wp--preset--color--base-3: var(--base-3);--wp--preset--color--accent: var(--accent);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='jquery-bxslider-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/bb-plugin/css/jquery.bxslider.css?ver=1742919454' media='all' />
+<link data-minify="1" rel='stylesheet' id='fl-builder-layout-81-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/uploads/bb-plugin/cache/81-layout.css?ver=1742919454' media='all' />
+<link data-minify="1" rel='stylesheet' id='mptt-style-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/mp-timetable/media/css/style.css?ver=1742919454' media='all' />
+<link data-minify="1" rel='stylesheet' id='woocommerce-layout-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=1742919454' media='all' />
+<style id='woocommerce-layout-inline-css'>
+
+	.infinite-scroll .woocommerce-pagination {
+		display: none;
+	}
+</style>
+<link data-minify="1" rel='stylesheet' id='woocommerce-smallscreen-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=1742919454' media='only screen and (max-width: 768px)' />
+<link data-minify="1" rel='stylesheet' id='woocommerce-general-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=1742919454' media='all' />
+<style id='woocommerce-inline-inline-css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link data-minify="1" rel='stylesheet' id='woopack-frontend-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woopack/assets/css/frontend.css?ver=1742919454' media='all' />
+<link data-minify="1" rel='stylesheet' id='font-awesome-5-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/css/all.min.css?ver=1742919454' media='all' />
+<link data-minify="1" rel='stylesheet' id='ultimate-icons-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/uploads/bb-plugin/icons/ultimate-icons/style.css?ver=1742919454' media='all' />
+<link data-minify="1" rel='stylesheet' id='fl-builder-layout-bundle-f9a950d5f2688d79d494b4a8ee588737-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/uploads/bb-plugin/cache/f9a950d5f2688d79d494b4a8ee588737-layout-bundle.css?ver=1742919454' media='all' />
+<link data-minify="1" rel='stylesheet' id='sendcloud-checkout-css-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/sendcloud-shipping/resources/css/sendcloud-checkout.css?ver=1742919454' media='all' />
+<link data-minify="1" rel='stylesheet' id='brands-styles-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/css/brands.css?ver=1742919454' media='all' />
+<link rel='stylesheet' id='generate-style-grid-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/themes/generatepress/assets/css/unsemantic-grid.min.css?ver=3.5.1' media='all' />
+<link rel='stylesheet' id='generate-style-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/themes/generatepress/assets/css/style.min.css?ver=3.5.1' media='all' />
+<style id='generate-style-inline-css'>
+body{background-color:#ffffff;color:#3a3a3a;}a{color:#8e998f;}a:hover, a:focus, a:active{color:#000000;}body .grid-container{max-width:1215px;}.wp-block-group__inner-container{max-width:1215px;margin-left:auto;margin-right:auto;}:root{--contrast:#222222;--contrast-2:#575760;--contrast-3:#b2b2be;--base:#f0f0f0;--base-2:#f7f8f9;--base-3:#ffffff;--accent:#1e73be;}:root .has-contrast-color{color:var(--contrast);}:root .has-contrast-background-color{background-color:var(--contrast);}:root .has-contrast-2-color{color:var(--contrast-2);}:root .has-contrast-2-background-color{background-color:var(--contrast-2);}:root .has-contrast-3-color{color:var(--contrast-3);}:root .has-contrast-3-background-color{background-color:var(--contrast-3);}:root .has-base-color{color:var(--base);}:root .has-base-background-color{background-color:var(--base);}:root .has-base-2-color{color:var(--base-2);}:root .has-base-2-background-color{background-color:var(--base-2);}:root .has-base-3-color{color:var(--base-3);}:root .has-base-3-background-color{background-color:var(--base-3);}:root .has-accent-color{color:var(--accent);}:root .has-accent-background-color{background-color:var(--accent);}body, button, input, select, textarea{font-family:"Alegreya Sans", sans-serif;font-size:16px;}body{line-height:1.5;}.entry-content > [class*="wp-block-"]:not(:last-child):not(.wp-block-heading){margin-bottom:1.5em;}.main-title{font-size:45px;}.main-navigation a, .menu-toggle{font-weight:400;text-transform:uppercase;font-size:16px;}.main-navigation .main-nav ul ul li a{font-size:15px;}.sidebar .widget, .footer-widgets .widget{font-size:17px;}h1{font-weight:500;text-transform:uppercase;font-size:16px;margin-bottom:0px;}h2{font-family:"Alegreya Sans", sans-serif;font-weight:400;font-size:30px;}h3{font-size:20px;}h4{font-size:inherit;}h5{font-size:inherit;}.site-info{font-size:10px;}@media (max-width:768px){.main-title{font-size:30px;}h1{font-size:30px;}h2{font-size:25px;}}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:#ffffff;color:#3a3a3a;}.site-header a{color:#3a3a3a;}.main-title a,.main-title a:hover{color:#222222;}.site-description{color:#757575;}.mobile-menu-control-wrapper .menu-toggle,.mobile-menu-control-wrapper .menu-toggle:hover,.mobile-menu-control-wrapper .menu-toggle:focus,.has-inline-mobile-toggle #site-navigation.toggled{background-color:rgba(0, 0, 0, 0.02);}.main-navigation,.main-navigation ul ul{background-color:#ffffff;}.main-navigation .main-nav ul li a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{color:#0a0a0a;}.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{color:#0a0909;background-color:#ced8cd;}button.menu-toggle:hover,button.menu-toggle:focus,.main-navigation .mobile-bar-items a,.main-navigation .mobile-bar-items a:hover,.main-navigation .mobile-bar-items a:focus{color:#0a0a0a;}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:#0a0a0a;background-color:#ced8cd;}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a{color:#0a0909;background-color:#ced8cd;}.main-navigation ul ul{background-color:#ffffff;}.main-navigation .main-nav ul ul li a{color:#0a0a0a;}.main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover > a,.main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"]) > a{color:#0a0a0a;background-color:#ced8cd;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a{color:#0a0a0a;background-color:#ced8cd;}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:#ffffff;}.entry-meta{color:#595959;}.entry-meta a{color:#595959;}.entry-meta a:hover{color:#1e73be;}h2{color:#96bcb8;}.sidebar .widget{background-color:#ffffff;}.sidebar .widget .widget-title{color:#000000;}.footer-widgets{background-color:#ffffff;}.footer-widgets .widget-title{color:#000000;}.site-info{color:#ffffff;background-color:#222222;}.site-info a{color:#ffffff;}.site-info a:hover{color:#606060;}.footer-bar .widget_nav_menu .current-menu-item a{color:#606060;}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:#666666;background-color:#fafafa;border-color:#cccccc;}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:#666666;background-color:#ffffff;border-color:#bfbfbf;}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#666666;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#3f3f3f;}a.generate-back-to-top{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}a.generate-back-to-top:hover,a.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}:root{--gp-search-modal-bg-color:var(--base-3);--gp-search-modal-text-color:var(--contrast);--gp-search-modal-overlay-bg-color:rgba(0,0,0,0.2);}@media (max-width: 768px){.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{background:none;color:#0a0a0a;}}.inside-top-bar{padding:10px;}.inside-header{padding:20px 20px 30px 20px;}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:20px;}.site-main .wp-block-group__inner-container{padding:20px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-20px;width:calc(100% + 40px);max-width:calc(100% + 40px);}.one-container.right-sidebar .site-main,.one-container.both-right .site-main{margin-right:20px;}.one-container.left-sidebar .site-main,.one-container.both-left .site-main{margin-left:20px;}.one-container.both-sidebars .site-main{margin:0px 20px 0px 20px;}.main-navigation .main-nav ul li a,.menu-toggle,.main-navigation .mobile-bar-items a{padding-left:10px;padding-right:10px;line-height:20px;}.main-navigation .main-nav ul ul li a{padding:6px 10px 6px 10px;}.navigation-search input[type="search"]{height:20px;}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:10px;}.menu-item-has-children .dropdown-menu-toggle{padding-right:10px;}.menu-item-has-children ul .dropdown-menu-toggle{padding-top:6px;padding-bottom:6px;margin-top:-6px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:10px;}.site-info{padding:20px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:30px;}.site-main .wp-block-group__inner-container{padding:30px;}.site-info{padding-right:10px;padding-left:10px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}}.one-container .sidebar .widget{padding:0px;}@media (max-width: 768px){.main-navigation .menu-toggle,.main-navigation .mobile-bar-items,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav{display:none;}[class*="nav-float-"] .site-header .inside-header > *{float:none;clear:both;}}
+.dynamic-author-image-rounded{border-radius:100%;}.dynamic-featured-image, .dynamic-author-image{vertical-align:middle;}.one-container.blog .dynamic-content-template:not(:last-child), .one-container.archive .dynamic-content-template:not(:last-child){padding-bottom:0px;}.dynamic-entry-excerpt > p:last-child{margin-bottom:0px;}
+</style>
+<link rel='stylesheet' id='generate-mobile-style-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/themes/generatepress/assets/css/mobile.min.css?ver=3.5.1' media='all' />
+<link data-minify="1" rel='stylesheet' id='generate-font-icons-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/themes/generatepress/assets/css/components/font-icons.min.css?ver=1742919454' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/css/v4-shims.min.css?ver=2.8.6.1' media='all' />
+<link data-minify="1" rel='stylesheet' id='generate-child-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/themes/generatepress_child/style.css?ver=1742919454' media='all' />
+<link data-minify="1" rel='stylesheet' id='fl-theme-builder-generatepress-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/bb-theme-builder/extensions/themes/css/generatepress.css?ver=1742919454' media='all' />
+<link data-minify="1" rel='stylesheet' id='postnl-fe-checkout-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woo-postnl/assets/css/fe-checkout.css?ver=1742919454' media='all' />
+<link data-minify="1" rel='stylesheet' id='ivpa-style-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/improved-variable-product-attributes/assets/css/styles.css?ver=1742919454' media='all' />
+<link rel='stylesheet' id='generate-woocommerce-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/plugins/gp-premium/woocommerce/functions/css/woocommerce.min.css?ver=2.5.0' media='all' />
+<style id='generate-woocommerce-inline-css'>
+.woocommerce ul.products li.product .woocommerce-LoopProduct-link{color:#000000;}.woocommerce ul.products li.product .woocommerce-LoopProduct-link h2, .woocommerce ul.products li.product .woocommerce-loop-category__title{font-weight:500;text-transform:uppercase;font-size:16px;}.woocommerce .up-sells ul.products li.product .woocommerce-LoopProduct-link h2, .woocommerce .cross-sells ul.products li.product .woocommerce-LoopProduct-link h2, .woocommerce .related ul.products li.product .woocommerce-LoopProduct-link h2{font-size:20px;}.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .wc-block-components-button{color:#ffffff;background-color:#666666;text-decoration:none;font-weight:normal;text-transform:none;}.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .wc-block-components-button:hover{color:#ffffff;background-color:#3f3f3f;}.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover{color:#0a0a0a;background-color:#cdd7cb;}.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{color:#0a0a0a;background-color:#cdd7cb;}button.wc-block-components-panel__button{font-size:inherit;}.woocommerce .star-rating span:before, .woocommerce p.stars:hover a::before{color:#ffa200;}.woocommerce span.onsale{background-color:#222222;color:#ffffff;}.woocommerce ul.products li.product .price, .woocommerce div.product p.price{color:#222222;}.woocommerce div.product .woocommerce-tabs ul.tabs li a{color:#222222;}.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover, .woocommerce div.product .woocommerce-tabs ul.tabs li.active a{color:#1e73be;}.woocommerce-message{background-color:#cdd7cb;color:#ffffff;}div.woocommerce-message a.button, div.woocommerce-message a.button:focus, div.woocommerce-message a.button:hover, div.woocommerce-message a, div.woocommerce-message a:focus, div.woocommerce-message a:hover{color:#ffffff;}.woocommerce-info{background-color:#cdd7cb;color:#ffffff;}div.woocommerce-info a.button, div.woocommerce-info a.button:focus, div.woocommerce-info a.button:hover, div.woocommerce-info a, div.woocommerce-info a:focus, div.woocommerce-info a:hover{color:#ffffff;}.woocommerce-error{background-color:#ff6d6d;color:#ffffff;}div.woocommerce-error a.button, div.woocommerce-error a.button:focus, div.woocommerce-error a.button:hover, div.woocommerce-error a, div.woocommerce-error a:focus, div.woocommerce-error a:hover{color:#ffffff;}.woocommerce-product-details__short-description{color:#3a3a3a;}#wc-mini-cart{background-color:#ffffff;color:#000000;}#wc-mini-cart a:not(.button), #wc-mini-cart a.remove{color:#000000;}#wc-mini-cart .button{background-color:#cdd7cb;color:#0a0a0a;}#wc-mini-cart .button:hover, #wc-mini-cart .button:focus, #wc-mini-cart .button:active{background-color:#cdd7cb;color:#0c0c0c;}.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images{width:35%;}.add-to-cart-panel{background-color:#ffffff;color:#000000;}.add-to-cart-panel a:not(.button){color:#000000;}#wc-sticky-cart-panel .button{background-color:#cdd7cb;color:#0a0909;}#wc-sticky-cart-panel .button:hover, #wc-sticky-cart-panel .button:focus, #wc-sticky-cart-panel .button:active{background-color:#cdd7cb;color:#0c0c0c;}.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content{background-color:#dddddd;}.woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle{background-color:#666666;}.wc-columns-container .products, .woocommerce .related ul.products, .woocommerce .up-sells ul.products{grid-gap:50px;}@media (max-width: 1024px){.woocommerce .wc-columns-container.wc-tablet-columns-2 .products{-ms-grid-columns:(1fr)[2];grid-template-columns:repeat(2, 1fr);}.wc-related-upsell-tablet-columns-2 .related ul.products, .wc-related-upsell-tablet-columns-2 .up-sells ul.products{-ms-grid-columns:(1fr)[2];grid-template-columns:repeat(2, 1fr);}}@media (max-width:768px){.add-to-cart-panel .continue-shopping{background-color:#ffffff;}.woocommerce #content div.product div.images,.woocommerce div.product div.images,.woocommerce-page #content div.product div.images,.woocommerce-page div.product div.images{width:100%;}}@media (max-width: 768px){.mobile-bar-items + .menu-toggle{text-align:left;}nav.toggled .main-nav li.wc-menu-item{display:none !important;}body.nav-search-enabled .wc-menu-cart-activated:not(#mobile-header) .mobile-bar-items{float:right;position:relative;}.nav-search-enabled .wc-menu-cart-activated:not(#mobile-header) .menu-toggle{float:left;width:auto;}.mobile-bar-items.wc-mobile-cart-items{z-index:1;}}
+</style>
+<link rel='stylesheet' id='generate-woocommerce-mobile-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/plugins/gp-premium/woocommerce/functions/css/woocommerce-mobile.min.css?ver=2.5.0' media='(max-width:768px)' />
+<link data-minify="1" rel='stylesheet' id='gp-premium-icons-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/gp-premium/general/icons/icons.min.css?ver=1742919454' media='all' />
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.9.8.1" id="jquery-blockui-js" data-wp-strategy="defer"></script>
+<script id="wc-add-to-cart-js-extra">
+var wc_add_to_cart_params = {"ajax_url":"\/nieuw\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"Bekijk winkelwagen","cart_url":"https:\/\/www.yogamaastricht.nl\/winkelmand\/","is_cart":"","cart_redirect_after_add":"yes"};
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=9.8.1" id="wc-add-to-cart-js" defer data-wp-strategy="defer"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.9.8.1" id="js-cookie-js" data-wp-strategy="defer"></script>
+
+<!-- Google tag (gtag.js) snippet toegevoegd door Site Kit -->
+
+<!-- Google Analytics snippet toegevoegd door Site Kit -->
+<script src="https://www.googletagmanager.com/gtag/js?id=GT-WFMMZSCN" id="google_gtagjs-js" async></script>
+<script id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["www.yogamaastricht.nl"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-WFMMZSCN");
+ window._googlesitekit = window._googlesitekit || {}; window._googlesitekit.throttledEvents = []; window._googlesitekit.gtagEvent = (name, data) => { var key = JSON.stringify( { name, data } ); if ( !! window._googlesitekit.throttledEvents[ key ] ) { return; } window._googlesitekit.throttledEvents[ key ] = true; setTimeout( () => { delete window._googlesitekit.throttledEvents[ key ]; }, 5 ); gtag( "event", name, { ...data, event_source: "site-kit" } ); }
+</script>
+
+<!-- Einde Google tag (gtag.js) snippet toegevoegd door Site Kit -->
+<link rel="https://api.w.org/" href="https://www.yogamaastricht.nl/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.yogamaastricht.nl/wp-json/wp/v2/pages/81" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.yogamaastricht.nl/nieuw/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8" />
+<meta name="generator" content="WooCommerce 9.8.1" />
+<link rel='shortlink' href='https://www.yogamaastricht.nl/' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.yogamaastricht.nl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.yogamaastricht.nl%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.yogamaastricht.nl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.yogamaastricht.nl%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.150.0" /><noscript><style type="text/css">.mptt-shortcode-wrapper .mptt-shortcode-table:first-of-type{display:table!important}.mptt-shortcode-wrapper .mptt-shortcode-table .mptt-event-container:hover{height:auto!important;min-height:100%!important}body.mprm_ie_browser .mptt-shortcode-wrapper .mptt-event-container{height:auto!important}@media (max-width:767px){.mptt-shortcode-wrapper .mptt-shortcode-table:first-of-type{display:none!important}}</style></noscript>		<script type="text/javascript">
+			var woopack_config = {"ajaxurl":"https:\/\/www.yogamaastricht.nl\/nieuw\/wp-admin\/admin-ajax.php","page":1,"current_page":"https:\/\/www.yogamaastricht.nl\/","woo_url":"https:\/\/www.yogamaastricht.nl\/nieuw\/wp-content\/plugins\/woocommerce\/"};
+		</script>
+			<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+				<script  type="text/javascript">
+				!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+					n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+					n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+					t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+					document,'script','https://connect.facebook.net/en_US/fbevents.js');
+			</script>
+			<!-- WooCommerce Facebook Integration Begin -->
+			<script  type="text/javascript">
+
+				fbq('init', '785147778779204', {}, {
+    "agent": "woocommerce-9.8.1-3.4.6"
+});
+
+				fbq( 'track', 'PageView', {
+    "source": "woocommerce",
+    "version": "9.8.1",
+    "pluginVersion": "3.4.6"
+} );
+
+				document.addEventListener( 'DOMContentLoaded', function() {
+					// Insert placeholder for events injected when a product is added to the cart through AJAX.
+					document.body.insertAdjacentHTML( 'beforeend', '<div class=\"wc-facebook-pixel-event-placeholder\"></div>' );
+				}, false );
+
+			</script>
+			<!-- WooCommerce Facebook Integration End -->
+			<link rel="icon" href="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2019/10/logo-100x100.png" sizes="32x32" />
+<link rel="icon" href="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2019/10/logo-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2019/10/logo-300x300.png" />
+<meta name="msapplication-TileImage" content="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2019/10/logo-300x300.png" />
+<meta name="generator" content="XforWooCommerce.com - Improved Product Options for WooCommerce"/>		<style id="wp-custom-css">
+			/* Button */
+.fl-node-5dd176f14852b form button{
+	display:none;
+}
+
+/* Input */
+.fl-node-5dd176f14852b form input[type=search]{
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:10px;
+	padding-right:10px;
+	
+}
+
+/* Button */
+.fl-node-5dd176e2663ea .widget button{
+	display:none;
+}
+
+/* Input */
+.fl-node-5dd176e2663ea .widget input[type=search]{
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:10px;
+	padding-right:10px;
+	
+}
+
+		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><meta name="generator" content="WP Rocket 3.18.3" data-wpr-features="wpr_minify_js wpr_lazyload_images wpr_oci wpr_minify_css wpr_desktop" /></head>
+
+<body data-rsssl=1 class="home wp-singular page-template-default page page-id-81 wp-custom-logo wp-embed-responsive wp-theme-generatepress wp-child-theme-generatepress_child theme-generatepress fl-builder fl-builder-2-8-6-1 fl-themer-1-4-11-2 post-image-aligned-center sticky-menu-fade non-logged-in woocommerce-no-js fl-theme-builder-footer fl-theme-builder-footer-footer no-sidebar nav-below-header one-container contained-header active-footer-widgets-3 nav-aligned-center header-aligned-center dropdown-hover" itemtype="https://schema.org/WebPage" itemscope>
+	<a class="screen-reader-text skip-link" href="#content" title="Ga naar de inhoud">Ga naar de inhoud</a>		<header class="site-header grid-container grid-parent" id="masthead" aria-label="Site"  itemtype="https://schema.org/WPHeader" itemscope>
+			<div  class="inside-header grid-container grid-parent">
+				<div  class="site-logo">
+					<a href="https://www.yogamaastricht.nl/" rel="home">
+						<img  class="header-image is-logo-image" alt="Yoga Maastricht" src="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2019/10/logo.png" srcset="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2019/10/logo.png 1x, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2019/10/logolarge.png 2x" width="130" height="130" />
+					</a>
+				</div>			</div>
+		</header>
+				<nav class="main-navigation sub-menu-right" id="site-navigation" aria-label="Primair"  itemtype="https://schema.org/SiteNavigationElement" itemscope>
+			<div class="inside-navigation grid-container grid-parent">
+								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="mobile-menu">Menu</span>				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-hoofdmenu" class=" menu sf-menu"><li id="menu-item-43" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-43"><a href="https://www.yogamaastricht.nl" aria-current="page">Home</a></li>
+<li id="menu-item-88" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-88">~</li>
+<li id="menu-item-580" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-580"><a href="https://www.yogamaastricht.nl/nieuws/">nieuws</a></li>
+<li id="menu-item-581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-581">~</li>
+<li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="https://www.yogamaastricht.nl/iyengar-yoga/">iyengar yoga</a></li>
+<li id="menu-item-89" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-89">~</li>
+<li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="https://www.yogamaastricht.nl/de-lessen/">de lessen</a></li>
+<li id="menu-item-96" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-96">~</li>
+<li id="menu-item-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"><a href="https://www.yogamaastricht.nl/de-leraren/">de leraren</a></li>
+<li id="menu-item-667" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-667">~</li>
+<li id="menu-item-666" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-666"><a href="https://www.yogamaastricht.nl/lesrooster/">lesrooster</a></li>
+<li id="menu-item-94" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-94">~</li>
+<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="https://www.yogamaastricht.nl/tarieven/">tarieven</a></li>
+<li id="menu-item-93" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93">~</li>
+<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="https://www.yogamaastricht.nl/workshops-cursussen/">workshops &#038; cursussen</a></li>
+<li id="menu-item-92" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-92">~</li>
+<li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="https://www.yogamaastricht.nl/bibliotheek/">bibliotheek</a></li>
+<li id="menu-item-91" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-91">~</li>
+<li id="menu-item-216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216"><a href="https://www.yogamaastricht.nl/webshop/">webshop</a></li>
+<li id="menu-item-90" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-90">~</li>
+<li id="menu-item-518" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-518"><a target="_blank" href="https://yogamaastricht.opencontrolplus.com/club_portal/lessons">mijn YM</a></li>
+<li id="menu-item-95" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-95">~</li>
+<li id="menu-item-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45"><a href="https://www.yogamaastricht.nl/contact/">contact</a></li>
+</ul></div>			</div>
+		</nav>
+		
+	<div  class="site grid-container container hfeed grid-parent" id="page">
+				<div  class="site-content" id="content">
+			
+	<div  class="content-area grid-parent mobile-grid-100 grid-100 tablet-grid-100" id="primary">
+		<main class="site-main" id="main">
+			
+<article id="post-81" class="post-81 page type-page status-publish" itemtype="https://schema.org/CreativeWork" itemscope>
+	<div class="inside-article">
+		
+		<div class="entry-content" itemprop="text">
+			<div class="fl-builder-content fl-builder-content-81 fl-builder-content-primary fl-builder-global-templates-locked" data-post-id="81"><div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-5db0a5dbc4d89 fl-row-default-height fl-row-align-center" data-node="5db0a5dbc4d89">
+	<div class="fl-row-content-wrap">
+								<div class="fl-row-content fl-row-full-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5ed0de01d223a" data-node="5ed0de01d223a">
+			<div class="fl-col fl-node-5ed0de01d231a fl-col-bg-color fl-col-has-cols" data-node="5ed0de01d231a">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-content-slider fl-node-5db0a5dbc4ae7" data-node="5db0a5dbc4ae7">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-content-slider">
+	<div class="fl-content-slider-wrapper">
+				<div class="fl-slide fl-slide-0 fl-slide-text-left">
+			<div class="fl-slide-mobile-photo"><img fetchpriority="high" decoding="async" width="1200" height="800" loading='false' class="fl-slide-mobile-photo-img wp-image-405" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20800'%3E%3C/svg%3E" alt="" data-lazy-srcset="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b.jpg 1200w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b-300x200.jpg 300w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b-1024x683.jpg 1024w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b-768x512.jpg 768w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b-600x400.jpg 600w" data-lazy-sizes="(max-width: 1200px) 100vw, 1200px" data-lazy-src="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b.jpg" /><noscript><img fetchpriority="high" decoding="async" width="1200" height="800" loading='false' class="fl-slide-mobile-photo-img wp-image-405" src="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b.jpg" alt="" srcset="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b.jpg 1200w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b-300x200.jpg 300w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b-1024x683.jpg 1024w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b-768x512.jpg 768w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur3_b-600x400.jpg 600w" sizes="(max-width: 1200px) 100vw, 1200px" /></noscript></div><div class="fl-slide-bg-photo"></div>			<div class="fl-slide-foreground clearfix">
+				<div class="fl-slide-content-wrap"><div class="fl-slide-content"></div></div>			</div>
+		</div>
+			<div class="fl-slide fl-slide-1 fl-slide-text-left">
+			<div class="fl-slide-mobile-photo"><img decoding="async" width="1200" height="800" loading='false' class="fl-slide-mobile-photo-img wp-image-404" src="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur1_a.jpg" alt="" srcset="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur1_a.jpg 1200w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur1_a-300x200.jpg 300w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur1_a-1024x683.jpg 1024w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur1_a-768x512.jpg 768w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/01/YM-interieur1_a-600x400.jpg 600w" sizes="(max-width: 1200px) 100vw, 1200px" /></div><div class="fl-slide-bg-photo"></div>			<div class="fl-slide-foreground clearfix">
+				<div class="fl-slide-content-wrap"><div class="fl-slide-content"></div></div>			</div>
+		</div>
+			<div class="fl-slide fl-slide-2 fl-slide-text-left">
+			<div class="fl-slide-mobile-photo"><img decoding="async" width="1100" height="500" loading='false' class="fl-slide-mobile-photo-img wp-image-488" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201100%20500'%3E%3C/svg%3E" alt="" data-lazy-srcset="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/02/YM_teatime.jpg 1100w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/02/YM_teatime-300x136.jpg 300w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/02/YM_teatime-1024x465.jpg 1024w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/02/YM_teatime-768x349.jpg 768w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/02/YM_teatime-600x273.jpg 600w" data-lazy-sizes="(max-width: 1100px) 100vw, 1100px" data-lazy-src="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/02/YM_teatime.jpg" /><noscript><img decoding="async" width="1100" height="500" loading='false' class="fl-slide-mobile-photo-img wp-image-488" src="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/02/YM_teatime.jpg" alt="" srcset="https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/02/YM_teatime.jpg 1100w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/02/YM_teatime-300x136.jpg 300w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/02/YM_teatime-1024x465.jpg 1024w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/02/YM_teatime-768x349.jpg 768w, https://www.yogamaastricht.nl/nieuw/wp-content/uploads/2020/02/YM_teatime-600x273.jpg 600w" sizes="(max-width: 1100px) 100vw, 1100px" /></noscript></div><div class="fl-slide-bg-photo"></div>			<div class="fl-slide-foreground clearfix">
+				<div class="fl-slide-content-wrap"><div class="fl-slide-content"></div></div>			</div>
+		</div>
+		</div>
+				<div class="fl-clear"></div>
+</div>
+	</div>
+</div>
+
+<div class="fl-col-group fl-node-5ed0fe7f189a9 fl-col-group-nested" data-node="5ed0fe7f189a9">
+			<div class="fl-col fl-node-5ed0fe7f18a51 fl-col-bg-color fl-col-small" data-node="5ed0fe7f18a51">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-5efd8bdc64070" data-node="5efd8bdc64070">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h2 class="uabb-post-heading uabb-blog-post-section">Welkom bij Yoga Maastricht!</h2>
+<div class="uabb-blog-posts-description uabb-blog-post-section uabb-text-editor">
+<p>De enige Iyengar yogastudio in Limburg met meer dan 20 lessen per week, puur Iyengar yoga! Een vast team van Iyengar-gecertificeerde leraren staat dagelijks voor je klaar om je op weg te helpen met alle ins en outs op het gebied van yoga. We bieden lessen op 6 verschillende niveaus om iedereen de kans te bieden zichzelf in zijn of haar eigen tempo te ontwikkelen.</p>
+<p><a href="https://www.yogamaastricht.nl/iyengar-yoga/">&gt;&gt;</a></p>
+</div>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-5ed0fe7f18a56 fl-col-bg-color fl-col-small" data-node="5ed0fe7f18a56">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-5ed0fe90c87bb" data-node="5ed0fe90c87bb">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h2>Classes in English</h2>
+<p>Classes in English are mixed levels and take place <u>every Friday from 9.30-10.45, Saturday from 11.30-12.45 .</u></p>
+<p><a href="https://www.yogamaastricht.nl/?p=594&amp;preview=true">&gt;&gt;</a></p>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-5ed0fe7f18a57 fl-col-bg-color fl-col-small" data-node="5ed0fe7f18a57">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-5ed0fe99d22e9" data-node="5ed0fe99d22e9">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h2 class="uabb-post-heading uabb-blog-post-section">Meld je aan voor een proefles!</h2>
+<div class="uabb-blog-posts-description uabb-blog-post-section uabb-text-editor">
+<p><span style="font-size: 16px;">Benieuwd</span> naar onze lessen? Je kunt voor €10 een proefles volgen en een tweede les gratis. We bieden lessen aan in de studio en  online.</p>
+<p><a href="https://www.yogamaastricht.nl/de-lessen/proefles/">&gt;&gt;</a></p>
+</div>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-5ed0fe9841e47" data-node="5ed0fe9841e47">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-5fa3de4f252fe fl-col-bg-color fl-col-small" data-node="5fa3de4f252fe">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-5fa3de4f25184" data-node="5fa3de4f25184">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<h2>Schrijf je in voor onze nieuwsbrief</h2>
+<p>klik <a href="https://mailchi.mp/fa4df3fe88a5/yogaweekend-eifel-26-28-augustus-2022">hier</a> voor onze meest recente nieuwsbrief. Wil jij ook het laatste nieuws van en over de studio en de webshop ontvangen? <a href="http://eepurl.com/dvWBwT" target="_blank" rel="noopener">Schrijf je dan nu in voor onze nieuwsbrief</a></p>
+<p><a href="http://eepurl.com/dvWBwT" target="_blank" rel="noopener">&gt;&gt;</a></p>
+<p>&nbsp;</p>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</div><div class="uabb-js-breakpoint" style="display: none;"></div>		</div>
+
+			</div>
+</article>
+		</main>
+	</div>
+
+	
+	</div>
+</div>
+
+
+<div class="site-footer">
+	<footer class="fl-builder-content fl-builder-content-106 fl-builder-global-templates-locked" data-post-id="106" data-type="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter"><div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-5ed108737518a fl-row-default-height fl-row-align-center" data-node="5ed108737518a">
+	<div class="fl-row-content-wrap">
+								<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5ed1087377373" data-node="5ed1087377373">
+			<div class="fl-col fl-node-5ed108737743a fl-col-bg-color" data-node="5ed108737743a">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-icon-group fl-node-5ed1087374f38" data-node="5ed1087374f38">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-group">
+	<span class="fl-icon">
+								<a href="https://www.facebook.com/pages/Yoga-Maastricht/129949937064232" target="_blank" rel="noopener" >
+							<i class="ua-icon ua-icon-facebook-with-circle" aria-hidden="true"></i>
+						</a>
+			</span>
+		<span class="fl-icon">
+								<a href="http://www.linkedin.com/pub/melanie-tillema/31/246/940" target="_blank" rel="noopener" >
+							<i class="ua-icon ua-icon-linkedin-with-circle" aria-hidden="true"></i>
+						</a>
+			</span>
+		<span class="fl-icon">
+								<a href="https://www.pinterest.com/melanietillema/pins/" target="_blank" rel="noopener" >
+							<i class="ua-icon ua-icon-pinterest-with-circle" aria-hidden="true"></i>
+						</a>
+			</span>
+		<span class="fl-icon">
+								<a href="https://www.instagram.com/iyengaryogamaastricht/?hl=nl" target="_blank" rel="noopener" >
+							<i class="ua-icon ua-icon-instagram-with-circle" aria-hidden="true"></i>
+						</a>
+			</span>
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-5ed1092b21671" data-node="5ed1092b21671">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p>© 2020 Yoga Maastricht. Website <a href="http://www.burobertus.nl/" target="_blank" rel="noopener">Buro Bertus</a> ism <a href="https://www.frisser.nl" target="_blank" rel="noopener">Frisser Websolutions</a></p>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</footer><div class="uabb-js-breakpoint" style="display: none;"></div></div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/nieuw\/wp-*.php","\/nieuw\/wp-admin\/*","\/nieuw\/wp-content\/uploads\/*","\/nieuw\/wp-content\/*","\/nieuw\/wp-content\/plugins\/*","\/nieuw\/wp-content\/themes\/generatepress_child\/*","\/nieuw\/wp-content\/themes\/generatepress\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div  class="woopack-modal" style="display: none;">
+    <div data-bg="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/woopack/assets/images/loader.gif"  class="woopack-modal-overlay rocket-lazyload" style=""></div>
+    <div  class="woopack-modal-inner">
+        <div  class="woopack-modal-close">×</div>
+        <div  class="woopack-modal-content"></div>
+    </div>
+</div>
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/a29f79917f4359031e0b3ccce/981e1041137a1ea93b965cd54.js");</script><script id="generate-a11y">!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("mousedown",function(){e.classList.add("using-mouse")}),e.addEventListener("keydown",function(){e.classList.remove("using-mouse")})}}();</script>			<!-- Facebook Pixel Code -->
+			<noscript>
+				<img
+					height="1"
+					width="1"
+					style="display:none"
+					alt="fbpx"
+					src="https://www.facebook.com/tr?id=785147778779204&ev=PageView&noscript=1"
+				/>
+			</noscript>
+			<!-- End Facebook Pixel Code -->
+				<script>
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<link data-minify="1" rel='stylesheet' id='wc-blocks-style-css' href='https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css?ver=1742919454' media='all' />
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/vendor/lodash.min.js?ver=4.17.21" id="lodash-js"></script>
+<script id="lodash-js-after">
+window.lodash = _.noConflict();
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/vendor/react.min.js?ver=18.3.1.1" id="react-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script id="wc-cart-checkout-base-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "woocommerce", {"translation-revision-date":"2025-04-17 13:54:11+0000","generator":"GlotPress\/4.0.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"nl"},"Please check this box if you want to proceed.":["Vink dit vakje aan als je door wilt gaan."],"%1$s must match the pattern %2$s":["%1$s moet overeenkomen met het patroon %2$s"],"%s is invalid":["%s is ongeldig"],"Collection from <address\/>":["Verzameling van <address\/>"],"No delivery options available for <address\/>":["Geen bezorgopties beschikbaar voor <address\/>"],"Delivers to <address\/>":["Bezorgt naar <address\/>"],"Products in cart":["Producten in winkelwagen"],"Check delivery options":["Bezorgopties bekijken"],"Enter address to check delivery options":["Voer het adres is om bezorgopties te bekijken"],"field":["veld"],"Password strength: %1$s (%2$d characters long)":["Wachtwoordsterkte: %1$s (%2$d tekens lang)"],"Password strength":["Wachtwoordsterkte"],"Very strong":["Zeer sterk"],"Strong":["Sterk"],"Weak":["Zwak"],"Too weak":["Te zwak"],"Please select a %s":["Selecteer een %s"],"Select a %s":["Selecteer een %s"],"+ Add %s":["+ %s toevoegen"],"Please select a valid option":["Selecteer een optie"],"Medium":["Medium"],"Something went wrong when placing the order. Check your account's order history or your email for order updates before retrying.":["Er is iets misgegaan bij het plaatsen van de bestelling. Controleer de bestelgeschiedenis of je e-mail voor bestellingsupdates voordat je het opnieuw probeert."],"Something went wrong when placing the order. Check your email for order updates before retrying.":["Er is iets misgegaan bij het plaatsen van de bestelling. Controleer je e-mail op bestellingsupdates voordat je het opnieuw probeert."],"Totals will be recalculated when a valid shipping method is selected.":["De totalen worden opnieuw berekend zodra een geldige verzendmethode is geselecteerd."],"Please enter a valid postcode":["Voer een geldige postcode in"],"Please fix the following errors before continuing":["Los de volgende fouten op voordat je doorgaat"],"Add a coupon":["Een waardebon toevoegen"],"Flat rate shipping":["Vaste verzendkosten"],"Multiple shipments must have the same pickup location":["Meerdere zendingen moeten dezelfde afhaallocatie hebben"],"Remove %s from cart":["Verwijder %s uit winkelwagen"],"Increase quantity of %s":["Aantal met %s verhogen"],"Reduce quantity of %s":["Aantal met %s verlagen"],"Please enter a valid %s":["Voer een geldige %s in"],"Including %s":["Inclusief %s"],"T-Shirt":["T-shirt"],"Hoodie with Pocket":["Hoodie met zak"],"Hoodie with Logo":["Hoodie met logo"],"Hoodie with Zipper":["Hoodie met rits"],"Long Sleeve Tee":["T-shirt met lange mouwen"],"Polo":["Polo"],"We are experiencing difficulties with this payment method. Please contact us for assistance.":["We ervaren problemen met deze betaalmethode. Neem voor hulp contact met ons op."],"%s has been removed from your cart.":["%s is verwijderd uit je winkelwagen."],"Total price for %1$d %2$s item: %3$s":["Totaalprijs voor %1$d %2$s item: %3$s","Totaalprijs voor %1$d %2$s items: %3$s"],"Sorry, this order requires a shipping option.":["Voor deze bestelling is een verzendoptie vereist."],"%d item":["%d item","%d items"],"Express Checkout":["Snel afrekenen"],"No registered Payment Methods":["Geen geregistreerde betaalmethoden"],"Price between %1$s and %2$s":["Prijs tussen %1$s en %2$s"],"The type returned by checkout filters must be the same as the type they receive. The function received %1$s but returned %2$s.":["Het door afreken filters geretourneerde type moet hetzelfde zijn als het type dat ze ontvangen. De functie ontving %1$s maar gaf %2$s terug."],"%s (optional)":["%s (optioneel)"],"Returned value must include %1$s, you passed \"%2$s\"":["De teruggeven waarde moet %1$s bevatten, je geeft door \"%2$s\""],"Other available payment methods":["Andere beschikbare betaalmethoden"],"Use another payment method.":["Gebruik een andere betaalmethode."],"%1$s (%2$d unit)":["%1$s (%2$d eenheid)","%1$s (%2$d eenheden)"],"Remove \"%s\"":["Verwijder \"%s\""],"Details":["Gegevens"],"Remove item":["Artikel verwijderen"],"Quantity increased to %s.":["Hoeveelheid verhoogd naar %s."],"Quantity reduced to %s.":["Hoeveelheid verlaagd naar %s."],"Quantity of %s in your cart.":["Aantal van %s in je winkelwagen."],"Removing coupon\u2026":["Waardebon wordt verwijderd..."],"Remove coupon \"%s\"":["Verwijder waardebon '%s'"],"Orange":["Oranje"],"Lightweight baseball cap":["Lichte honkbalpet"],"Cap":["Pet"],"Yellow":["Geel"],"Warm hat for winter":["Warme wintermuts"],"Beanie":["Beanie"],"example product in Cart Block\u0004Beanie":["Beanie"],"example product in Cart Block\u0004Beanie with Logo":["Beanie met logo"],"Loading shipping rates\u2026":["Verzendkosten laden \u2026"],"%d shipping option was found":["%d verzendoptie gevonden","%d verzendopties gevonden"],"Shipping option searched for %d package.":["Verzendoptie gezocht voor %d pakket.","Verzendoptie gezocht voor %d pakketten."],"%d shipping option was found.":["%d verzendoptie gevonden.","%d verzendopties gevonden."],"Please select your country":["Selecteer je land"],"Save payment information to my account for future purchases.":["Betaalgegevens opslaan in mijn account voor toekomstige aankopen."],"There was an error with this payment method. Please verify it's configured correctly.":["Er is een fout opgetreden met deze betaalmethode. Controleer of deze op de juiste manier geconfigureerd is."],"Saved token for %s":["Opgeslagen token voor %s"],"%1$s ending in %2$s (expires %3$s)":["%1$s eindigt op %2$s (vervalt op %3$s)"],"There are no payment methods available. This may be an error on our side. Please contact us if you need any help placing your order.":["Er zijn geen betaalmethoden beschikbaar. Dit kan een fout vanuit onze kant zijn. Neem contact met ons op als je hulp nodig hebt bij het plaatsen van een bestelling."],"Or continue below":["Of ga hieronder verder"],"Taxes:":["Belastingen:"],"There was a problem with your shipping option.":["Er is een probleem opgetreden bij je verzendoptie."],"There was a problem with your payment option.":["Er is een probleem opgetreden bij je betaaloptie."],"Including <TaxAmount\/> in taxes":["Inclusief <TaxAmount\/> belasting"],"Enter code":["Voer code in"],"Applying coupon\u2026":["Waardebon wordt toegepast\u2026"],"Discounted price:":["Kortingsprijs:"],"Previous price:":["Vorige prijs:"],"%d left in stock":["Nog %d op voorraad"],"Coupon code \"%s\" has been removed from your cart.":["Waardeboncode '%s' is verwijderd uit je winkelwagen."],"Coupon code \"%s\" has been applied to your cart.":["Waardeboncode '%s' is toegepast op je winkelwagen."],"Something went wrong. Please contact us to get assistance.":["Er is iets fout gegaan. Neem contact met ons op voor hulp."],"Loading\u2026":["Laden\u2026"],"Unable to get cart data from the API.":["Winkelwagengegevens ophalen uit de API mislukt."],"Sales tax":["BTW"],"Dismiss this notice":["Negeer dit bericht"],"Fees:":["Kosten:"],"Color":["Kleur"],"Small":["Klein"],"Size":["Afmetingen"],"Or":["Of"],"Show less":["Minder weergeven"],"Show less options":["Minder opties weergeven"],"Show %s more":["Toon %s meer","Toon %s meer"],"Show %s more option":["Nog %s optie weergeven","Nog %s opties weergeven"],"There was an error loading the content.":["Er is een fout opgetreden bij het laden van de content."],"Oops!":["Oeps!"],"Read less":["Minder lezen"],"Please enter a valid email address":["Voer een geldig e-mailadres in"],"%1$s ending in %2$s":["%1$s eindigend met %2$s"],"Coupon: %s":["Waardebon: %s"],"Free shipping":["Gratis verzending"],"Error:":["Fout:"],"Subtotal":["Subtotaal"],"Free":["Gratis"],"Discount":["Korting"],"Close":["Sluiten"],"Shipping":["Verzending"],"Save %s":["Bespaar %s"],"Apply":["Toepassen"],"Taxes":["Belastingen"],"Total":["Totaal"],"Product":["Product","Producten"],"Coupons":["Waardebonnen"],"Local pickup":["Lokaal afhalen"],"Remove":["Verwijderen"],"Available on backorder":["Beschikbaar via nabestelling"],"Read more":["Lees verder"],"Fee":["Kosten"],"Shipping:":["Verzending:"],"Discount:":["Korting:"],"Subtotal:":["Subtotaal:"]}},"comment":{"reference":"assets\/client\/blocks\/wc-cart-checkout-base-frontend.js"}} );
+</script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/client/blocks/wc-cart-checkout-base-frontend.js?ver=1742919454" id="wc-cart-checkout-base-js"></script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/client/blocks/wc-cart-checkout-vendors-frontend.js?ver=1742919454" id="wc-cart-checkout-vendors-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/vendor/react-dom.min.js?ver=18.3.1.1" id="react-dom-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/vendor/react-jsx-runtime.min.js?ver=18.3.1" id="react-jsx-runtime-js"></script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/client/blocks/wc-types.js?ver=1742919454" id="wc-types-js"></script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/client/blocks/blocks-checkout-events.js?ver=1744347135" id="wc-blocks-checkout-events-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/url.min.js?ver=6bf93e90403a1eec6501" id="wp-url-js"></script>
+<script id="wp-api-fetch-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2025-04-14 06:11:02+0000","generator":"GlotPress\/4.0.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"nl"},"You are probably offline.":["Je bent waarschijnlijk offline."],"Media upload failed. If this is a photo or a large image, please scale it down and try again.":["Uploaden media mislukt. Als dit een foto of een grote afbeelding is, verklein deze dan en probeer opnieuw."],"The response is not a valid JSON response.":["De reactie is geen geldige JSON-reactie."],"An unknown error occurred.":["Er is een onbekende fout opgetreden."]}},"comment":{"reference":"wp-includes\/js\/dist\/api-fetch.js"}} );
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/api-fetch.min.js?ver=3623a576c78df404ff20" id="wp-api-fetch-js"></script>
+<script id="wp-api-fetch-js-after">
+wp.apiFetch.use( wp.apiFetch.createRootURLMiddleware( "https://www.yogamaastricht.nl/wp-json/" ) );
+wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware( "5169c13062" );
+wp.apiFetch.use( wp.apiFetch.nonceMiddleware );
+wp.apiFetch.use( wp.apiFetch.mediaUploadMiddleware );
+wp.apiFetch.nonceEndpoint = "https://www.yogamaastricht.nl/nieuw/wp-admin/admin-ajax.php?action=rest-nonce";
+</script>
+<script id="wc-settings-js-before">
+var wcSettings = wcSettings || JSON.parse( decodeURIComponent( '%7B%22shippingCostRequiresAddress%22%3Afalse%2C%22adminUrl%22%3A%22https%3A%5C%2F%5C%2Fwww.yogamaastricht.nl%5C%2Fnieuw%5C%2Fwp-admin%5C%2F%22%2C%22countries%22%3A%7B%22AF%22%3A%22Afghanistan%22%2C%22AX%22%3A%22Aland%20eilanden%22%2C%22AL%22%3A%22Albani%5Cu00eb%22%2C%22DZ%22%3A%22Algerije%22%2C%22AS%22%3A%22Amerikaans-Samoa%22%2C%22AD%22%3A%22Andorra%22%2C%22AO%22%3A%22Angola%22%2C%22AI%22%3A%22Anguilla%22%2C%22AQ%22%3A%22Antarctica%22%2C%22AG%22%3A%22Antigua%20en%20Barbuda%22%2C%22AR%22%3A%22Argentini%5Cu00eb%22%2C%22AM%22%3A%22Armeni%5Cu00eb%22%2C%22AW%22%3A%22Aruba%22%2C%22AU%22%3A%22Australi%5Cu00eb%22%2C%22AZ%22%3A%22Azerbeidzjan%22%2C%22BS%22%3A%22Bahamas%22%2C%22BH%22%3A%22Bahrein%22%2C%22BD%22%3A%22Bangladesh%22%2C%22BB%22%3A%22Barbados%22%2C%22PW%22%3A%22Belau%22%2C%22BE%22%3A%22Belgi%5Cu00eb%22%2C%22BZ%22%3A%22Belize%22%2C%22BJ%22%3A%22Benin%22%2C%22BM%22%3A%22Bermuda%22%2C%22BT%22%3A%22Bhutan%22%2C%22BI%22%3A%22Boeroendi%22%2C%22BO%22%3A%22Bolivia%22%2C%22BQ%22%3A%22Bonaire%2C%20Sint%20Eustatius%20en%20Saba%22%2C%22BA%22%3A%22Bosni%5Cu00eb%20en%20Herzegovina%22%2C%22BW%22%3A%22Botswana%22%2C%22BV%22%3A%22Bouvet%22%2C%22BR%22%3A%22Brazili%5Cu00eb%22%2C%22IO%22%3A%22Brits%20Indische%20Oceaanterritorium%22%2C%22BN%22%3A%22Brunei%22%2C%22BG%22%3A%22Bulgarije%22%2C%22BF%22%3A%22Burkina%20Faso%22%2C%22KH%22%3A%22Cambodja%22%2C%22CA%22%3A%22Canada%22%2C%22CF%22%3A%22Centraal-Afrikaanse%20Republiek%22%2C%22CL%22%3A%22Chili%22%2C%22CN%22%3A%22China%22%2C%22CX%22%3A%22Christmaseiland%22%2C%22CC%22%3A%22Cocoseilanden%22%2C%22CO%22%3A%22Colombia%22%2C%22KM%22%3A%22Comoren%22%2C%22CG%22%3A%22Congo-Brazzaville%22%2C%22CD%22%3A%22Congo-Kinshasa%22%2C%22CK%22%3A%22Cookeilanden%22%2C%22CR%22%3A%22Costa%20Rica%22%2C%22CU%22%3A%22Cuba%22%2C%22CW%22%3A%22Cura%5Cu00e7ao%22%2C%22CY%22%3A%22Cyprus%22%2C%22DK%22%3A%22Denemarken%22%2C%22DJ%22%3A%22Djibouti%22%2C%22DM%22%3A%22Dominica%22%2C%22DO%22%3A%22Dominicaanse%20Republiek%22%2C%22DE%22%3A%22Duitsland%22%2C%22EC%22%3A%22Ecuador%22%2C%22EG%22%3A%22Egypte%22%2C%22SV%22%3A%22El%20Salvador%22%2C%22GQ%22%3A%22Equatoriaal-Guinea%22%2C%22ER%22%3A%22Eritrea%22%2C%22EE%22%3A%22Estland%22%2C%22SZ%22%3A%22Eswatini%22%2C%22ET%22%3A%22Ethiopi%5Cu00eb%22%2C%22FO%22%3A%22Faer%5Cu00f6er%22%2C%22FK%22%3A%22Falklandeilanden%22%2C%22FJ%22%3A%22Fiji%22%2C%22PH%22%3A%22Filippijnen%22%2C%22FI%22%3A%22Finland%22%2C%22FR%22%3A%22Frankrijk%22%2C%22GF%22%3A%22Frans-Guyana%22%2C%22PF%22%3A%22Frans-Polynesi%5Cu00eb%22%2C%22TF%22%3A%22Franse%20Zuidelijke%20Gebieden%22%2C%22GA%22%3A%22Gabon%22%2C%22GM%22%3A%22Gambia%22%2C%22GE%22%3A%22Georgi%5Cu00eb%22%2C%22GH%22%3A%22Ghana%22%2C%22GI%22%3A%22Gibraltar%22%2C%22GD%22%3A%22Grenada%22%2C%22GR%22%3A%22Griekenland%22%2C%22GL%22%3A%22Groenland%22%2C%22GP%22%3A%22Guadeloupe%22%2C%22GU%22%3A%22Guam%22%2C%22GT%22%3A%22Guatemala%22%2C%22GG%22%3A%22Guernsey%22%2C%22GN%22%3A%22Guinea%22%2C%22GW%22%3A%22Guinee-Bissau%22%2C%22GY%22%3A%22Guyana%22%2C%22HT%22%3A%22Ha%5Cu00efti%22%2C%22HM%22%3A%22Heard%20en%20McDonaldeilanden%22%2C%22HN%22%3A%22Honduras%22%2C%22HU%22%3A%22Hongarije%22%2C%22HK%22%3A%22Hongkong%22%2C%22IE%22%3A%22Ierland%22%2C%22IS%22%3A%22IJsland%22%2C%22IN%22%3A%22India%22%2C%22ID%22%3A%22Indonesi%5Cu00eb%22%2C%22IQ%22%3A%22Irak%22%2C%22IR%22%3A%22Iran%22%2C%22IM%22%3A%22Isle%20of%20Man%22%2C%22IL%22%3A%22Isra%5Cu00ebl%22%2C%22IT%22%3A%22Itali%5Cu00eb%22%2C%22CI%22%3A%22Ivoorkust%22%2C%22JM%22%3A%22Jamaica%22%2C%22JP%22%3A%22Japan%22%2C%22JE%22%3A%22Jersey%22%2C%22JO%22%3A%22Jordani%5Cu00eb%22%2C%22KY%22%3A%22Kaaimaneilanden%22%2C%22CV%22%3A%22Kaapverdi%5Cu00eb%22%2C%22CM%22%3A%22Kameroen%22%2C%22QA%22%3A%22Katar%22%2C%22KZ%22%3A%22Kazachstan%22%2C%22KE%22%3A%22Kenia%22%2C%22KG%22%3A%22Kirgizi%5Cu00eb%22%2C%22KI%22%3A%22Kiribati%22%2C%22KW%22%3A%22Koeweit%22%2C%22HR%22%3A%22Kroati%5Cu00eb%22%2C%22LA%22%3A%22Laos%22%2C%22LS%22%3A%22Lesotho%22%2C%22LV%22%3A%22Letland%22%2C%22LB%22%3A%22Libanon%22%2C%22LR%22%3A%22Liberia%22%2C%22LY%22%3A%22Libi%5Cu00eb%22%2C%22LI%22%3A%22Liechtenstein%22%2C%22LT%22%3A%22Litouwen%22%2C%22LU%22%3A%22Luxemburg%22%2C%22VG%22%3A%22Maagdeneilanden%20%28Verenigd%20Koninkrijk%29%22%2C%22VI%22%3A%22Maagdeneilanden%20%28VS%29%22%2C%22MO%22%3A%22Macao%22%2C%22MG%22%3A%22Madagascar%22%2C%22MW%22%3A%22Malawi%22%2C%22MV%22%3A%22Malediven%22%2C%22MY%22%3A%22Maleisi%5Cu00eb%22%2C%22ML%22%3A%22Mali%22%2C%22MT%22%3A%22Malta%22%2C%22MA%22%3A%22Marokko%22%2C%22MH%22%3A%22Marshalleilanden%22%2C%22MQ%22%3A%22Martinique%22%2C%22MR%22%3A%22Mauritani%5Cu00eb%22%2C%22MU%22%3A%22Mauritius%22%2C%22YT%22%3A%22Mayotte%22%2C%22MX%22%3A%22Mexico%22%2C%22FM%22%3A%22Micronesi%5Cu00eb%22%2C%22MD%22%3A%22Moldavi%5Cu00eb%22%2C%22MC%22%3A%22Monaco%22%2C%22MN%22%3A%22Mongoli%5Cu00eb%22%2C%22ME%22%3A%22Montenegro%22%2C%22MS%22%3A%22Montserrat%22%2C%22MZ%22%3A%22Mozambique%22%2C%22MM%22%3A%22Myanmar%22%2C%22NA%22%3A%22Namibi%5Cu00eb%22%2C%22NR%22%3A%22Nauru%22%2C%22NL%22%3A%22Nederland%22%2C%22NP%22%3A%22Nepal%22%2C%22NI%22%3A%22Nicaragua%22%2C%22NC%22%3A%22Nieuw-Caledoni%5Cu00eb%22%2C%22NZ%22%3A%22Nieuw-Zeeland%22%2C%22NE%22%3A%22Niger%22%2C%22NG%22%3A%22Nigeria%22%2C%22NU%22%3A%22Niue%22%2C%22MK%22%3A%22Noord%20Macedoni%5Cu00eb%22%2C%22KP%22%3A%22Noord-Korea%22%2C%22MP%22%3A%22Noordelijke%20Marianen%22%2C%22NO%22%3A%22Noorwegen%22%2C%22NF%22%3A%22Norfolk%20Island%22%2C%22UG%22%3A%22Oeganda%22%2C%22UA%22%3A%22Oekra%5Cu00efne%22%2C%22UZ%22%3A%22Oezbekistan%22%2C%22OM%22%3A%22Oman%22%2C%22TL%22%3A%22Oost-Timor%22%2C%22AT%22%3A%22Oostenrijk%22%2C%22PK%22%3A%22Pakistan%22%2C%22PS%22%3A%22Palestijnse%20Gebieden%22%2C%22PA%22%3A%22Panama%22%2C%22PG%22%3A%22Papoea-Nieuw-Guinea%22%2C%22PY%22%3A%22Paraguay%22%2C%22PE%22%3A%22Peru%22%2C%22PN%22%3A%22Pitcairn%22%2C%22PL%22%3A%22Polen%22%2C%22PT%22%3A%22Portugal%22%2C%22PR%22%3A%22Puerto%20Rico%22%2C%22RE%22%3A%22R%5Cu00e9union%22%2C%22RO%22%3A%22Roemeni%5Cu00eb%22%2C%22RU%22%3A%22Rusland%22%2C%22RW%22%3A%22Rwanda%22%2C%22KN%22%3A%22Saint%20Kitts%20en%20Nevis%22%2C%22LC%22%3A%22Saint%20Lucia%22%2C%22VC%22%3A%22Saint%20Vincent%20en%20de%20Grenadines%22%2C%22PM%22%3A%22Saint-Pierre%20en%20Miquelon%22%2C%22SB%22%3A%22Salomonseilanden%22%2C%22WS%22%3A%22Samoa%22%2C%22SM%22%3A%22San%20Marino%22%2C%22ST%22%3A%22Sao%20Tom%26eacute%3B%20en%20Principe%22%2C%22SA%22%3A%22Saudi-Arabi%5Cu00eb%22%2C%22SN%22%3A%22Senegal%22%2C%22RS%22%3A%22Servi%5Cu00eb%22%2C%22SC%22%3A%22Seychellen%22%2C%22SL%22%3A%22Sierra%20Leone%22%2C%22SG%22%3A%22Singapore%22%2C%22SX%22%3A%22Sint%20Maarten%22%2C%22BL%22%3A%22Sint-Bartholomeus%22%2C%22SH%22%3A%22Sint-Helena%22%2C%22MF%22%3A%22Sint-Maarten%20%28Frans%20deel%29%22%2C%22SI%22%3A%22Sloveni%5Cu00eb%22%2C%22SK%22%3A%22Slowakije%22%2C%22SD%22%3A%22Soedan%22%2C%22SO%22%3A%22Somali%5Cu00eb%22%2C%22ES%22%3A%22Spanje%22%2C%22SJ%22%3A%22Spitsbergen%20en%20Jan%20Mayen%22%2C%22LK%22%3A%22Sri%20Lanka%22%2C%22SR%22%3A%22Suriname%22%2C%22SY%22%3A%22Syri%5Cu00eb%22%2C%22TJ%22%3A%22Tadzjikistan%22%2C%22TW%22%3A%22Taiwan%22%2C%22TZ%22%3A%22Tanzania%22%2C%22TH%22%3A%22Thailand%22%2C%22TG%22%3A%22Togo%22%2C%22TK%22%3A%22Tokelau%22%2C%22TO%22%3A%22Tonga%22%2C%22TT%22%3A%22Trinidad%20en%20Tobago%22%2C%22TD%22%3A%22Tsjaad%22%2C%22CZ%22%3A%22Tsjechi%5Cu00eb%22%2C%22TN%22%3A%22Tunesi%5Cu00eb%22%2C%22TR%22%3A%22Turkije%22%2C%22TM%22%3A%22Turkmenistan%22%2C%22TC%22%3A%22Turks-%20en%20Caicoseilanden%22%2C%22TV%22%3A%22Tuvalu%22%2C%22UY%22%3A%22Uruguay%22%2C%22VU%22%3A%22Vanuatu%22%2C%22VA%22%3A%22Vaticaan%22%2C%22VE%22%3A%22Venezuela%22%2C%22GB%22%3A%22Verenigd%20Koninkrijk%20%28UK%29%22%2C%22AE%22%3A%22Verenigde%20Arabische%20Emiraten%22%2C%22US%22%3A%22Verenigde%20Staten%20%28US%29%22%2C%22UM%22%3A%22Verenigde%20Staten%20%28VS%29%20Kleine%20Afgelegen%20Eilanden%22%2C%22VN%22%3A%22Vietnam%22%2C%22WF%22%3A%22Wallis%20en%20Futuna%22%2C%22EH%22%3A%22Westelijke%20Sahara%22%2C%22BY%22%3A%22Wit-Rusland%22%2C%22YE%22%3A%22Yemen%22%2C%22ZM%22%3A%22Zambia%22%2C%22ZW%22%3A%22Zimbabwe%22%2C%22ZA%22%3A%22Zuid-Afrika%22%2C%22GS%22%3A%22Zuid-Georgia%20en%20de%20Zuidelijke%20Sandwicheilanden%22%2C%22KR%22%3A%22Zuid-Korea%22%2C%22SS%22%3A%22Zuid-Soedan%22%2C%22SE%22%3A%22Zweden%22%2C%22CH%22%3A%22Zwitserland%22%7D%2C%22currency%22%3A%7B%22code%22%3A%22EUR%22%2C%22precision%22%3A2%2C%22symbol%22%3A%22%5Cu20ac%22%2C%22symbolPosition%22%3A%22left_space%22%2C%22decimalSeparator%22%3A%22%2C%22%2C%22thousandSeparator%22%3A%22.%22%2C%22priceFormat%22%3A%22%251%24s%5Cu00a0%252%24s%22%7D%2C%22currentUserId%22%3A0%2C%22currentUserIsAdmin%22%3Afalse%2C%22currentThemeIsFSETheme%22%3Afalse%2C%22dateFormat%22%3A%22j%20F%20Y%22%2C%22homeUrl%22%3A%22https%3A%5C%2F%5C%2Fwww.yogamaastricht.nl%5C%2F%22%2C%22locale%22%3A%7B%22siteLocale%22%3A%22nl_NL%22%2C%22userLocale%22%3A%22nl_NL%22%2C%22weekdaysShort%22%3A%5B%22zo%22%2C%22ma%22%2C%22di%22%2C%22wo%22%2C%22do%22%2C%22vr%22%2C%22za%22%5D%7D%2C%22isRemoteLoggingEnabled%22%3Atrue%2C%22dashboardUrl%22%3A%22https%3A%5C%2F%5C%2Fwww.yogamaastricht.nl%5C%2Fmijn-account%5C%2F%22%2C%22orderStatuses%22%3A%7B%22pending%22%3A%22Wachtend%20op%20betaling%22%2C%22processing%22%3A%22In%20behandeling%22%2C%22on-hold%22%3A%22In%20de%20wacht%22%2C%22completed%22%3A%22Afgerond%22%2C%22cancelled%22%3A%22Geannuleerd%22%2C%22refunded%22%3A%22Terugbetaald%22%2C%22failed%22%3A%22Mislukt%22%2C%22checkout-draft%22%3A%22Concept%22%7D%2C%22placeholderImgSrc%22%3A%22https%3A%5C%2F%5C%2Fwww.yogamaastricht.nl%5C%2Fnieuw%5C%2Fwp-content%5C%2Fuploads%5C%2Fwoocommerce-placeholder-300x300.png%22%2C%22productsSettings%22%3A%7B%22cartRedirectAfterAdd%22%3Atrue%7D%2C%22siteTitle%22%3A%22Yoga%20Maastricht%22%2C%22storePages%22%3A%7B%22myaccount%22%3A%7B%22id%22%3A24%2C%22title%22%3A%22mijn%20account%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fwww.yogamaastricht.nl%5C%2Fmijn-account%5C%2F%22%7D%2C%22shop%22%3A%7B%22id%22%3A21%2C%22title%22%3A%22winkel%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fwww.yogamaastricht.nl%5C%2Fwinkel%5C%2F%22%7D%2C%22cart%22%3A%7B%22id%22%3A22%2C%22title%22%3A%22winkelmand%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fwww.yogamaastricht.nl%5C%2Fwinkelmand%5C%2F%22%7D%2C%22checkout%22%3A%7B%22id%22%3A23%2C%22title%22%3A%22afrekenen%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fwww.yogamaastricht.nl%5C%2Fafrekenen%5C%2F%22%7D%2C%22privacy%22%3A%7B%22id%22%3A2805%2C%22title%22%3A%22privacy%20beleid%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fwww.yogamaastricht.nl%5C%2Fprivacy-beleid%5C%2F%22%7D%2C%22terms%22%3A%7B%22id%22%3A2798%2C%22title%22%3A%22algemene%20voorwaarden%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fwww.yogamaastricht.nl%5C%2Falgemene-voorwaarden%5C%2F%22%7D%7D%2C%22wcAssetUrl%22%3A%22https%3A%5C%2F%5C%2Fwww.yogamaastricht.nl%5C%2Fnieuw%5C%2Fwp-content%5C%2Fplugins%5C%2Fwoocommerce%5C%2Fassets%5C%2F%22%2C%22wcVersion%22%3A%229.8.1%22%2C%22wpLoginUrl%22%3A%22https%3A%5C%2F%5C%2Fwww.yogamaastricht.nl%5C%2Fnieuw%5C%2Fwp-login.php%22%2C%22wpVersion%22%3A%226.8%22%7D' ) );
+</script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/client/blocks/wc-settings.js?ver=1742919454" id="wc-settings-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/deprecated.min.js?ver=e1f84915c5e8ae38964c" id="wp-deprecated-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/dom.min.js?ver=f3a673a30f968c8fa314" id="wp-dom-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/escape-html.min.js?ver=6561a406d2d232a6fbd2" id="wp-escape-html-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/element.min.js?ver=a4eeeadd23c0d7ab1d2d" id="wp-element-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/is-shallow-equal.min.js?ver=e0f9f1d78d83f5196979" id="wp-is-shallow-equal-js"></script>
+<script id="wp-keycodes-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2025-04-14 06:11:02+0000","generator":"GlotPress\/4.0.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"nl"},"Tilde":["Tilde"],"Backtick":["Accent grave"],"Period":["Punt"],"Comma":["Komma"]}},"comment":{"reference":"wp-includes\/js\/dist\/keycodes.js"}} );
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/keycodes.min.js?ver=034ff647a54b018581d3" id="wp-keycodes-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/priority-queue.min.js?ver=9c21c957c7e50ffdbf48" id="wp-priority-queue-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/compose.min.js?ver=84bcf832a5c99203f3db" id="wp-compose-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/private-apis.min.js?ver=0f8478f1ba7e0eea562b" id="wp-private-apis-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/redux-routine.min.js?ver=8bb92d45458b29590f53" id="wp-redux-routine-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/data.min.js?ver=fe6c4835cd00e12493c3" id="wp-data-js"></script>
+<script id="wp-data-js-after">
+( function() {
+	var userId = 0;
+	var storageKey = "WP_DATA_USER_" + userId;
+	wp.data
+		.use( wp.data.plugins.persistence, { storageKey: storageKey } );
+} )();
+</script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks-registry.js?ver=1742919454" id="wc-blocks-registry-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/data-controls.min.js?ver=49f5587e8b90f9e7cc7e" id="wp-data-controls-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/html-entities.min.js?ver=2cd3358363e0675638fb" id="wp-html-entities-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/notices.min.js?ver=673a68a7ac2f556ed50b" id="wp-notices-js"></script>
+<script id="wc-blocks-middleware-js-before">
+			var wcBlocksMiddlewareConfig = {
+				storeApiNonce: '3b424f6203',
+				wcStoreApiNonceTimestamp: '1745057485'
+			};
+			
+</script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks-middleware.js?ver=1742919454" id="wc-blocks-middleware-js"></script>
+<script id="wc-blocks-data-store-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "woocommerce", {"translation-revision-date":"2025-04-17 13:54:11+0000","generator":"GlotPress\/4.0.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"nl"},"The quantity of \"%1$s\" was changed to %2$d.":["De hoeveelheid van \"%1$s\" werd gewijzigd in %2$d."],"\"%s\" was removed from your cart.":["\"%s\" is verwijderd uit je winkelwagen."],"Flat rate shipping":["Vaste verzendkosten"],"T-Shirt":["T-shirt"],"Hoodie with Pocket":["Hoodie met zak"],"Hoodie with Logo":["Hoodie met logo"],"Hoodie with Zipper":["Hoodie met rits"],"Long Sleeve Tee":["T-shirt met lange mouwen"],"Polo":["Polo"],"%s (optional)":["%s (optioneel)"],"There was an error registering the payment method with id '%s': ":["Er is een fout opgetreden bij het registreren van de betaalmethode met id '%s': "],"Orange":["Oranje"],"Lightweight baseball cap":["Lichte honkbalpet"],"Cap":["Pet"],"Yellow":["Geel"],"Warm hat for winter":["Warme wintermuts"],"Beanie":["Beanie"],"example product in Cart Block\u0004Beanie":["Beanie"],"example product in Cart Block\u0004Beanie with Logo":["Beanie met logo"],"Something went wrong. Please contact us to get assistance.":["Er is iets fout gegaan. Neem contact met ons op voor hulp."],"Unable to get cart data from the API.":["Winkelwagengegevens ophalen uit de API mislukt."],"The response is not a valid JSON response.":["De reactie is geen geldige JSON-reactie."],"Sales tax":["BTW"],"Color":["Kleur"],"Small":["Klein"],"Size":["Afmetingen"],"Free shipping":["Gratis verzending"],"Shipping":["Verzending"],"Local pickup":["Lokaal afhalen"],"Fee":["Kosten"]}},"comment":{"reference":"assets\/client\/blocks\/wc-blocks-data.js"}} );
+</script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks-data.js?ver=1742919454" id="wc-blocks-data-store-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/dom-ready.min.js?ver=f77871ff7694fffea381" id="wp-dom-ready-js"></script>
+<script id="wp-a11y-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2025-04-14 06:11:02+0000","generator":"GlotPress\/4.0.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"nl"},"Notifications":["Meldingen"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/a11y.min.js?ver=3156534cc54473497e14" id="wp-a11y-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/primitives.min.js?ver=aef2543ab60c8c9bb609" id="wp-primitives-js"></script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/client/blocks/blocks-components.js?ver=1742919454" id="wc-blocks-components-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/warning.min.js?ver=ed7c8b0940914f4fe44b" id="wp-warning-js"></script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woocommerce/assets/client/blocks/blocks-checkout.js?ver=1742919454" id="wc-blocks-checkout-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/vendor/moment.min.js?ver=2.30.1" id="moment-js"></script>
+<script id="moment-js-after">
+moment.updateLocale( 'nl_NL', {"months":["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"],"monthsShort":["jan","feb","mrt","apr","mei","jun","jul","aug","sep","okt","nov","dec"],"weekdays":["zondag","maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag"],"weekdaysShort":["zo","ma","di","wo","do","vr","za"],"week":{"dow":1},"longDateFormat":{"LT":"H:i","LTS":null,"L":null,"LL":"j F Y","LLL":"j F Y H:i","LLLL":null}} );
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/date.min.js?ver=85ff222add187a4e358f" id="wp-date-js"></script>
+<script id="wp-date-js-after">
+wp.date.setSettings( {"l10n":{"locale":"nl_NL","months":["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"],"monthsShort":["jan","feb","mrt","apr","mei","jun","jul","aug","sep","okt","nov","dec"],"weekdays":["zondag","maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag"],"weekdaysShort":["zo","ma","di","wo","do","vr","za"],"meridiem":{"am":"am","pm":"pm","AM":"AM","PM":"PM"},"relative":{"future":"%s vanaf nu","past":"%s geleden","s":"een seconde","ss":"%d seconden","m":"een minuut","mm":"%d minuten","h":"een uur","hh":"%d uren","d":"een dag","dd":"%d dagen","M":"een maand","MM":"%d maanden","y":"een jaar","yy":"%d jaar"},"startOfWeek":1},"formats":{"time":"H:i","date":"j F Y","datetime":"j F Y H:i","datetimeAbbreviated":"j M Y G:i"},"timezone":{"offset":2,"offsetFormatted":"2","string":"Europe\/Amsterdam","abbr":"CEST"}} );
+</script>
+<script id="wp-rich-text-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2025-04-14 06:11:02+0000","generator":"GlotPress\/4.0.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"nl"},"%s applied.":["%s toegepast."],"%s removed.":["%s verwijderd."]}},"comment":{"reference":"wp-includes\/js\/dist\/rich-text.js"}} );
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/rich-text.min.js?ver=74178fc8c4d67d66f1a8" id="wp-rich-text-js"></script>
+<script id="wp-components-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2025-04-14 06:11:02+0000","generator":"GlotPress\/4.0.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"nl"},"December":["december"],"November":["november"],"October":["oktober"],"September":["september"],"August":["augustus"],"July":["juli"],"June":["juni"],"May":["mei"],"April":["april"],"March":["maart"],"February":["februari"],"January":["januari"],"input control\u0004Show %s":["Toon %s"],"Border color picker. The currently selected color has a value of \"%s\".":["Randkleur kiezer. De momenteel geselecteerde kleur heeft een waarde van \"%s\"."],"Border color picker. The currently selected color is called \"%1$s\" and has a value of \"%2$s\".":["Randkleur kiezer. De momenteel geselecteerde kleur heet \"%1$s\" en heeft een waarde van \"%2$s\"."],"Border color and style picker. The currently selected color has a value of \"%s\".":["Randkleur en stijl kiezer. De momenteel geselecteerde kleur heeft een waarde van \"%s\"."],"Border color and style picker. The currently selected color has a value of \"%1$s\". The currently selected style is \"%2$s\".":["Randkleur en stijl kiezer. De momenteel geselecteerde kleur heeft een waarde van \"%1$s\". De momenteel geselecteerde stijl is \"%2$s\"."],"Border color and style picker. The currently selected color is called \"%1$s\" and has a value of \"%2$s\".":["Randkleur en stijl kiezer. De momenteel geselecteerde kleur heet \"%1$s\" en heeft een waarde van \"%2$s\"."],"Border color and style picker. The currently selected color is called \"%1$s\" and has a value of \"%2$s\". The currently selected style is \"%3$s\".":["Randkleur en stijl kiezer. De momenteel geselecteerde kleur heet \"%1$s\" en heeft een waarde van \"%2$s\". De momenteel geselecteerde stijl is \"%3$s\"."],"%s items selected":["%s items geselecteerd"],"Select AM or PM":["Selecteer AM of PM"],"Select an item":["Selecteer een item"],"No items found":["Geen items gevonden"],"Remove color: %s":["Verwijder kleur: %s"],"authors\u0004All":["Alle"],"categories\u0004All":["Alle"],"Edit: %s":["Bewerk: %s"],"Left and right sides":["Linker- en rechterkant"],"Top and bottom sides":["Boven- en onderkant"],"Right side":["Rechterzijde"],"Left side":["Linkerzijde"],"Bottom side":["Onderkant"],"Top side":["Bovenkant"],"Large viewport largest dimension (lvmax)":["Grote viewport grootste dimensie (lvmax)"],"Small viewport largest dimension (svmax)":["Kleine viewport grootste dimensie (svmax)"],"Dynamic viewport largest dimension (dvmax)":["Dynamische viewport grootste dimensie (dvmax)"],"Dynamic viewport smallest dimension (dvmin)":["Dynamische viewport kleinste dimensie (dvmin)"],"Dynamic viewport width or height (dvb)":["Dynamische viewport breedte of hoogte (dvb)"],"Dynamic viewport width or height (dvi)":["Dynamische viewport breedte of hoogte (dvi)"],"Dynamic viewport height (dvh)":["Dynamische viewport hoogte (dvh)"],"Dynamic viewport width (dvw)":["Dynamische viewport breedte (dvw)"],"Large viewport smallest dimension (lvmin)":["Grote viewport kleinste dimensie (lvmin)"],"Large viewport width or height (lvb)":["Grote viewport breedte of hoogte (lvb)"],"Large viewport width or height (lvi)":["Grote viewport breedte of hoogte (lvi)"],"Large viewport height (lvh)":["Grote hoogte van viewport (lvh)"],"Large viewport width (lvw)":["Grote viewport breedte (lvw)"],"Small viewport smallest dimension (svmin)":["Kleine viewport kleinste dimensie (svmin)"],"Small viewport width or height (svb)":["Kleine viewport breedte of hoogte (svb)"],"Viewport smallest size in the block direction (svb)":["Kleinste grootte van viewport in de blokrichting (svb)"],"Small viewport width or height (svi)":["Kleine viewport breedte of hoogte (svi)"],"Viewport smallest size in the inline direction (svi)":["Kleinste grootte van viewport in de inline richting (svi)"],"Small viewport height (svh)":["Kleine hoogte van viewport (svh)"],"Small viewport width (svw)":["Kleine viewport breedte (svw)"],"No color selected":["Geen kleur geselecteerd"],"Notice":["Bericht"],"Error notice":["Fout bericht"],"Information notice":["Informatief bericht"],"Warning notice":["Waarschuwingsbericht"],"Focal point top position":["Focuspunt bovenste positie"],"Focal point left position":["Focuspunt linker positie"],"Scrollable section":["Scrolbare sectie"],"Initial %d result loaded. Type to filter all available results. Use up and down arrow keys to navigate.":["Initi\u00eble %d resultaat geladen. Typ om alle beschikbare resultaten te filteren. Gebruik de pijltoetsen omhoog en omlaag om te navigeren.","Initi\u00eble %d resultaten geladen. Typ om alle beschikbare resultaten te filteren. Gebruik de pijltoetsen omhoog en omlaag om te navigeren."],"Extra Extra Large":["Extra extra groot"],"Show details":["Details weergeven"],"Decrement":["Verlagen"],"Increment":["Verhogen"],"All options reset":["Alle opties teruggezet"],"All options are currently hidden":["Alle opties zijn momenteel verborgen"],"%s is now visible":["%s is nu zichtbaar"],"%s hidden and reset to default":["%s verborgen en teruggezet naar standaard"],"%s reset to default":["%s gereset naar standaard"],"XXL":["XXL"],"XL":["XL"],"L":["L"],"M":["M"],"S":["S"],"Unset":["Uitschakelen"],"%1$s. Selected":["%1$s. Geselecteerd"],"%1$s. Selected. There is %2$d event":["%1$s. Geselecteerd. Er is %2$d evenement","%1$s. Geselecteerd. Er zijn %2$d evenementen"],"View next month":["Volgende maand bekijken"],"View previous month":["Vorige maand bekijken"],"Border color and style picker":["Randkleur en stijl kiezer"],"Loading \u2026":["Bezig met laden \u2026"],"All sides":["Alle kanten"],"Bottom border":["Onder rand"],"Right border":["Rechter rand"],"Left border":["Linker rand"],"Top border":["Boven rand"],"Border color picker.":["Randkleur kiezen."],"Border color and style picker.":["Randkleur en stijl kiezen."],"Custom color picker. The currently selected color is called \"%1$s\" and has a value of \"%2$s\".":["Aangepaste kleurkiezer. De momenteel geselecteerde kleur heet \"%1$s\" en heeft een waarde van \"%2$s\"."],"Link sides":["Kanten linken"],"Unlink sides":["Kanten ontlinken"],"Reset all":["Alles resetten"],"Button label to reveal tool panel options\u0004%s options":["%s opties"],"Hide and reset %s":["%s verbergen en terugzetten"],"Reset %s":["Reset %s"],"Search %s":["%s zoeken"],"Set custom size":["Aangepaste grootte instellen"],"Use size preset":["Vooringestelde grootte gebruiken"],"Currently selected font size: %s":["Huidig geselecteerde lettertypegrootte: %s"],"Highlights":["Hoogtepunten"],"Size of a UI element\u0004Extra Large":["Extra groot"],"Size of a UI element\u0004Large":["Groot"],"Size of a UI element\u0004Medium":["Middel"],"Size of a UI element\u0004Small":["Klein"],"Size of a UI element\u0004None":["Geen"],"Currently selected: %s":["Huidig geselecteerd: %s"],"Reset colors":["Kleuren resetten"],"Reset gradient":["Reset gradi\u00ebnt"],"Remove all colors":["Alle kleuren verwijderen"],"Remove all gradients":["Alle gradi\u00ebnt verwijderen"],"Color options":["Kleuropties"],"Gradient options":["Gradi\u00ebnt opties"],"Add color":["Kleur toevoegen"],"Add gradient":["Gradi\u00ebnt toevoegen"],"Gradient name":["Gradi\u00ebnt naam"],"Color %s":["Kleur %s"],"Color format":["Kleur format"],"Hex color":["Hex kleur"],"Invalid item":["Ongeldig item"],"Shadows":["Schaduwen"],"Duotone: %s":["Duotoon: %s"],"Duotone code: %s":["Duotoon code: %s"],"%1$s. There is %2$d event":["%1$s. Er is %2$d gebeurtenis","%1$s. Er zijn %2$d gebeurtenissen"],"Relative to root font size (rem)\u0004rems":["rems"],"Relative to parent font size (em)\u0004ems":["ems"],"Points (pt)":["Punten (pt)"],"Picas (pc)":["Picas (pc)"],"Inches (in)":["Inches (in)"],"Millimeters (mm)":["Millimeters (mm)"],"Centimeters (cm)":["Centimeters (cm)"],"x-height of the font (ex)":["x-hoogte van het lettertype (ex)"],"Width of the zero (0) character (ch)":["Breedte van het nul (0) karakter (ch)"],"Viewport largest dimension (vmax)":["Viewpoort grootste afmeting (vmax)"],"Viewport smallest dimension (vmin)":["Viewpoort kleinste afmeting (vmin)"],"Percent (%)":["Percentage (%)"],"Border width":["Randbreedte"],"Dotted":["Gestippeld"],"Dashed":["Gestreept"],"Viewport height (vh)":["Viewport hoogte (vh)"],"Viewport width (vw)":["Viewport breedte (vw)"],"Relative to root font size (rem)":["Vergeleken met de oorspronkelijke lettertypegrootte (rem)"],"Relative to parent font size (em)":["Relatief aan de hoofd lettertypegrootte (em)"],"Pixels (px)":["Pixels (px)"],"Percentage (%)":["Percentage (%)"],"Close search":["Zoekopdracht sluiten"],"Search in %s":["Zoeken in %s"],"Select unit":["Eenheid selecteren"],"Radial":["Radiaal"],"Linear":["Lineair"],"Media preview":["Media voorbeeld"],"Coordinated Universal Time":["Geco\u00f6rdineerde universele tijd"],"Color name":["Kleurnaam"],"Reset search":["Zoekopdracht resetten"],"Box Control":["Vak besturing"],"Alignment Matrix Control":["Uitlijning matrix besturing"],"Bottom Center":["Middenonder"],"Center Right":["Midden rechts"],"Center Left":["Midden links"],"Top Center":["Middenboven"],"Solid":["Doorlopend"],"Finish":["Voltooien"],"Page %1$d of %2$d":["Pagina %1$d van %2$d"],"Guide controls":["Gidsbediening"],"Gradient: %s":["Gradi\u00ebnt: %s"],"Gradient code: %s":["Gradi\u0113nt code: %s"],"Remove Control Point":["Controlepunt verwijderen"],"Use your left or right arrow keys or drag and drop with the mouse to change the gradient position. Press the button to change the color or remove the control point.":["Gebruik je linker- of rechterpijltoetsen of versleep met de muis om de gradi\u00ebnt positie te veranderen. Druk op de knop om de kleur te veranderen of het controlepunt te verwijderen."],"Gradient control point at position %1$s%% with color code %2$s.":["Gradi\u00ebnt controlepunt op positie %1$s%% met kleurcode %2$s."],"Extra Large":["Extra groot"],"Small":["Klein"],"Angle":["Hoek"],"Separate with commas or the Enter key.":["Scheiden met komma's of de Enter-toets."],"Separate with commas, spaces, or the Enter key.":["Met komma's, spaties of de Enter-toets scheiden."],"Copied!":["Gekopieerd!"],"%d result found.":["%d resultaat gevonden.","%d resultaten gevonden."],"Number of items":["Aantal items"],"Category":["Categorie"],"Z \u2192 A":["Z \u2192 A"],"A \u2192 Z":["A \u2192 Z"],"Oldest to newest":["Oudste naar nieuwste"],"Newest to oldest":["Nieuwste naar oudste"],"Order by":["Rangschikken op"],"Dismiss this notice":["Dit bericht negeren"],"%1$s (%2$s of %3$s)":["%1$s (%2$s van %3$s)"],"Remove item":["Item verwijderen"],"Item removed.":["Item verwijderd."],"Item added.":["Item toegevoegd."],"Add item":["Item toevoegen"],"Reset":["Reset"],"(opens in a new tab)":["(opent in een nieuwe tab)"],"Minutes":["Minuten"],"Color code: %s":["Kleurcode: %s"],"Custom color picker":["Aangepaste kleurkiezer"],"No results.":["Geen resultaten."],"%d result found, use up and down arrow keys to navigate.":["%d resultaat gevonden, gebruik de omhoog en omlaag pijltoetsen om te navigeren.","%d resultaten gevonden, gebruik de omhoog en omlaag pijltoetsen om te navigeren."],"Time":["Tijd"],"Day":["Dag"],"Month":["Maand"],"Date":["Datum"],"Hours":["Uren"],"Item selected.":["Item geselecteerd."],"Previous":["Vorige"],"Year":["Jaar"],"Custom Size":["Aangepaste afmetingen"],"Back":["Terug"],"Style":["Stijl"],"Large":["Groot"],"Drop files to upload":["Sleep bestanden om te uploaden"],"Clear":["Wissen"],"Mixed":["Gemengd"],"Custom":["Aangepast"],"Next":["Volgende"],"PM":["PM"],"AM":["AM"],"Bottom Right":["Rechtsonder"],"Bottom Left":["Linksonder"],"Top Right":["Rechtsboven"],"Top Left":["Linksboven"],"Type":["Type"],"Top":["Bovenkant"],"Copy":["Kopi\u00ebren"],"Font size":["Lettertype grootte"],"Calendar":["Kalender"],"No results found.":["Geen resultaten gevonden."],"Default":["Standaard"],"Close":["Sluiten"],"Search":["Zoeken"],"OK":["OK"],"Size":["Grootte"],"Medium":["Gemiddeld"],"Center":["Gecentreerd"],"Left":["Links"],"Cancel":["Annuleren"],"Done":["Klaar"],"None":["Geen"],"Categories":["Categorie\u00ebn"],"Author":["Auteur"]}},"comment":{"reference":"wp-includes\/js\/dist\/components.js"}} );
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-includes/js/dist/components.min.js?ver=787a8a74848a09b31e37" id="wp-components-js"></script>
+<script id="postnl-container-frontend-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "postnl-for-woocommerce", {
+  "translation-revision-date": "2024-12-22 01:47+0300",
+  "generator": "WP-CLI\/2.11.0",
+  "source": "src\/Checkout_Blocks\/js\/postnl-container\/block.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "nl",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Dropoff Points": [
+        "PostNL punten"
+      ],
+      "Delivery Days": [
+        "Bezorgdagen"
+      ],
+      "Evening": [
+        "Avond"
+      ],
+      "Morning": [
+        "Ochtend"
+      ],
+      "These items are eligible for letterbox delivery.": [
+        "Deze bestelling past door de brievenbus."
+      ],
+      "As soon as possible": [
+        "Zo snel mogelijk"
+      ],
+      "Receive shipment at home? Make a selection from the Delivery Days.": [
+        "Zending thuis ontvangen? Maak een selectie uit de bezorgdagen."
+      ]
+    }
+  }
+} );
+</script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woo-postnl/build/postnl-container-frontend.js?ver=1742919454" id="postnl-container-frontend-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/bb-plugin/js/jquery.easing.min.js?ver=1.4" id="jquery-easing-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/bb-plugin/js/jquery.fitvids.min.js?ver=1.2" id="jquery-fitvids-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/bb-plugin/js/jquery.bxslider.min.js?ver=2.8.6.1" id="jquery-bxslider-js"></script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/uploads/bb-plugin/cache/81-layout.js?ver=1742919454" id="fl-builder-layout-81-js"></script>
+<script id="woocommerce-js-extra">
+var woocommerce_params = {"ajax_url":"\/nieuw\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_password_show":"Wachtwoord weergeven","i18n_password_hide":"Wachtwoord verbergen"};
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=9.8.1" id="woocommerce-js" data-wp-strategy="defer"></script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woopack/assets/js/frontend.js?ver=1742919455" id="woopack-frontend-js"></script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/uploads/bb-plugin/cache/9cbeed2483214713a1e32346b3644a52-layout-bundle.js?ver=1742919455" id="fl-builder-layout-bundle-9cbeed2483214713a1e32346b3644a52-js"></script>
+<script data-minify="1" defer defer src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/npm/@sendcloud/checkout-plugin-ui@2.0.0/dist/checkout-plugin-ui-loader.js?ver=1742919455" id="sendcloud-checkout-widget-js"></script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/sendcloud-shipping/resources/js/sendcloud.checkout-widget-controller.js?ver=1742919455" id="sendcloud-checkout-widget-controller-js"></script>
+<script id="mailchimp-woocommerce-js-extra">
+var mailchimp_public_data = {"site_url":"https:\/\/www.yogamaastricht.nl\/nieuw","ajax_url":"https:\/\/www.yogamaastricht.nl\/nieuw\/wp-admin\/admin-ajax.php","disable_carts":"","subscribers_only":"","language":"nl","allowed_to_set_cookies":"1"};
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/mailchimp-for-woocommerce/public/js/mailchimp-woocommerce-public.min.js?ver=5.3.07" id="mailchimp-woocommerce-js"></script>
+<!--[if lte IE 11]>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/themes/generatepress/assets/js/classList.min.js?ver=3.5.1" id="generate-classlist-js"></script>
+<![endif]-->
+<script id="generate-menu-js-extra">
+var generatepressMenu = {"toggleOpenedSubMenus":"1","openSubMenuLabel":"Open het sub-menu","closeSubMenuLabel":"Sub-menu sluiten"};
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/themes/generatepress/assets/js/menu.min.js?ver=3.5.1" id="generate-menu-js"></script>
+<script data-minify="1" src="https://www.yogamaastricht.nl/nieuw/wp-content/cache/min/1/nieuw/wp-content/plugins/woo-postnl/assets/js/fe-checkout.js?ver=1742919455" id="postnl-fe-checkout-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=9.8.1" id="sourcebuster-js-js"></script>
+<script id="wc-order-attribution-js-extra">
+var wc_order_attribution = {"params":{"lifetime":1.0000000000000000818030539140313095458623138256371021270751953125e-5,"session":30,"base64":false,"ajaxurl":"https:\/\/www.yogamaastricht.nl\/nieuw\/wp-admin\/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=9.8.1" id="wc-order-attribution-js"></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-contact-form-7-21cf1c445673c649970d.js" id="googlesitekit-events-provider-contact-form-7-js" defer></script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-woocommerce-9043ca3351c215979b62.js" id="googlesitekit-events-provider-woocommerce-js" defer></script>
+<script id="generate-woocommerce-js-extra">
+var generateWooCommerce = {"quantityButtons":"1","stickyAddToCart":"","addToCartPanel":""};
+</script>
+<script src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/gp-premium/woocommerce/functions/js/woocommerce.min.js?ver=2.5.0" id="generate-woocommerce-js"></script>
+<script id="ocvars">var ocSiteMeta = {plugins: {"a3e4aa5d9179da09d8af9b6802f861a8": 0,"2c9812363c3c947e61f043af3c9852d0": 0,"b904efd4c2b650207df23db3e5b40c86": 1,"a3fe9dc9824eccbd72b7e5263258ab2c": 0}}</script><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.yogamaastricht.nl/nieuw/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1745057486 -->

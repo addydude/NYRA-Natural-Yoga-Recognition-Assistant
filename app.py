@@ -1,40 +1,111 @@
-from flask import Flask,render_template,Response
-from unittest import result
+# Apply JAX-NumPy compatibility fix before imports
+import sys
+import os
+
+# Add the current directory to the path to ensure imports work
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.append(current_dir)
+
+# Apply the fix for JAX-NumPy compatibility issue
+try:
+    from fix_jax_numpy import apply_jax_numpy_fix
+    apply_jax_numpy_fix()
+    print("Applied JAX-NumPy compatibility fix")
+except ImportError:
+    print("Warning: Could not apply JAX-NumPy compatibility fix")
+
+from flask import Flask, render_template, Response, request, jsonify, send_from_directory
 import numpy as np
 import cv2
 import time 
 import PoseModule as pm
-import tensorflow as tf
-import tensorflow_hub as hub
-from matplotlib import pyplot as plt
-import data as data
-import win32api
-import pyttsx3
-import pythoncom
-from time import sleep
-import schedule
-import time
 import matplotlib.pyplot as plt
-import gtts  
-from playsound import playsound  
+import threading
+import json
+import pygame
 
-app=Flask(__name__)
-#loding the model
+# Import CORS to handle cross-origin requests during development
+from flask_cors import CORS
 
+# Initialize audio system
+try:
+    pygame.mixer.init()
+    print("Audio system initialized successfully")
+except Exception as e:
+    print(f"Audio initialization warning: {str(e)}")
 
-# model = hub.load(r"C:\Users\welcome\Downloads\movenet_multipose_lightning_1.tar")
-# https://tfhub.dev/google/tfjs-model/movenet/multipose/lightning/1
-model = hub.load("https://tfhub.dev/google/movenet/multipose/lightning/1")
-movenet = model.signatures['serving_default']
-cap=cv2.VideoCapture(0)
+# Ensure audio directory exists
+audio_dir = os.path.join(os.path.dirname(__file__), 'static', 'audio')
+if not os.path.exists(audio_dir):
+    os.makedirs(audio_dir)
 
-detector=pm.PoseDetector()
-dataList=data.AngleData
-# print(dataList)
+# Check and generate audio files if needed
+def ensure_audio_files():
+    inhale_path = os.path.join(audio_dir, 'inhale.mp3')
+    exhale_path = os.path.join(audio_dir, 'exhale.mp3')
+    
+    if not os.path.exists(inhale_path) or not os.path.exists(exhale_path):
+        try:
+            from gtts import gTTS
+            
+            if not os.path.exists(inhale_path):
+                tts = gTTS("Inhale deeply", lang='en')
+                tts.save(inhale_path)
+                
+            if not os.path.exists(exhale_path):
+                tts = gTTS("Exhale slowly", lang='en')
+                tts.save(exhale_path)
+                
+            print("Audio files created successfully")
+        except Exception as e:
+            print(f"Error creating audio files: {str(e)}")
+
+# Run audio file setup in a background thread to avoid blocking app startup
+threading.Thread(target=ensure_audio_files).start()
+
+# Define the app with explicit static folder
+app = Flask(__name__, 
+    static_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static'),
+    static_url_path='/static'
+)
+
+# Enable CORS for development
+CORS(app)
+
+# Global variable to store accuracy data
+accuracy_data = {
+    'poses': [],
+    'values': []
+}
+
+# Global variable to store the current pose
+current_pose = 'vrksana'  # Default to vrksana
+
+# Initialize webcam capture
+cap = cv2.VideoCapture(0)
+
+# Initialize the PoseDetector with default pose
+detector = pm.PoseDetector(pose_name='vrksana')
+
+# Import yoga pose angle data
+try:
+    from data import AngleData
+    dataList = AngleData
+except ImportError:
+    # Define fallback data if import fails
+    dataList = [
+        {'Name': 'tadasan', 'right_arm': 201, 'left_arm': 162, 'right_leg':177,'left_leg':182},
+        {'Name': 'vrksana', 'right_arm': 207, 'left_arm': 158, 'right_leg':180,'left_leg':329},
+        {'Name': 'balasana', 'right_arm': 155, 'left_arm': 167, 'right_leg':337,'left_leg':335},
+        {'Name': 'trikonasana', 'right_arm': 181, 'left_arm': 184, 'right_leg':176,'left_leg':182},
+        {'Name': 'virabhadrasana', 'right_arm': 167, 'left_arm': 166, 'right_leg':273,'left_leg':178},
+        {'Name': 'adhomukha', 'right_arm': 176, 'left_arm': 171, 'right_leg':177,'left_leg':179},
+    ]
 
 # Check if the webcam is opened correctly
 if not cap.isOpened():
-    raise IOError("Cannot open webcam")
+    print("Warning: Cannot open webcam! The application might not function correctly.")
 
 def make_1080p():
     cap.set(3, 1920)
@@ -52,302 +123,178 @@ def change_res(width, height):
     cap.set(3, width)
     cap.set(4, height)
 
-    #drawing the keypoints
-
-def draw_keypoints(frame, keypoints, confidence_threshold):
-    y, x, c = frame.shape
-    shaped = np.squeeze(np.multiply(keypoints, [y,x,1]))
-    
-    for kp in shaped:
-        ky, kx, kp_conf = kp
-        if kp_conf > confidence_threshold:
-            cv2.circle(frame, (int(kx), int(ky)), 4, (0,255,0), -1) 
-
-# drawing the edges
-
-EDGES = {
-    (0, 1): 'm',
-    (0, 2): 'c',
-    (1, 3): 'm',
-    (2, 4): 'c',
-    (0, 5): 'm',
-    (0, 6): 'c',
-    (5, 7): 'm',
-    (7, 9): 'm',
-    (6, 8): 'c',
-    (8, 10): 'c',
-    (5, 6): 'y',
-    (5, 11): 'm',
-    (6, 12): 'c',
-    (11, 12): 'y',
-    (11, 13): 'm',
-    (13, 15): 'm',
-    (12, 14): 'c',
-    (14, 16): 'c'
-}
-
-
-# drawing the connections
-def draw_connections(frame, keypoints, edges, confidence_threshold):
-    y, x, c = frame.shape
-    shaped = np.squeeze(np.multiply(keypoints, [y,x,1]))
-    
-    for edge, color in edges.items():
-        p1, p2 = edge
-        y1, x1, c1 = shaped[p1]
-        y2, x2, c2 = shaped[p2]
-        
-        if (c1 > confidence_threshold) & (c2 > confidence_threshold):      
-            cv2.line(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0,0,255), 2)
-
-
-            
-# looping through each person
-def loop_through_people(frame, keypoints_with_scores, edges, confidence_threshold):
-    for person in keypoints_with_scores:
-        draw_connections(frame, person, edges, confidence_threshold)
-        draw_keypoints(frame, person, confidence_threshold)
-
-    
-
-# def speech(text):
-#     engine = pyttsx3.init() 
-#     # engine.setProperty( "rate", 200 )
-#     # engine.setProperty( "volume", 1.0 )
-#     engine.say(text) 
-#     # engine.runAndWait()
-
-
+def get_pose_index(pose_name):
+    """Get the index of the pose in dataList based on the pose name"""
+    pose_indices = {
+        'vrksana': 1,
+        'balasana': 2, 
+        'trikonasana': 3,
+        'virabhadrasana': 4,
+        'adhomukha': 5,
+        'tadasan': 0  # Default
+    }
+    return pose_indices.get(pose_name, 0)  # Default to tadasan (0) if pose not found
 
 def compare_right_arm(right_arm):
-    tadasan=[y for x, y in list(dataList[0].items()) if type(y) == int]
+    # Get the pose data based on the current global pose
+    pose_index = get_pose_index(current_pose)
+    pose_data = [y for x, y in list(dataList[pose_index].items()) if type(y) == int]
     
-    # vrksana=[y for x, y in list(dataList[1].items()) if type(y) == int]
-    # balasana=[y for x, y in list(dataList[2].items()) if type(y) == int]
-    # trikonasana=[y for x, y in list(dataList[3].items()) if type(y) == int]
-    # virabhadrasana=[y for x, y in list(dataList[4].items()) if type(y) == int]
-    # adhomukha=[y for x, y in list(dataList[5].items()) if type(y) == int]
-        
-    if(right_arm<=tadasan[0]):
-        acc=(right_arm/tadasan[0])*100
+    if right_arm <= pose_data[0]:
+        acc = (right_arm / pose_data[0]) * 100
     else:
-        acc=0
+        acc = 0
         
-    if abs(tadasan[0]-right_arm)<=10:
-    #  and tadasan[1]-left_arm<5 and tadasan[0]-right_leg<5 and tadasan[0]-left_leg<5:
-        # sleep(10)
+    if abs(pose_data[0] - right_arm) <= 10:
         print("Your right arm is accurate")
-        # t1 = gtts.gTTS("Your right arm is accurate") 
-        # t1.save("right_arm.mp3")    
-        # playsound("right_arm.mp3")  
-
-        # speech("Your right arm is accurate") 
     else:
-        # sleep(10)
         print("Your right arm is not accurate")
-        # speech("Right arm is not correct, try again")
-        # t1 = gtts.gTTS("Your right arm is not accurate") 
-        # t1.save("right_arm_no.mp3")    
-        # playsound("right_arm_no.mp3")  
 
     return acc
-
 
 def compare_left_arm(left_arm):
-    # for index in range(len(dataList)):
-            # for key in dataList[index]:
-
-    tadasan=[y for x, y in list(dataList[0].items()) if type(y) == int]
-        # vrksana=[y for x, y in list(dataList[1].items()) if type(y) == int]
-        # balasana=[y for x, y in list(dataList[2].items()) if type(y) == int]
-        # trikonasana=[y for x, y in list(dataList[3].items()) if type(y) == int]
-        # virabhadrasana=[y for x, y in list(dataList[4].items()) if type(y) == int]
-        # adhomukha=[y for x, y in list(dataList[5].items()) if type(y) == int]
-        
-    if(left_arm<=tadasan[1]):
-            acc=(left_arm/tadasan[1])*100
+    # Get the pose data based on the current global pose
+    pose_index = get_pose_index(current_pose)
+    pose_data = [y for x, y in list(dataList[pose_index].items()) if type(y) == int]
+    
+    if left_arm <= pose_data[1]:
+        acc = (left_arm / pose_data[1]) * 100
     else:
-        acc=0
+        acc = 0
         
-        # if tadasan[1]-left_arm>0 and tadasan[1]-left_arm<50:
-    if abs(tadasan[1]-left_arm)<=10:    
-    #  and tadasan[1]-left_arm<5 and tadasan[0]-right_leg<5 and tadasan[0]-left_leg<5:
-        print("Your left arm is accurate")
-        # t1 = gtts.gTTS("Your left arm is accurate") 
-        # t1.save("left_arm.mp3")    
-        # playsound("left_arm.mp3")    
+    if abs(pose_data[1] - left_arm) <= 10:    
+        print("Your left arm is accurate")  
     else:
-        print("Your left arm is not accurate , try again")
-        # t1 = gtts.gTTS("Your left arm is not accurate , try again") 
-        # t1.save("left_arm_no.mp3")    
-        # playsound("left_arm_no.mp3")  
+        print("Your left arm is not accurate, try again")
     
     return acc
-    
     
 def compare_right_leg(right_leg):
-    tadasan=[y for x, y in list(dataList[0].items()) if type(y) == int]
-        # vrksana=[y for x, y in list(dataList[1].items()) if type(y) == int]
-        # balasana=[y for x, y in list(dataList[2].items()) if type(y) == int]
-        # trikonasana=[y for x, y in list(dataList[3].items()) if type(y) == int]
-        # virabhadrasana=[y for x, y in list(dataList[4].items()) if type(y) == int]
-        # adhomukha=[y for x, y in list(dataList[5].items()) if type(y) == int]
+    # Get the pose data based on the current global pose
+    pose_index = get_pose_index(current_pose)
+    pose_data = [y for x, y in list(dataList[pose_index].items()) if type(y) == int]
 
-    if(right_leg<=tadasan[2]):
-        acc=(right_leg/tadasan[2])*100
+    if right_leg <= pose_data[2]:
+        acc = (right_leg / pose_data[2]) * 100
     else:
-        acc=0
+        acc = 0
 
-    if abs(tadasan[2]-right_leg)<=10:
-    #  and tadasan[1]-left_arm<5 and tadasan[0]-right_leg<5 and tadasan[0]-left_leg<5:
-        
+    if abs(pose_data[2] - right_leg) <= 10:
         print("Your right leg is accurate")
-        # t1 = gtts.gTTS("Your right leg is accurate") 
-        # t1.save("right_leg.mp3")    
-        # playsound("right_leg.mp3") 
-                 
     else:
         print("Your right leg is not accurate, try again") 
-        # t1 = gtts.gTTS("Your right leg is not accurate, try again") 
-        # t1.save("right_leg_no.mp3")    
-        # playsound("right_leg_no.mp3") 
 
     return acc
-        
        
 def compare_left_leg(left_leg):
-    # for index in range(len(dataList)):
-            # for key in dataList[index]:
-
-    tadasan=[y for x, y in list(dataList[0].items()) if type(y) == int]
-        # vrksana=[y for x, y in list(dataList[1].items()) if type(y) == int]
-        # balasana=[y for x, y in list(dataList[2].items()) if type(y) == int]
-        # trikonasana=[y for x, y in list(dataList[3].items()) if type(y) == int]
-        # virabhadrasana=[y for x, y in list(dataList[4].items()) if type(y) == int]
-        # adhomukha=[y for x, y in list(dataList[5].items()) if type(y) == int]
-    if(left_leg<=tadasan[3]):
-        acc=(left_leg/tadasan[3])*100
+    # Get the pose data based on the current global pose
+    pose_index = get_pose_index(current_pose)
+    pose_data = [y for x, y in list(dataList[pose_index].items()) if type(y) == int]
+    
+    if left_leg <= pose_data[3]:
+        acc = (left_leg / pose_data[3]) * 100
     else:
-        acc=0
+        acc = 0
 
-
-    if abs(tadasan[3]-left_leg and left_leg<tadasan[3] )<=10:
-    #  and tadasan[1]-left_arm<5 and tadasan[0]-right_leg<5 and tadasan[0]-left_leg<5:
+    if abs(pose_data[3] - left_leg) <= 10 and left_leg < pose_data[3]:
        print("Your left leg is accurate") 
-        # t1 = gtts.gTTS("Your left leg is accurate") 
-        # t1.save("left_leg.mp3")    
-        # playsound("left_leg.mp3") 
     else:
         print("Your left leg is not accurate, try again") 
-        # t1 = gtts.gTTS("Your left leg is not accurate, try again") 
-        # t1.save("left_leg_no.mp3")    
-        # playsound("left_leg_no.mp3") 
     
     return acc
-
 
 arr = np.array([])
     
 def generate_frames(arr):
-    count=0
-    timeout=20
-    timeout_start=time.time()
-    while time.time()<timeout_start+timeout:
-     while True:
-            
-        ## read the camera frame
-        success, frame = cap.read()
-        frame = cv2.flip(frame, 1)
-  
-        #resize the image
-        img=frame.copy()
-         
-
-        img =tf.image.resize_with_pad(tf.expand_dims(img, axis=0), 192,256)
-        input_img=tf.cast(img, dtype=tf.int32)
-            
-        # detecting the image
-        results=movenet(input_img)
-        keypoints_with_scores=results['output_0'].numpy()[:,:,:51].reshape((6,17,3)) #finding the main keypoints that we need for detection
-        
-        #showing the keypoints on to the screen
-        loop_through_people(frame, keypoints_with_scores, EDGES, 0.1)
-        cv2.imshow('Users Yoga Pose', frame)
-
-        # points detection 
-        frame=detector.findPose(frame,False)
-        lmlist=detector.getPosition(frame,False)
-        
-        if len(lmlist)!=0:
-            
-            #right arm
-            RightArmAngle=int(detector.findAngle(frame,12,14,16))
-            accuracy=compare_right_arm(RightArmAngle)
-            # print("acc: ", accuracy)
-            if (count<=16 and accuracy!=0):
-                arr=np.append(arr, accuracy)
-                count=count+1
-
-            #left arm
-            angle=int(detector.findAngle(frame,11,13,15))
-            accuracy=compare_left_arm(angle)
-            # print(accuracy)
-            if (count<=16 and accuracy!=0):
-                arr=np.append(arr, accuracy)
-                count=count+1
-            
-            
-            #right leg
-            angle=int(detector.findAngle(frame,24,26,28))
-            accuracy=compare_right_leg(angle)
-            if (count<=16 and accuracy!=0):
-                arr=np.append(arr, accuracy)
-                count=count+1
-           
-            
-            
-            
-            #left leg
-            angle=int(detector.findAngle(frame,23,25,27))
-            accuracy=compare_left_leg(angle)
-            if (count<=16 and accuracy!=0):
-                arr=np.append(arr, accuracy)
-                count=count+1
-            elif(count>16):
-                print("entring")
-                print("accuracy: ", accuracyCaluclation(arr))
-
+    global accuracy_data
+    count = 0
+    timeout = 20
+    timeout_start = time.time()
+    
+    while time.time() < timeout_start + timeout:
+        while True:
+            ## read the camera frame
+            success, frame = cap.read()
+            if not success:
+                break
                 
+            frame = cv2.flip(frame, 1)
+      
+            # resize the image
+            img = frame.copy()
+             
+            # Use our PoseDetector
+            frame = detector.findPose(frame, draw=True)
+            lmlist = detector.getPosition(frame, draw=False)
+            
+            # Check if we have a person in frame
+            if len(lmlist) != 0:
+                # Add breathing guidance
+                frame = detector.showBreathingGuide(frame)
                 
-        cv2.waitKey(1)
-        ret,buffer=cv2.imencode('.jpg',frame)
-        frame=buffer.tobytes()
+                # Continue with angle-based measurements
+                # Right arm
+                RightArmAngle = int(detector.findAngle(frame, 12, 14, 16))
+                accuracy = compare_right_arm(RightArmAngle)
+                if (count <= 16 and accuracy != 0):
+                    arr = np.append(arr, accuracy)
+                    count = count + 1
+                    accuracy_data['poses'].append('Right Arm')
+                    accuracy_data['values'].append(accuracy)
 
-        yield(b'--frame\r\n'
-                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-        print('Original Array:', arr)
-        x=range(1, len(arr)+1)
-        y=arr
-        plt.plot(x,y)
+                # Left arm
+                angle = int(detector.findAngle(frame, 11, 13, 15))
+                accuracy = compare_left_arm(angle)
+                if (count <= 16 and accuracy != 0):
+                    arr = np.append(arr, accuracy)
+                    count = count + 1
+                    accuracy_data['poses'].append('Left Arm')
+                    accuracy_data['values'].append(accuracy)
+                
+                # Right leg
+                angle = int(detector.findAngle(frame, 24, 26, 28))
+                accuracy = compare_right_leg(angle)
+                if (count <= 16 and accuracy != 0):
+                    arr = np.append(arr, accuracy)
+                    count = count + 1
+                    accuracy_data['poses'].append('Right Leg')
+                    accuracy_data['values'].append(accuracy)
+               
+                # Left leg
+                angle = int(detector.findAngle(frame, 23, 25, 27))
+                accuracy = compare_left_leg(angle)
+                if (count <= 16 and accuracy != 0):
+                    arr = np.append(arr, accuracy)
+                    count = count + 1
+                    accuracy_data['poses'].append('Left Leg')
+                    accuracy_data['values'].append(accuracy)
+                elif(count > 16):
+                    print("entering")
+                    print("accuracy: ", accuracyCalculation(arr))
+                    
+            cv2.waitKey(1)
+            ret, buffer = cv2.imencode('.jpg', frame)
+            frame = buffer.tobytes()
 
+            yield(b'--frame\r\n'
+                  b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+            print('Original Array:', arr)
+            x = range(1, len(arr) + 1)
+            y = arr
+            plt.plot(x, y)
 
-
-def accuracyCaluclation (arr):
+def accuracyCalculation(arr):
     accArray = np.array([])
-    sum=0
-    f=0
-    # print('Original Array:', arr)
-    for j in range (0, len(arr)-1, 4):
-        for i in range(j,j+4):
-            print("arr[i]",arr[i])
-            sum=sum+arr[i]
-        accur=sum/4
-        accArray=np.append(accArray,accur/4)
+    sum = 0
+    for j in range(0, len(arr) - 1, 4):
+        sum = 0
+        for i in range(j, min(j + 4, len(arr))):
+            print("arr[i]", arr[i])
+            sum = sum + arr[i]
+        accur = sum / 4
+        accArray = np.append(accArray, accur)
     
     return accArray
-
-
-
 
 @app.route("/")
 def home():
@@ -363,21 +310,359 @@ def yoga():
 
 @app.route('/index')
 def index():
-    return render_template('index.html')
+    pose = request.args.get('pose', 'vrksana')  # Default to vrksana if no pose is specified
+    
+    # Define pose name mappings
+    pose_names = {
+        'vrksana': 'Vrksasana',
+        'adhomukha': 'Adho Mukha',
+        'balasana': 'Balasana',
+        'tadasan': 'Tadasana',
+        'trikonasana': 'Trikonasana',
+        'virabhadrasana': 'Virabhadrasana'
+    }
+    
+    # Define image mappings - use exact filenames from static/images folder
+    gif_mappings = {
+        'vrksana': 'vrksana.jpg',
+        'adhomukha': 'adho_mukha.jpeg',
+        'balasana': 'balasana.jpg',
+        'tadasan': 'Tad-asan.gif',  # Updated to match the actual file in static/images
+        'trikonasana': 'trikonasana.jpg',
+        'virabhadrasana': 'virabhadrasana.jpg',
+        'bhujangasana': 'bhujangasana.jpg',
+        'setubandhasana': 'setubandhasana.png',
+        'uttanasana': 'uttanasana.png',
+        'shavasana': 'shavasana.png',
+        'ardhamatsyendrasana': 'ardhamatsyendrasana.png'
+    }
+    
+    # Define Sanskrit names
+    sanskrit_names = {
+        'vrksana': 'वृक्षासन',
+        'adhomukha': 'अधोमुखश्वानासन',
+        'balasana': 'बालासन',
+        'tadasan': 'ताड़ासन',
+        'trikonasana': 'त्रिकोणासन',
+        'virabhadrasana': 'वीरभद्रासन',
+        'bhujangasana': 'भुजङ्गासन',
+        'setubandhasana': 'सेतुबन्धासन',
+        'uttanasana': 'उत्तानासन',
+        'shavasana': 'शवासन',
+        'ardhamatsyendrasana': 'अर्धमत्स्येन्द्रासन'
+    }
+    
+    # Define English names
+    english_names = {
+        'vrksana': 'Tree Pose',
+        'adhomukha': 'Downward Facing Dog',
+        'balasana': 'Child\'s Pose',
+        'tadasan': 'Mountain Pose',
+        'trikonasana': 'Triangle Pose',
+        'virabhadrasana': 'Warrior Pose',
+        'bhujangasana': 'Cobra Pose',
+        'setubandhasana': 'Bridge Pose',
+        'uttanasana': 'Standing Forward Bend',
+        'shavasana': 'Corpse Pose',
+        'ardhamatsyendrasana': 'Half Lord of the Fishes Pose'
+    }
+    
+    # Define breathing patterns
+    breathing_patterns = {
+        'vrksana': {'total_cycle': 6, 'inhale_ratio': 0.4},       # Tree pose: 2.4s inhale, 3.6s exhale
+        'adhomukha': {'total_cycle': 8, 'inhale_ratio': 0.5},     # Downward dog: 4s inhale, 4s exhale 
+        'balasana': {'total_cycle': 10, 'inhale_ratio': 0.3},     # Child's pose: 3s inhale, 7s exhale (more relaxed)
+        'tadasan': {'total_cycle': 5, 'inhale_ratio': 0.5},       # Mountain pose: 2.5s inhale, 2.5s exhale
+        'trikonasana': {'total_cycle': 7, 'inhale_ratio': 0.4},   # Triangle pose: 2.8s inhale, 4.2s exhale
+        'virabhadrasana': {'total_cycle': 6, 'inhale_ratio': 0.45} # Warrior pose: 2.7s inhale, 3.3s exhale
+    }
+    
+    # Get the current pattern
+    pattern = breathing_patterns.get(pose, breathing_patterns['vrksana'])
+    
+    # Calculate breathing times
+    inhale_time = round(pattern['total_cycle'] * pattern['inhale_ratio'], 1)
+    exhale_time = round(pattern['total_cycle'] * (1 - pattern['inhale_ratio']), 1)
+    
+    # Get the proper pose name and image file
+    pose_name = pose_names.get(pose, 'Vrksasana')
+    gif_name = gif_mappings.get(pose, 'vrksana.jpg')
+    sanskrit_name = sanskrit_names.get(pose, '')
+    english_name = english_names.get(pose, '')
+    
+    # Store the selected pose in global variable
+    global current_pose
+    current_pose = pose
+    
+    # Also update the detector's pose name
+    global detector
+    detector.setPose(pose)
+    
+    return render_template('index.html', 
+                          pose_name=pose_name, 
+                          gif_name=gif_name,
+                          pose_param=pose,
+                          sanskrit_name=sanskrit_name,
+                          english_name=english_name,
+                          pattern=pattern,
+                          inhale_time=inhale_time,
+                          exhale_time=exhale_time)
 
-@app.route('/charts' )
+@app.route('/charts')
 def charts():
-    accArray=accuracyCaluclation(arr)
-    values = [12, 19, 3, 5, 2, 3]
-    labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']
-    colors = ['#ff0000','#0000ff','#ffffe0','#008000','#800080','#FFA500', '#FF2554', ]
-    return render_template('charts.html', values=accArray, labels=labels, colors=colors)
+    # Use the updated accuracy data
+    if len(accuracy_data['values']) == 0:
+        # Generate sample data if no real data exists yet
+        values = [67, 78, 68, 89, 69, 59, 70, 61, 84, 78]
+    else:
+        values = accuracy_data['values']
+        
+    labels = ['Right Arm', 'Left Arm', 'Right Leg', 'Left Leg']
+    colors = ['#ff0000','#0000ff','#ffffe0','#008000','#800080','#FFA500', '#FF2554']
+    return render_template('charts.html', values=values, labels=labels, colors=colors)
 
 @app.route('/video')
-
-
 def video():
+    # Get the pose parameter from the request
+    pose = request.args.get('pose', 'vrksana')
+    
+    # Update global detector with the selected pose
+    global detector
+    detector.setPose(pose)
+    
     return Response(generate_frames(arr), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-if __name__=="__main__":
-    app.run(host = "127.0.0.1",debug=True)
+# API endpoints for React frontend
+@app.route('/api/poses', methods=['GET'])
+def get_poses():
+    """Return all available poses"""
+    poses = [
+        {
+            "id": "vrksana",
+            "name": "Vrksasana",
+            "sanskritName": "वृक्षासन",
+            "englishName": "Tree Pose",
+            "description": "A classic standing posture. It establishes strength and balance, and helps you feel centered.",
+            "benefits": [
+                "Improves balance and stability",
+                "Strengthens the legs, ankles, and feet",
+                "Opens the hips and stretches the inner thighs",
+                "Improves focus and concentration",
+                "Builds confidence and self-esteem"
+            ],
+            "instructions": [
+                "Begin standing with feet together, arms at sides.",
+                "Shift weight to left foot, bending right knee.",
+                "Place right foot on left inner thigh, toes pointing down.",
+                "Bring palms together at heart center or reach arms overhead.",
+                "Fix gaze on a steady point for balance.",
+                "Hold for 30-60 seconds, then switch sides."
+            ],
+            "cautions": [
+                "Avoid if you have low blood pressure or migraine",
+                "Be cautious if you have knee, hip, or ankle injuries",
+                "Use a wall for support if balance is challenging"
+            ],
+            "imageSrc": "/static/images/vrksana.jpg",
+            "gifName": "vrksana.jpg"
+        },
+        {
+            "id": "adhomukha",
+            "name": "Adho Mukha",
+            "sanskritName": "अधोमुखश्वानासन",
+            "englishName": "Downward Facing Dog",
+            "description": "It strengthens the core and improves circulation, while providing full-body stretch.",
+            "benefits": [
+                "Stretches the hamstrings, calves, and shoulders",
+                "Strengthens the arms, shoulders, and legs",
+                "Increases blood flow to the brain",
+                "Relieves back pain and tension",
+                "Energizes the body"
+            ],
+            "instructions": [
+                "Start on hands and knees, hands shoulder-width apart.",
+                "Tuck toes and lift knees off the floor.",
+                "Straighten legs as much as possible, lifting hips toward ceiling.",
+                "Press chest toward thighs, creating an inverted V-shape.",
+                "Keep head between arms, gazing toward navel.",
+                "Hold for 1-3 minutes, breathing deeply."
+            ],
+            "cautions": [
+                "Modify if you have carpal tunnel syndrome",
+                "Bend knees if hamstrings are tight",
+                "Not recommended for those with severe hypertension"
+            ],
+            "imageSrc": "/static/images/adho_mukha.jpeg",
+            "gifName": "adho_mukha.jpeg"
+        },
+        {
+            "id": "balasana",
+            "name": "Balasana",
+            "sanskritName": "बालासन",
+            "englishName": "Child's Pose",
+            "description": "Balasana is a restful pose that can be sequenced between more challenging asanas.",
+            "benefits": [
+                "Gently stretches the lower back and hips",
+                "Relieves stress and fatigue",
+                "Calms the mind and reduces anxiety",
+                "Helps release tension in the shoulders",
+                "Promotes relaxation and surrender"
+            ],
+            "instructions": [
+                "Kneel on the floor with knees hip-width apart.",
+                "Touch big toes together and sit on heels.",
+                "Exhale and lay torso down between thighs.",
+                "Extend arms forward or alongside body.",
+                "Rest forehead on mat and breathe deeply.",
+                "Hold for 30 seconds to several minutes."
+            ],
+            "cautions": [
+                "Use caution with knee injuries",
+                "Avoid during late pregnancy",
+                "Modify with props if needed for comfort"
+            ],
+            "imageSrc": "/static/images/balasana.jpg",
+            "gifName": "balasana.jpg"
+        },
+        {
+            "id": "tadasan",
+            "name": "Tadasana",
+            "sanskritName": "ताड़ासन",
+            "englishName": "Mountain Pose",
+            "description": "The foundation of all standing poses. It improves posture, balance, and body awareness.",
+            "benefits": [
+                "Improves posture and alignment",
+                "Strengthens thighs, knees, and ankles",
+                "Increases awareness and focus",
+                "Develops steady breathing",
+                "Creates a foundation for other standing poses"
+            ],
+            "instructions": [
+                "Stand with feet together or hip-width apart.",
+                "Distribute weight evenly through feet.",
+                "Engage thigh muscles and lift kneecaps.",
+                "Lengthen spine and lift chest.",
+                "Relax shoulders down and back.",
+                "Breathe deeply for 30-60 seconds."
+            ],
+            "cautions": [
+                "Widen stance if balance is difficult",
+                "Use a wall for support if needed",
+                "Modify if you have low blood pressure"
+            ],
+            "imageSrc": "/static/images/Tad-asan.gif",
+            "gifName": "Tad-asan.gif"
+        },
+        {
+            "id": "trikonasana",
+            "name": "Trikonasana",
+            "sanskritName": "त्रिकोणासन",
+            "englishName": "Triangle Pose",
+            "description": "It is a quintessential standing pose that stretches and strengthens the whole body.",
+            "benefits": [
+                "Stretches legs, hips, groin, and hamstrings",
+                "Strengthens thighs, knees, and ankles",
+                "Opens chest and shoulders",
+                "Improves digestion",
+                "Reduces stress and anxiety"
+            ],
+            "instructions": [
+                "Stand with feet wide apart.",
+                "Turn right foot out 90° and left foot slightly in.",
+                "Extend arms parallel to floor.",
+                "Reach right hand down toward right ankle.",
+                "Extend left arm toward ceiling.",
+                "Hold for 30-60 seconds, then switch sides."
+            ],
+            "cautions": [
+                "Avoid if you have severe back pain",
+                "Use a block under hand if flexibility is limited",
+                "Modify head position if you have neck issues"
+            ],
+            "imageSrc": "/static/images/trikonasana.jpg",
+            "gifName": "trikonasana.jpg"
+        },
+        {
+            "id": "virabhadrasana",
+            "name": "Virabhadrasana",
+            "sanskritName": "वीरभद्रासन",
+            "englishName": "Warrior Pose",
+            "description": "It is a foundational yoga pose that balances flexibility and strength in true warrior fashion.",
+            "benefits": [
+                "Strengthens legs, core, and back",
+                "Opens hips and chest",
+                "Improves concentration and balance",
+                "Builds stamina and endurance",
+                "Stimulates abdominal organs"
+            ],
+            "instructions": [
+                "Start in Mountain Pose, step one foot back.",
+                "Align front heel with back arch.",
+                "Bend front knee over ankle.",
+                "Lift arms overhead or alongside body.",
+                "Gaze forward and breathe steadily.",
+                "Hold for 30-60 seconds, then switch sides."
+            ],
+            "cautions": [
+                "Avoid with high blood pressure (arms overhead)",
+                "Modify knee bend if you have knee issues",
+                "Use caution with shoulder injuries"
+            ],
+            "imageSrc": "/static/images/virabhadrasana.jpg",
+            "gifName": "virabhadrasana.jpg"
+        }
+    ]
+    return jsonify(poses)
+
+@app.route('/api/poses/<pose_id>', methods=['GET'])
+def get_pose(pose_id):
+    """Return details for a specific pose"""
+    poses = json.loads(get_poses().get_data())
+    pose = next((p for p in poses if p["id"] == pose_id), None)
+    
+    if pose:
+        return jsonify(pose)
+    else:
+        return jsonify({"error": "Pose not found"}), 404
+
+@app.route('/api/accuracy', methods=['GET'])
+def get_accuracy():
+    """Return accuracy data for analytics"""
+    if len(accuracy_data['values']) == 0:
+        values = [67, 78, 68, 89, 69, 59, 70, 61, 84, 78]
+    else:
+        values = accuracy_data['values']
+    
+    labels = ['Right Arm', 'Left Arm', 'Right Leg', 'Left Leg']
+    return jsonify({
+        'values': values,
+        'labels': labels,
+        'poses': accuracy_data.get('poses', ['Pose 1', 'Pose 2', 'Pose 3', 'Pose 4'])
+    })
+
+@app.route('/api/video')
+def api_video():
+    """API endpoint for video stream"""
+    pose = request.args.get('pose', 'vrksana')
+    global detector
+    detector.setPose(pose)
+    return Response(generate_frames(arr), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+# Serve static images with fallback to placeholder
+@app.route('/static/images/<path:filename>')
+def serve_static_images(filename):
+    """Try to serve static images with fallback to placeholder"""
+    # First check if the file exists in the static folder
+    file_path = os.path.join(os.path.dirname(__file__), 'static', 'images', filename)
+    
+    if os.path.isfile(file_path):
+        # If file exists, serve it directly from the actual static folder
+        return app.send_static_file(f'images/{filename}')
+    else:
+        # If not found, extract the pose name from the filename and return a 404
+        print(f"Image not found: {filename}")
+        return "Image not found", 404
+
+if __name__ == "__main__":
+    print(f"Static folder path: {app.static_folder}")
+    app.run(host="127.0.0.1", debug=True)

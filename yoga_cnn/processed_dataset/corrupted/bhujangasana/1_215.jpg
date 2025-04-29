@@ -1,0 +1,1580 @@
+	<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js g1-off-outside lt-ie10 lt-ie9" id="ie8" lang="en-US"><![endif]-->
+<!--[if IE 9]>
+<html class="no-js g1-off-outside lt-ie10" id="ie9" lang="en-US"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js g1-off-outside" lang="en-US"><!--<![endif]-->
+<head><meta charset="UTF-8"/><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+	
+	<link rel="profile" href="http://gmpg.org/xfn/11"/>
+	
+
+	<title>The Impressive Benefits of Nigella Sativa (Black Seed Oil)</title><link rel="preload" href="https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-758x397.jpg" as="image" imagesrcset="https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-758x397.jpg 758w, https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-300x157.jpg 300w, https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-1024x536.jpg 1024w, https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-768x402.jpg 768w, https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-320x167.jpg 320w, https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-640x335.jpg 640w, https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal.jpg 1200w" imagesizes="(max-width: 758px) 100vw, 758px" /><link rel='preload' href='https://www.ahealthblog.com/wp-content/themes/ahealthblog2019/fonts/fontawesome-webfont.woff?v=4.4.0' as='font' crossorigin><link rel='preload' href='https://www.ahealthblog.com/wp-content/themes/ahealthblog2019/fonts/fontawesome-webfont.ttf?v=4.4.0' as='font' crossorigin><link rel="stylesheet" href="https://www.ahealthblog.com/wp-content/cache/min/1/b27141c7285d98d1dcb7118f23146ea6.css" media="all" data-minify="1" />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, height=device-height, width=device-width" />
+
+<!-- The SEO Framework by Sybre Waaijer -->
+<meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1" />
+<link rel="canonical" href="https://www.ahealthblog.com/the-impressive-benefits-of-nigella-sativa-black-seed-oil.html" />
+<meta name="description" content="The ultimate guide for Black Seed Oil or Nigella Sativa. This ancient seed is a powerful supplement. It&#8217;s anti inflammatory, anti&#x2d;microbial, and more!" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="AHealthBlog" />
+<meta property="og:title" content="The Impressive Benefits of Nigella Sativa (Black Seed Oil)" />
+<meta property="og:description" content="The ultimate guide for Black Seed Oil or Nigella Sativa. This ancient seed is a powerful supplement. It&#8217;s anti inflammatory, anti&#x2d;microbial, and more!" />
+<meta property="og:url" content="https://www.ahealthblog.com/the-impressive-benefits-of-nigella-sativa-black-seed-oil.html" />
+<meta property="og:image" content="https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="628" />
+<meta property="og:image:alt" content="Black Seed Oil Horizontal" />
+<meta property="article:published_time" content="2023-11-10T23:34:26+00:00" />
+<meta property="article:modified_time" content="2023-11-10T23:45:47+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@ahealthblog" />
+<meta name="twitter:title" content="The Impressive Benefits of Nigella Sativa (Black Seed Oil)" />
+<meta name="twitter:description" content="The ultimate guide for Black Seed Oil or Nigella Sativa. This ancient seed is a powerful supplement. It&#8217;s anti inflammatory, anti&#x2d;microbial, and more!" />
+<meta name="twitter:image" content="https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal.jpg" />
+<meta name="twitter:image:alt" content="Black Seed Oil Horizontal" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.ahealthblog.com/#/schema/WebSite","url":"https://www.ahealthblog.com/","name":"AHealthBlog","description":"Health, Fitness, and Wellness","inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.ahealthblog.com/search/{search_term_string}"},"query-input":"required name=search_term_string"},"publisher":{"@type":"Organization","@id":"https://www.ahealthblog.com/#/schema/Organization","name":"AHealthBlog","url":"https://www.ahealthblog.com/"}},{"@type":"WebPage","@id":"https://www.ahealthblog.com/the-impressive-benefits-of-nigella-sativa-black-seed-oil.html","url":"https://www.ahealthblog.com/the-impressive-benefits-of-nigella-sativa-black-seed-oil.html","name":"The Impressive Benefits of Nigella Sativa (Black Seed Oil)","description":"The ultimate guide for Black Seed Oil or Nigella Sativa. This ancient seed is a powerful supplement. It&#8217;s anti inflammatory, anti&#x2d;microbial, and more!","inLanguage":"en-US","isPartOf":{"@id":"https://www.ahealthblog.com/#/schema/WebSite"},"breadcrumb":{"@type":"BreadcrumbList","@id":"https://www.ahealthblog.com/#/schema/BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":"https://www.ahealthblog.com/","name":"AHealthBlog"},{"@type":"ListItem","position":2,"item":"https://www.ahealthblog.com/category/uncategorized","name":"Category: Uncategorized"},{"@type":"ListItem","position":3,"name":"The Impressive Benefits of Nigella Sativa (Black Seed Oil)"}]},"potentialAction":{"@type":"ReadAction","target":"https://www.ahealthblog.com/the-impressive-benefits-of-nigella-sativa-black-seed-oil.html"},"datePublished":"2023-11-10T23:34:26+00:00","dateModified":"2023-11-10T23:45:47+00:00","author":{"@type":"Person","@id":"https://www.ahealthblog.com/#/schema/Person/9566c16b5c330f4f733530f0fc046876","name":"Louis Dewitt-Hoeger","sameAs":"https://twitter.com/ahealthblog","description":"Louis is the current owner of AHealthBlog, which regularly publishes evidence based health and fitness news and information. When he isn&rsquo;t writing, you can find him staying active."}}]}</script>
+<!-- / The SEO Framework by Sybre Waaijer | 9.32ms meta | 8.38ms boot -->
+
+<link href="https://www.ahealthblog.com/wp-content/plugins/fixed-toc/frontend/assets/fonts/icons.woff2?45335921" rel="preload" as="font" type="font/woff" crossorigin><script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="http://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=11675e7bca3d67ccdec889b6cdf264ba2ec008bb" defer></script><link rel="alternate" type="application/rss+xml" title="AHealthBlog &raquo; Feed" href="https://www.ahealthblog.com/feed" />
+<!-- ahealthblog.com is managing ads with Advanced Ads 1.28.0 --><!--noptimize--><script id="aheal-ready">
+			window.advanced_ads_ready=function(e,a){a=a||"complete";var d=function(e){return"interactive"===a?"loading"!==e:"complete"===e};d(document.readyState)?e():document.addEventListener("readystatechange",(function(a){d(a.target.readyState)&&e()}),{once:"interactive"===a})},window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[];		</script>
+		<!--/noptimize-->
+
+
+
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='afpb-button-style-inline-css' type='text/css'>
+.wp-block-afpb-button a{line-height:1;padding:10px 20px;text-align:center;text-decoration:none;transition:.3s}
+
+</style>
+<style id='afpb-props-cons-style-inline-css' type='text/css'>
+.wp-block-afpb-props-cons{align-items:stretch;display:flex;flex-wrap:wrap;justify-content:space-between}.wp-block-afpb-props-cons .afpb__cons_box,.wp-block-afpb-props-cons .afpb__props_box{position:relative;width:48%}.wp-block-afpb-props-cons .afpb__icon{background:#fff;border-radius:50%;height:36px;left:50%;line-height:36px;margin-left:-18px;margin-top:-18px;position:absolute;text-align:center;top:0;width:36px}.wp-block-afpb-props-cons .afpb__icon i{font-size:18px}.wp-block-afpb-props-cons .afpb__cons_list ul,.wp-block-afpb-props-cons .afpb__props_list ul{list-style:none!important;margin:0;padding:0}.wp-block-afpb-props-cons .afpb__cons_list ul li,.wp-block-afpb-props-cons .afpb__props_list ul li{line-height:1.6;position:relative}.wp-block-afpb-props-cons .afpb__cons_list ul li:before,.wp-block-afpb-props-cons .afpb__props_list ul li:before{font-family:Font Awesome\ 5 Free;font-weight:900;left:-25px;position:absolute;top:0}.wp-block-afpb-props-cons .afpb__props_list li:before{content:""}.wp-block-afpb-props-cons .afpb__cons_list li:before{content:""}.wp-block-afpb-props-cons .afpb__cons_list,.wp-block-afpb-props-cons .afpb__props_list{padding:30px 15px 15px 40px}@media only screen and (max-width:767px){.wp-block-afpb-props-cons{flex-direction:column}.wp-block-afpb-props-cons .afpb__cons_box,.wp-block-afpb-props-cons .afpb__props_box{width:100%}.wp-block-afpb-props-cons .afpb__props_box{margin-bottom:30px}}
+
+</style>
+<style id='afpb-review-list-style-inline-css' type='text/css'>
+.rate-select-layer span{color:#ebae00}.rate-base-layer span{color:#7c7c7c}.wp-block-afpb-review-list{align-items:center;box-sizing:border-box;display:flex;justify-content:space-between;margin:15px auto;padding:20px;position:relative}.wp-block-afpb-review-list p:empty{display:none}.wp-block-afpb-review-list .afpb__badge{border-radius:0 20px 20px 0;box-sizing:border-box;font-size:14px;left:-1px;margin-top:-16px;padding:5px 10px;position:absolute;top:0}.wp-block-afpb-review-list .product_photo img{margin:0 auto;max-width:80%}.wp-block-afpb-review-list .product_photo{text-align:center;width:20%}.wp-block-afpb-review-list .product_content{width:50%}.wp-block-afpb-review-list .product__action_area{text-align:center;width:25%}.wp-block-afpb-review-list .product__action_area .product_rating{align-items:center;display:flex;justify-content:center;margin-bottom:5px}.wp-block-afpb-review-list .product__action_area span.rating_value{margin-right:5px}.wp-block-afpb-review-list .afpb__props_list{margin-left:25px}.wp-block-afpb-review-list .title_tag{margin:0 0 15px!important}.wp-block-afpb-review-list .afpb__props_list ul{list-style:none!important;margin:0;padding:0}.wp-block-afpb-review-list .afpb__props_list ul li{line-height:1.4;margin-bottom:7px;position:relative}.wp-block-afpb-review-list .afpb__props_list ul li:before{font-family:Font Awesome\ 5 Free;font-weight:900;left:-25px;position:absolute;top:0}.wp-block-afpb-review-list .afpb__props_list li:before{content:""}.wp-block-afpb-review-list .afpb__icon{background:#fff;border-radius:50%;font-size:17px;height:34px;left:50%;line-height:34px;margin-left:-17px;margin-top:-17px;position:absolute;text-align:center;top:0;width:34px}.wp-block-afpb-review-list a.afpb__btn{display:inline-block;line-height:1.2;padding:8px 10px;text-align:center;text-decoration:none;transition:.3s}@media only screen and (max-width:767px){.wp-block-afpb-review-list{flex-direction:column}.wp-block-afpb-review-list .product__action_area,.wp-block-afpb-review-list .product_content,.wp-block-afpb-review-list .product_photo{width:100%}.wp-block-afpb-review-list .product_photo img{margin-bottom:15px;width:50%}.wp-block-afpb-review-list .product__action_area{margin-top:20px}}
+
+</style>
+<style id='afpb-review-style-one-style-inline-css' type='text/css'>
+.rate-select-layer span{color:#ebae00}.rate-base-layer span{color:#7c7c7c}.wp-block-afpb-review-style-one{position:relative}.wp-block-afpb-review-style-one p:empty{display:none}.wp-block-afpb-review-style-one .afpb__badge{border-radius:0 20px 20px 0;box-sizing:border-box;font-size:14px;left:0;margin-top:-16px;padding:5px 10px;position:absolute;top:0}.wp-block-afpb-review-style-one .afpb__product_info{align-items:center;display:flex;flex-wrap:wrap;justify-content:space-between;padding:30px 20px 20px}.wp-block-afpb-review-style-one .afpb__product_info.afpb__product_info--reverse{flex-direction:row-reverse}.wp-block-afpb-review-style-one .product_content,.wp-block-afpb-review-style-one .product_photo{width:48%}.wp-block-afpb-review-style-one .product_photo img{margin:0 auto;max-width:90%}.wp-block-afpb-review-style-one .title_tag{margin:0 0 15px!important}.wp-block-afpb-review-style-one .product_rating{display:flex}.wp-block-afpb-review-style-one span.rating_value{color:#ebae00;display:inline-block;margin-right:5px}.wp-block-afpb-review-style-one .product_description{margin-top:5px}.wp-block-afpb-review-style-one .product_description p{margin-top:0}.wp-block-afpb-review-style-one .afpb__props_cons{align-items:stretch;display:flex;flex-wrap:wrap;justify-content:space-between;margin:30px 0 20px}.wp-block-afpb-review-style-one .afpb__cons_box,.wp-block-afpb-review-style-one .afpb__props_box{box-sizing:border-box;padding:30px 15px 15px 40px;position:relative;width:48%}.wp-block-afpb-review-style-one .afpb__cons_list ul,.wp-block-afpb-review-style-one .afpb__props_list ul{list-style:none!important;margin:0;padding:0}.wp-block-afpb-review-style-one .afpb__cons_list ul li,.wp-block-afpb-review-style-one .afpb__props_list ul li{line-height:1.4;margin-bottom:7px;position:relative}.wp-block-afpb-review-style-one .afpb__cons_list ul li:before,.wp-block-afpb-review-style-one .afpb__props_list ul li:before{font-family:Font Awesome\ 5 Free;font-weight:900;left:-25px;position:absolute;top:0}.wp-block-afpb-review-style-one .afpb__props_list li:before{content:""}.wp-block-afpb-review-style-one .afpb__cons_list li:before{content:""}.wp-block-afpb-review-style-one .afpb__icon{background:#fff;border-radius:50%;font-size:17px;height:34px;left:50%;line-height:34px;margin-left:-17px;margin-top:-17px;position:absolute;text-align:center;top:0;width:34px}.wp-block-afpb-review-style-one a.afpb__btn{display:block;line-height:1;padding:10px 20px;text-align:center;text-decoration:none;transition:.3s}@media only screen and (max-width:767px){.wp-block-afpb-review-style-one .afpb__product_info,.wp-block-afpb-review-style-one .afpb__product_info.afpb__product_info--reverse{flex-direction:column}.wp-block-afpb-review-style-one .product_content,.wp-block-afpb-review-style-one .product_photo{width:100%}.wp-block-afpb-review-style-one .afpb__props_cons{flex-direction:column}.wp-block-afpb-review-style-one .afpb__cons_box,.wp-block-afpb-review-style-one .afpb__props_box{width:100%}.wp-block-afpb-review-style-one .afpb__props_box{padding:15px 15px 15px 40px}.wp-block-afpb-review-style-one .afpb__cons_box{padding:0 15px 15px 40px;width:100%}.wp-block-afpb-review-style-one .afpb__icon{display:none}}
+
+</style>
+<style id='afpb-product-showcase-style-inline-css' type='text/css'>
+.rate-select-layer span{color:#ebae00}.rate-base-layer span{color:#7c7c7c}.wp-block-afpb-product-showcase{position:relative}.wp-block-afpb-product-showcase p:empty{display:none}.wp-block-afpb-product-showcase .afpb__badge{border-radius:0 20px 20px 0;box-sizing:border-box;font-size:14px;left:0;margin-top:-16px;padding:5px 10px;position:absolute;top:0}.wp-block-afpb-product-showcase .afpb__product_info{align-items:center;display:flex;flex-wrap:wrap;justify-content:space-between;padding:30px 20px 20px}.wp-block-afpb-product-showcase .afpb__product_info.afpb__product_info--reverse{flex-direction:row-reverse}.wp-block-afpb-product-showcase .product_content,.wp-block-afpb-product-showcase .product_photo{width:48%}.wp-block-afpb-product-showcase .product_photo{text-align:center}.wp-block-afpb-product-showcase .product_photo img{max-width:90%}.wp-block-afpb-product-showcase .title_tag{margin:0 0 15px!important}.wp-block-afpb-product-showcase .product_rating{display:flex}.wp-block-afpb-product-showcase span.rating_value{color:#ebae00;display:inline-block;margin-right:5px}.wp-block-afpb-product-showcase .product_description{margin-top:5px}.wp-block-afpb-product-showcase .product_description p{margin-top:0}.wp-block-afpb-product-showcase .afpb__cons_list ul,.wp-block-afpb-product-showcase .afpb__props_list ul{list-style:none!important;margin:0;padding:0}.wp-block-afpb-product-showcase .afpb__cons_list ul li,.wp-block-afpb-product-showcase .afpb__props_list ul li{line-height:1.4;margin-bottom:7px;position:relative}.wp-block-afpb-product-showcase .afpb__cons_list ul li:before,.wp-block-afpb-product-showcase .afpb__props_list ul li:before{font-family:Font Awesome\ 5 Free;font-weight:900;left:-25px;position:absolute;top:0}.wp-block-afpb-product-showcase .afpb__props_list li:before{content:""}.wp-block-afpb-product-showcase .afpb__cons_list li:before{content:""}.wp-block-afpb-product-showcase a.afpb__btn{display:block;line-height:1;margin-top:10px;padding:10px 20px;text-align:center;text-decoration:none;transition:.3s}.wp-block-afpb-product-showcase .afpb__cons_list,.wp-block-afpb-product-showcase .afpb__props_list{padding-left:25px}.wp-block-afpb-product-showcase .afpb__props_cons_title{font-weight:500;margin-bottom:5px}@media only screen and (max-width:767px){.wp-block-afpb-product-showcase .afpb__product_info,.wp-block-afpb-product-showcase .afpb__product_info.afpb__product_info--reverse{flex-direction:column}.wp-block-afpb-product-showcase .product_content,.wp-block-afpb-product-showcase .product_photo{width:100%}.wp-block-afpb-product-showcase .product_photo img{max-width:60%}.wp-block-afpb-product-showcase .afpb__props_cons{flex-direction:column}.wp-block-afpb-product-showcase .afpb__cons_box,.wp-block-afpb-product-showcase .afpb__props_box{width:100%}.wp-block-afpb-product-showcase .afpb__props_box{padding:0}.wp-block-afpb-product-showcase .afpb__cons_box{padding:0;width:100%}.wp-block-afpb-product-showcase a.afpb__btn{margin-bottom:10px}}
+
+</style>
+<style id='afpb-list-table-style-inline-css' type='text/css'>
+.rate-select-layer span{color:#ebae00}.rate-base-layer span{color:#7c7c7c}.wp-block-afpb-list-item{align-items:center;box-sizing:border-box;display:flex;justify-content:space-between;margin:0 auto;padding:20px;position:relative}.wp-block-afpb-list-item p:empty{display:none}.wp-block-afpb-list-item .afpb__badge{border-radius:0 20px 20px 0;box-sizing:border-box;font-size:14px;left:-1px;margin-top:-16px;padding:5px 10px;position:absolute;top:0}.wp-block-afpb-list-item .product_photo img{margin:0 auto;max-width:80%}.wp-block-afpb-list-item .product_photo{text-align:center;width:20%}.wp-block-afpb-list-item .product_content{width:50%}.wp-block-afpb-list-item .product__action_area{text-align:center;width:25%}.wp-block-afpb-list-item .product__action_area .product_rating{align-items:center;display:flex;justify-content:center;margin-bottom:5px}.wp-block-afpb-list-item .product__action_area span.rating_value{margin-right:5px}.wp-block-afpb-list-item .afpb__props_list{margin-left:25px}.wp-block-afpb-list-item .title_tag{margin:0 0 15px!important}.wp-block-afpb-list-item .afpb__props_list ul{list-style:none!important;margin:0;padding:0}.wp-block-afpb-list-item .afpb__props_list ul li{line-height:1.4;margin-bottom:7px;position:relative}.wp-block-afpb-list-item .afpb__props_list ul li:before{font-family:Font Awesome\ 5 Free;font-weight:900;left:-25px;position:absolute;top:0}.wp-block-afpb-list-item .afpb__props_list li:before{content:""}.wp-block-afpb-list-item .afpb__icon{background:#fff;border-radius:50%;font-size:17px;height:34px;left:50%;line-height:34px;margin-left:-17px;margin-top:-17px;position:absolute;text-align:center;top:0;width:34px}.wp-block-afpb-list-item a.afpb__btn{display:inline-block;line-height:1.2;padding:8px 10px;text-align:center;text-decoration:none;transition:.3s}@media only screen and (max-width:767px){.wp-block-afpb-list-item{flex-direction:column}.wp-block-afpb-list-item .product__action_area,.wp-block-afpb-list-item .product_content,.wp-block-afpb-list-item .product_photo{width:100%}.wp-block-afpb-list-item .product_photo img{margin-bottom:15px;width:50%}.wp-block-afpb-list-item .product__action_area{margin-top:20px}}
+
+</style>
+<style id='afpb-comparison-table-style-inline-css' type='text/css'>
+.rate-select-layer span{color:#ebae00}.rate-base-layer span{color:#7c7c7c}.wp-block-afpb-product-item{align-items:stretch;box-sizing:border-box;display:flex;justify-content:space-between;margin:0 auto;padding:0!important;position:relative}.wp-block-afpb-product-item p:empty{display:none}.wp-block-afpb-product-item .afpb__badge{border-radius:0 20px 20px 0;box-sizing:border-box;font-size:14px;left:-1px;margin-top:-16px;padding:5px 10px;position:absolute;top:0}.wp-block-afpb-product-item .product_photo img{margin:0 auto;max-width:80%}.wp-block-afpb-product-item .product_photo{text-align:center;width:20%}.wp-block-afpb-product-item .product_content{width:50%}.wp-block-afpb-product-item .product__action_area{text-align:center;width:25%}.wp-block-afpb-product-item .product__action_area .product_rating{align-items:center;display:flex;justify-content:center;margin-bottom:5px}.wp-block-afpb-product-item .product__action_area span.rating_value{margin-right:5px}.wp-block-afpb-product-item .afpb__props_list{margin-left:25px}.wp-block-afpb-product-item .title_tag{margin:0 0 15px!important}.wp-block-afpb-product-item .afpb__props_list ul{list-style:none!important;margin:0;padding:0}.wp-block-afpb-product-item .afpb__props_list ul li{line-height:1.4;margin-bottom:7px;position:relative}.wp-block-afpb-product-item .afpb__props_list ul li:before{font-family:Font Awesome\ 5 Free;font-weight:900;left:-25px;position:absolute;top:0}.wp-block-afpb-product-item .afpb__props_list li:before{content:""}.wp-block-afpb-product-item .afpb__icon{background:#fff;border-radius:50%;font-size:17px;height:34px;left:50%;line-height:34px;margin-left:-17px;margin-top:-17px;position:absolute;text-align:center;top:0;width:34px}.wp-block-afpb-product-item a.afpb__btn{display:inline-block;line-height:1.2;padding:8px 10px;text-align:center;text-decoration:none;transition:.3s}.wp-block-afpb-product-item .product__action_area,.wp-block-afpb-product-item .product_content,.wp-block-afpb-product-item .product_photo{box-sizing:border-box;display:table;padding:10px}.wp-block-afpb-product-item .display_tablecell{display:table-cell;height:100%;vertical-align:middle;width:100%}@media only screen and (max-width:767px){.wp-block-afpb-product-item{flex-direction:column;padding:20px!important}.wp-block-afpb-product-item .product__action_area,.wp-block-afpb-product-item .product_content,.wp-block-afpb-product-item .product_photo{width:100%}.wp-block-afpb-product-item .product_photo img{margin-bottom:15px;width:50%}.wp-block-afpb-product-item .product__action_area{margin-top:20px}.wp-block-afpb-product-item .product__action_area,.wp-block-afpb-product-item .product_content,.wp-block-afpb-product-item .product_photo{border-right:0!important;padding:0!important}}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id='ez-toc-inline-css' type='text/css'>
+div#ez-toc-container .ez-toc-title {font-size: 120%;}div#ez-toc-container .ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}div#ez-toc-container ul li {font-weight: 500;}div#ez-toc-container nav ul ul li {font-size: 90%;}
+.ez-toc-container-direction {direction: ltr;}.ez-toc-counter ul{counter-reset: item ;}.ez-toc-counter nav ul li a::before {content: counters(item, '.', decimal) '. ';display: inline-block;counter-increment: item;flex-grow: 0;flex-shrink: 0;margin-right: .2em; float: left; }.ez-toc-widget-direction {direction: ltr;}.ez-toc-widget-container ul{counter-reset: item ;}.ez-toc-widget-container nav ul li a::before {content: counters(item, '.', decimal) '. ';display: inline-block;counter-increment: item;flex-grow: 0;flex-shrink: 0;margin-right: .2em; float: left; }
+</style>
+
+
+<link rel='stylesheet' id='bimber-google-fonts-css' href='https://www.ahealthblog.com/wp-content/cache/perfmatters/www.ahealthblog.com/fonts/5156f9a88326.google-fonts.css' type='text/css' media='all' />
+
+
+
+
+<script type="text/javascript" src="https://www.ahealthblog.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://www.ahealthblog.com/wp-content/themes/bimber-child-theme/js/jquery.lazyloadxt.min.js?ver=1.0.0" id="lazyload-js" defer></script>
+<script type="text/javascript" id="colorbox-js-extra">
+/* <![CDATA[ */
+var jQueryColorboxSettingsArray = {"jQueryColorboxVersion":"4.6.2","colorboxInline":"false","colorboxIframe":"false","colorboxGroupId":"","colorboxTitle":"","colorboxWidth":"false","colorboxHeight":"false","colorboxMaxWidth":"false","colorboxMaxHeight":"false","colorboxSlideshow":"false","colorboxSlideshowAuto":"false","colorboxScalePhotos":"false","colorboxPreloading":"false","colorboxOverlayClose":"true","colorboxLoop":"true","colorboxEscKey":"true","colorboxArrowKey":"true","colorboxScrolling":"true","colorboxOpacity":"0.85","colorboxTransition":"elastic","colorboxSpeed":"350","colorboxSlideshowSpeed":"2500","colorboxClose":"close","colorboxNext":"next","colorboxPrevious":"previous","colorboxSlideshowStart":"start slideshow","colorboxSlideshowStop":"stop slideshow","colorboxCurrent":"{current} of {total} images","colorboxXhrError":"This content failed to load.","colorboxImgError":"This image failed to load.","colorboxImageMaxWidth":"false","colorboxImageMaxHeight":"false","colorboxImageHeight":"false","colorboxImageWidth":"false","colorboxLinkHeight":"false","colorboxLinkWidth":"false","colorboxInitialHeight":"100","colorboxInitialWidth":"300","autoColorboxJavaScript":"","autoHideFlash":"","autoColorbox":"true","autoColorboxGalleries":"","addZoomOverlay":"","useGoogleJQuery":"","colorboxAddClassToLinks":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.ahealthblog.com/wp-content/plugins/jquery-colorbox/js/jquery.colorbox-min.js?ver=1.4.33" id="colorbox-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/plugins/jquery-colorbox/js/jquery-colorbox-wrapper-min.js?ver=4.6.2" id="colorbox-wrapper-js" defer></script>
+<script type="text/javascript" id="advanced-ads-advanced-js-js-extra">
+/* <![CDATA[ */
+var advads_options = {"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.ahealthblog.com/wp-content/plugins/advanced-ads/public/assets/js/advanced.min.js?ver=1.28.0" id="advanced-ads-advanced-js-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/themes/bimber/js/modernizr/modernizr-custom.min.js?ver=3.3.0" id="modernizr-js" defer></script>
+<link rel="https://api.w.org/" href="https://www.ahealthblog.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.ahealthblog.com/wp-json/wp/v2/posts/33448" /><link rel="preload" href="https://www.ahealthblog.com/wp-content/plugins/g1-socials/css/iconfont/fonts/g1-socials.woff" as="font" type="font/woff" crossorigin="anonymous"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6151099875013917"
+     crossorigin="anonymous"></script>
+<script type="rocketlazyloadscript">(function(w, d, s, id) {
+  w.PUBX=w.PUBX || {pub: "health_blog", discover: true, lazy: false};
+  var js, pjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id; js.async = false;
+  js.src = "//main.pubexchange.com/loader.min.js";
+  pjs.parentNode.insertBefore(js, pjs);
+}(window, document, "script", "pubexchange-jssdk"));</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">//<![CDATA[
+  function external_links_in_new_windows_loop() {
+    if (!document.links) {
+      document.links = document.getElementsByTagName('a');
+    }
+    var change_link = false;
+    var force = '';
+    var ignore = '';
+
+    for (var t=0; t<document.links.length; t++) {
+      var all_links = document.links[t];
+      change_link = false;
+      
+      if(document.links[t].hasAttribute('onClick') == false) {
+        // forced if the address starts with http (or also https), but does not link to the current domain
+        if(all_links.href.search(/^http/) != -1 && all_links.href.search('www.ahealthblog.com') == -1 && all_links.href.search(/^#/) == -1) {
+          // console.log('Changed ' + all_links.href);
+          change_link = true;
+        }
+          
+        if(force != '' && all_links.href.search(force) != -1) {
+          // forced
+          // console.log('force ' + all_links.href);
+          change_link = true;
+        }
+        
+        if(ignore != '' && all_links.href.search(ignore) != -1) {
+          // console.log('ignore ' + all_links.href);
+          // ignored
+          change_link = false;
+        }
+
+        if(change_link == true) {
+          // console.log('Changed ' + all_links.href);
+          document.links[t].setAttribute('onClick', 'javascript:window.open(\'' + all_links.href.replace(/'/g, '') + '\', \'_blank\', \'noopener\'); return false;');
+          document.links[t].removeAttribute('target');
+        }
+      }
+    }
+  }
+  
+  // Load
+  function external_links_in_new_windows_load(func)
+  {  
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function'){
+      window.onload = func;
+    } else {
+      window.onload = function(){
+        oldonload();
+        func();
+      }
+    }
+  }
+
+  external_links_in_new_windows_load(external_links_in_new_windows_loop);
+  //]]></script>
+
+<script data-minify="1" async src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/uploads/perfmatters/gtagv4.js?ver=1723242091"></script><script type="rocketlazyloadscript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-JSF4JVNNXD");</script><link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" /><meta property="gb:site:verify" content="23790.15980" />
+<meta name='ir-site-verification-token' value='1572559277'>
+<meta name='outreach_verification' content='1mtkaYbPRDUQz1NOZZbB' />
+        <style>
+            span[class*="simple-icon-"] {
+            	width: 1.5rem;
+            	height: 1.5rem;
+            	display: inline-block;
+
+            }
+            span[class*="simple-icon-"] svg {
+            	display: inline-block;
+            	vertical-align: middle;
+                height: inherit;
+                width: inherit;
+            }
+        </style>
+    <meta name="generator" content="Easy Digital Downloads v3.3.5.2" />
+<script type="text/javascript">
+		var advadsCfpQueue = [];
+		var advadsCfpAd = function( adID ){
+			if ( 'undefined' == typeof advadsProCfp ) { advadsCfpQueue.push( adID ) } else { advadsProCfp.addElement( adID ) }
+		};
+		</script>
+			<style>
+	@font-face {
+		font-family: "bimber";
+							src:url("https://www.ahealthblog.com/wp-content/themes/bimber/css/9.2.3/bimber/fonts/bimber.eot");
+			src:url("https://www.ahealthblog.com/wp-content/themes/bimber/css/9.2.3/bimber/fonts/bimber.eot?#iefix") format("embedded-opentype"),
+			url("https://www.ahealthblog.com/wp-content/themes/bimber/css/9.2.3/bimber/fonts/bimber.woff") format("woff"),
+			url("https://www.ahealthblog.com/wp-content/themes/bimber/css/9.2.3/bimber/fonts/bimber.ttf") format("truetype"),
+			url("https://www.ahealthblog.com/wp-content/themes/bimber/css/9.2.3/bimber/fonts/bimber.svg#bimber") format("svg");
+				font-weight: normal;
+		font-style: normal;
+		font-display: block;
+	}
+	</style>
+	      <meta name="onesignal" content="wordpress-plugin"/>
+            <script type="rocketlazyloadscript">
+
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+
+      OneSignalDeferred.push(function(OneSignal) {
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['serviceWorkerParam'] = { scope: '/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/push/onesignal/' };
+oneSignal_options['serviceWorkerPath'] = 'OneSignalSDKWorker.js';
+
+        OneSignal.Notifications.setDefaultUrl("https://www.ahealthblog.com");
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = 'b4391da4-d56a-43a5-a462-abe9e35229cf';
+oneSignal_options['allowLocalhostAsSecureOrigin'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "";
+oneSignal_options['welcomeNotification']['message'] = "";
+oneSignal_options['path'] = "https://www.ahealthblog.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.20000090-ae08-4d2f-988d-291912c8a9bf";
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['promptOptions']['actionMessage'] = "We'd like to notify you when new content is published. You can unsubscribe at any time.";
+              OneSignal.init(window._oneSignalInitOptions);
+              OneSignal.Slidedown.promptPush()      });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.Notifications.requestPermission(); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+<script type="rocketlazyloadscript">(function(w, d, s, id) {
+  w.PUBX=w.PUBX || {pub: "health_blog", discover: true, lazy: false};
+  var js, pjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id; js.async = false;
+  js.src = "//main.pubexchange.com/loader.min.js";
+  pjs.parentNode.insertBefore(js, pjs);
+}(window, document, "script", "pubexchange-jssdk"));</script>
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="//cdn.thisiswaldo.com/static/js/11565.js" defer></script><link rel="icon" href="https://www.ahealthblog.com/wp-content/uploads/2021/01/cropped-favicon512-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://www.ahealthblog.com/wp-content/uploads/2021/01/cropped-favicon512-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.ahealthblog.com/wp-content/uploads/2021/01/cropped-favicon512-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.ahealthblog.com/wp-content/uploads/2021/01/cropped-favicon512-300x300.png" />
+	<script type="rocketlazyloadscript">if("undefined"!=typeof localStorage){var nsfwItemId=document.getElementsByName("g1:nsfw-item-id");nsfwItemId=nsfwItemId.length>0?nsfwItemId[0].getAttribute("content"):"g1_nsfw_off",window.g1SwitchNSFW=function(e){e?(localStorage.setItem(nsfwItemId,1),document.documentElement.classList.add("g1-nsfw-off")):(localStorage.removeItem(nsfwItemId),document.documentElement.classList.remove("g1-nsfw-off"))};try{var nsfwmode=localStorage.getItem(nsfwItemId);window.g1SwitchNSFW(nsfwmode)}catch(e){}}</script>
+			<style type="text/css" id="wp-custom-css">
+			/* Add underline to all links */
+a {
+    text-decoration: underline;
+}
+
+/* Exclude links that are styled as buttons */
+a.button, a.btn, button, .button, .btn {
+    text-decoration: none;
+}
+/* This is the mobile-specific style */
+@media (max-width: 768px) {
+  #adx_native_ad_111089 {
+    height: calc(83vw); /* Adjust this value as needed */
+    overflow: hidden; /* This hides the excess content */
+  }
+}
+@media screen and (max-width: 768px) {
+    #secondary {
+        display: none;
+    }
+}		</style>
+		</head>
+
+<body class="wp-singular post-template-default single single-post postid-33448 single-format-standard wp-embed-responsive wp-theme-bimber wp-child-theme-bimber-child-theme post-image-above-header post-image-aligned-center sticky-menu-fade desktop edge edd-js-none g1-layout-stretched g1-hoverable g1-has-mobile-logo g1-sidebar-normal aa-prefix-aheal-" itemscope="" itemtype="http://schema.org/WebPage" >
+
+<div class="g1-body-inner">
+
+	<div id="page">
+		
+
+		
+
+						<div class="g1-sticky-top-wrapper g1-hb-row-1">
+				<div class="g1-row g1-row-layout-page g1-hb-row g1-hb-row-normal g1-hb-row-a g1-hb-row-1 g1-hb-boxed g1-hb-sticky-on g1-hb-shadow-off">
+			<div class="g1-row-inner">
+				<div class="g1-column g1-dropable">
+											<div class="g1-bin-1 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-left">
+															</div>
+						</div>
+											<div class="g1-bin-2 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-center">
+																	
+	<div class="g1-row g1-row-layout-page g1-advertisement g1-advertisement-inside-header">
+		<div class="g1-row-inner">
+			<div class="g1-column">
+
+				<div class="adace-slot-wrapper bimber_inside_header  adace-slot-wrapper-main" >
+	<div class="adace-disclaimer">
+			</div>
+	<div class="adace-slot">
+			<div class="adace_ad_67ff857fba541">
+
+		
+			
+			<div id="waldo-tag-11588"></div>
+
+			</div>
+		</div>
+</div>
+
+
+
+
+			</div>
+		</div>
+		<div class="g1-row-background"></div>
+	</div>
+															</div>
+						</div>
+											<div class="g1-bin-3 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-right">
+															</div>
+						</div>
+									</div>
+			</div>
+			<div class="g1-row-background"></div>
+		</div>
+				</div>
+				<div class="g1-row g1-row-layout-page g1-hb-row g1-hb-row-normal g1-hb-row-b g1-hb-row-2 g1-hb-boxed g1-hb-sticky-off g1-hb-shadow-off">
+			<div class="g1-row-inner">
+				<div class="g1-column g1-dropable">
+											<div class="g1-bin-1 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-left">
+															</div>
+						</div>
+											<div class="g1-bin-2 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-center">
+															</div>
+						</div>
+											<div class="g1-bin-3 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-right">
+															</div>
+						</div>
+									</div>
+			</div>
+			<div class="g1-row-background"></div>
+		</div>
+			<div class="g1-row g1-row-layout-page g1-hb-row g1-hb-row-normal g1-hb-row-c g1-hb-row-3 g1-hb-boxed g1-hb-sticky-off g1-hb-shadow-off">
+			<div class="g1-row-inner">
+				<div class="g1-column g1-dropable">
+											<div class="g1-bin-1 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-left">
+																	<div class="g1-id g1-id-desktop">
+			<p class="g1-mega g1-mega-1st site-title">
+	
+			<a class="g1-logo-wrapper"
+			   href="https://www.ahealthblog.com/" rel="home">
+									<picture class="g1-logo g1-logo-default">
+						<source media="(min-width: 1025px)" srcset="https://www.ahealthblog.com/wp-content/uploads/2021/01/hb-logo-2018-green81.png 2x,https://www.ahealthblog.com/wp-content/uploads/2021/01/hb-logo-2018-green81.png 1x">
+						<source media="(max-width: 1024px)" srcset="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20217%200%27%2F%3E">
+						<img
+							src="https://www.ahealthblog.com/wp-content/uploads/2021/01/hb-logo-2018-green81.png"
+							width="217"
+							height="0"
+							alt="AHealthBlog" />
+					</picture>
+
+											<picture class="g1-logo g1-logo-inverted">
+							<source id="g1-logo-inverted-source" media="(min-width: 1025px)" srcset="https://127.0.0.1/wordpress/wp-content/uploads/2018/12/bimber-inverted-logo-2x.png 2x,https://127.0.0.1/wordpress/wp-content/uploads/2018/12/bimber-inverted-logo.png 1x" data-srcset="https://127.0.0.1/wordpress/wp-content/uploads/2018/12/bimber-inverted-logo.png">
+							<source media="(max-width: 1024px)" srcset="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20217%200%27%2F%3E">
+							<img
+								id="g1-logo-inverted-img"
+								class=""
+								src="https://127.0.0.1/wordpress/wp-content/uploads/2018/12/bimber-inverted-logo.png"
+								data-src=""
+								width="217"
+								height="0"
+								alt="" />
+						</picture>
+												</a>
+
+			</p>
+	
+    
+	</div>																	<!-- BEGIN .g1-primary-nav -->
+<nav id="g1-primary-nav" class="g1-primary-nav"><ul id="g1-primary-nav-menu" class="g1-primary-nav-menu g1-menu-h"><li id="menu-item-29901" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-g1-standard menu-item-29901"><a href="https://www.ahealthblog.com/?page_id=29715">About</a></li>
+<li id="menu-item-28064" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-g1-mega menu-item-28064"><a href="#">Articles</a><div class="sub-menu-wrapper">
+<ul class="sub-menu">
+	<li id="menu-item-30779" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-30779"><a href="https://www.ahealthblog.com/category/aging">Aging</a></li>
+	<li id="menu-item-28066" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-28066"><a href="https://www.ahealthblog.com/category/immune-system">Immune System</a></li>
+	<li id="menu-item-26848" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26848"><a href="https://www.ahealthblog.com/category/fitness">Fitness</a></li>
+	<li id="menu-item-28065" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28065"><a href="https://www.ahealthblog.com/category/mood-disorders">Mental Health</a></li>
+	<li id="menu-item-28067" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28067"><a href="https://www.ahealthblog.com/category/nutrition">Nutrition</a></li>
+	<li id="menu-item-29148" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29148"><a href="https://www.ahealthblog.com/category/sleep">Sleep</a></li>
+	<li id="menu-item-30780" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-30780"><a href="https://www.ahealthblog.com/category/supplements">Supplements</a></li>
+</ul>
+</div></li>
+<li id="menu-item-28034" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-g1-standard menu-item-28034"><a href="https://www.ahealthblog.com/contact-us">Contact</a></li>
+<li id="menu-item-33393" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-g1-standard menu-item-33393"><a target="_blank" href="http://eepurl.com/iCf1AM">Newsletter</a></li>
+</ul></nav><!-- END .g1-primary-nav -->
+															</div>
+						</div>
+											<div class="g1-bin-2 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-center">
+															</div>
+						</div>
+											<div class="g1-bin-3 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-right">
+																	<ul id="g1-social-icons-1" class="g1-socials-items g1-socials-items-tpl-grid g1-socials-hb-list g1-socials-s  ">
+			<li class="g1-socials-item g1-socials-item-facebook">
+	   <a class="g1-socials-item-link" href="https://www.facebook.com/AHealthBlog/" target="_blank" rel="noopener">
+		   <span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-facebook"></span>
+		   <span class="g1-socials-item-tooltip">
+			   <span class="g1-socials-item-tooltip-inner">Facebook</span>
+		   </span>
+	   </a>
+	</li>
+			<li class="g1-socials-item g1-socials-item-pinterest">
+	   <a class="g1-socials-item-link" href="https://pinterest.com/ahealthblog9/" target="_blank" rel="noopener">
+		   <span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-pinterest"></span>
+		   <span class="g1-socials-item-tooltip">
+			   <span class="g1-socials-item-tooltip-inner">Pinterest</span>
+		   </span>
+	   </a>
+	</li>
+			<li class="g1-socials-item g1-socials-item-twitter">
+	   <a class="g1-socials-item-link" href="https://twitter.com/AHealthBlog" target="_blank" rel="noopener">
+		   <span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-twitter"></span>
+		   <span class="g1-socials-item-tooltip">
+			   <span class="g1-socials-item-tooltip-inner">Twitter</span>
+		   </span>
+	   </a>
+	</li>
+			<li class="g1-socials-item g1-socials-item-instagram">
+	   <a class="g1-socials-item-link" href="https://www.instagram.com/ahealthblog/" target="_blank" rel="noopener">
+		   <span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-instagram"></span>
+		   <span class="g1-socials-item-tooltip">
+			   <span class="g1-socials-item-tooltip-inner">Instagram</span>
+		   </span>
+	   </a>
+	</li>
+	</ul>
+																		<div class="g1-drop g1-drop-with-anim g1-drop-before g1-drop-the-search  g1-drop-m g1-drop-icon ">
+		<a class="g1-drop-toggle" href="https://www.ahealthblog.com/?s=">
+			<span class="g1-drop-toggle-icon"></span><span class="g1-drop-toggle-text">Search</span>
+			<span class="g1-drop-toggle-arrow"></span>
+		</a>
+		<div class="g1-drop-content">
+			
+
+<div role="search" class="search-form-wrapper">
+	<form method="get"
+	      class="g1-searchform-tpl-default search-form"
+	      action="https://www.ahealthblog.com/">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input type="search" class="search-field"
+			       placeholder="Search &hellip;"
+			       value="" name="s"
+			       title="Search for:" />
+		</label>
+		<button class="search-submit">Search</button>
+	</form>
+
+	</div>
+		</div>
+	</div>
+															</div>
+						</div>
+									</div>
+			</div>
+			<div class="g1-row-background"></div>
+		</div>
+					<div class="g1-sticky-top-wrapper g1-hb-row-1">
+				<div class="g1-row g1-row-layout-page g1-hb-row g1-hb-row-mobile g1-hb-row-a g1-hb-row-1 g1-hb-boxed g1-hb-sticky-on g1-hb-shadow-off">
+			<div class="g1-row-inner">
+				<div class="g1-column g1-dropable">
+											<div class="g1-bin-1 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-left">
+															</div>
+						</div>
+											<div class="g1-bin-2 g1-bin-grow-on">
+							<div class="g1-bin g1-bin-align-center">
+																	
+	<div class="g1-row g1-row-layout-page g1-advertisement g1-advertisement-inside-header">
+		<div class="g1-row-inner">
+			<div class="g1-column">
+
+				<div class="adace-slot-wrapper bimber_inside_header  adace-slot-wrapper-main" >
+	<div class="adace-disclaimer">
+			</div>
+	<div class="adace-slot">
+			<div class="adace_ad_67ff857fbc43f">
+
+		
+			
+			<div id="waldo-tag-11588"></div>
+
+			</div>
+		</div>
+</div>
+
+
+
+
+			</div>
+		</div>
+		<div class="g1-row-background"></div>
+	</div>
+															</div>
+						</div>
+											<div class="g1-bin-3 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-right">
+															</div>
+						</div>
+									</div>
+			</div>
+			<div class="g1-row-background"></div>
+		</div>
+				</div>
+				<div class="g1-row g1-row-layout-page g1-hb-row g1-hb-row-mobile g1-hb-row-b g1-hb-row-2 g1-hb-boxed g1-hb-sticky-off g1-hb-shadow-off">
+			<div class="g1-row-inner">
+				<div class="g1-column g1-dropable">
+											<div class="g1-bin-1 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-left">
+															</div>
+						</div>
+											<div class="g1-bin-2 g1-bin-grow-on">
+							<div class="g1-bin g1-bin-align-center">
+															</div>
+						</div>
+											<div class="g1-bin-3 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-right">
+															</div>
+						</div>
+									</div>
+			</div>
+			<div class="g1-row-background"></div>
+		</div>
+			<div class="g1-row g1-row-layout-page g1-hb-row g1-hb-row-mobile g1-hb-row-c g1-hb-row-3 g1-hb-boxed g1-hb-sticky-on g1-hb-shadow-off">
+			<div class="g1-row-inner">
+				<div class="g1-column g1-dropable">
+											<div class="g1-bin-1 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-left">
+																		<a class="g1-hamburger g1-hamburger-show g1-hamburger-s  " href="#">
+		<span class="g1-hamburger-icon"></span>
+			<span class="g1-hamburger-label
+			g1-hamburger-label-hidden			">Menu</span>
+	</a>
+															</div>
+						</div>
+											<div class="g1-bin-2 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-center">
+																	<div class="g1-id g1-id-mobile">
+			<p class="g1-mega g1-mega-1st site-title">
+	
+		<a class="g1-logo-wrapper"
+		   href="https://www.ahealthblog.com/" rel="home">
+							<picture class="g1-logo g1-logo-default">
+					<source media="(max-width: 1024px)" srcset="https://www.ahealthblog.com/wp-content/uploads/2021/01/hb-logo-2018-green81.png 2x,https://www.ahealthblog.com/wp-content/uploads/2021/01/hb-logo-2018-green81.png 1x">
+					<source media="(min-width: 1025px)" srcset="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20150%200%27%2F%3E">
+					<img
+						src="https://www.ahealthblog.com/wp-content/uploads/2021/01/hb-logo-2018-green81.png"
+						width="150"
+						height="0"
+						alt="AHealthBlog" />
+				</picture>
+
+									<picture class="g1-logo g1-logo-inverted">
+						<source id="g1-logo-mobile-inverted-source" media="(max-width: 1024px)" srcset="https://127.0.0.1/wordpress/wp-content/uploads/2018/12/demo-mobile-logo-inverted@2x.png 2x,https://127.0.0.1/wordpress/wp-content/uploads/2018/12/demo-mobile-logo-inverted.png 1x" data-srcset="https://127.0.0.1/wordpress/wp-content/uploads/2018/12/demo-mobile-logo-inverted.png">
+						<source media="(min-width: 1025px)" srcset="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20150%200%27%2F%3E">
+						<img
+							id="g1-logo-mobile-inverted-img"
+							class=""
+							src="https://127.0.0.1/wordpress/wp-content/uploads/2018/12/demo-mobile-logo-inverted.png"
+							data-src=""
+							width="150"
+							height="0"
+							alt="" />
+					</picture>
+									</a>
+
+			</p>
+	
+    
+	</div>															</div>
+						</div>
+											<div class="g1-bin-3 g1-bin-grow-off">
+							<div class="g1-bin g1-bin-align-right">
+																																																			<ul id="g1-social-icons-2" class="g1-socials-items g1-socials-items-tpl-grid g1-socials-hb-list g1-socials-s  ">
+			<li class="g1-socials-item g1-socials-item-facebook">
+	   <a class="g1-socials-item-link" href="https://www.facebook.com/AHealthBlog/" target="_blank" rel="noopener">
+		   <span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-facebook"></span>
+		   <span class="g1-socials-item-tooltip">
+			   <span class="g1-socials-item-tooltip-inner">Facebook</span>
+		   </span>
+	   </a>
+	</li>
+			<li class="g1-socials-item g1-socials-item-pinterest">
+	   <a class="g1-socials-item-link" href="https://pinterest.com/ahealthblog9/" target="_blank" rel="noopener">
+		   <span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-pinterest"></span>
+		   <span class="g1-socials-item-tooltip">
+			   <span class="g1-socials-item-tooltip-inner">Pinterest</span>
+		   </span>
+	   </a>
+	</li>
+			<li class="g1-socials-item g1-socials-item-twitter">
+	   <a class="g1-socials-item-link" href="https://twitter.com/AHealthBlog" target="_blank" rel="noopener">
+		   <span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-twitter"></span>
+		   <span class="g1-socials-item-tooltip">
+			   <span class="g1-socials-item-tooltip-inner">Twitter</span>
+		   </span>
+	   </a>
+	</li>
+			<li class="g1-socials-item g1-socials-item-instagram">
+	   <a class="g1-socials-item-link" href="https://www.instagram.com/ahealthblog/" target="_blank" rel="noopener">
+		   <span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-instagram"></span>
+		   <span class="g1-socials-item-tooltip">
+			   <span class="g1-socials-item-tooltip-inner">Instagram</span>
+		   </span>
+	   </a>
+	</li>
+	</ul>
+																		<div class="g1-drop g1-drop-with-anim g1-drop-before g1-drop-the-search  g1-drop-m g1-drop-icon ">
+		<a class="g1-drop-toggle" href="https://www.ahealthblog.com/?s=">
+			<span class="g1-drop-toggle-icon"></span><span class="g1-drop-toggle-text">Search</span>
+			<span class="g1-drop-toggle-arrow"></span>
+		</a>
+		<div class="g1-drop-content">
+			
+
+<div role="search" class="search-form-wrapper">
+	<form method="get"
+	      class="g1-searchform-tpl-default search-form"
+	      action="https://www.ahealthblog.com/">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input type="search" class="search-field"
+			       placeholder="Search &hellip;"
+			       value="" name="s"
+			       title="Search for:" />
+		</label>
+		<button class="search-submit">Search</button>
+	</form>
+
+	</div>
+		</div>
+	</div>
+															</div>
+						</div>
+									</div>
+			</div>
+			<div class="g1-row-background"></div>
+		</div>
+	
+		
+		
+		
+
+	
+	<div class="g1-row g1-row-padding-m g1-row-layout-page">
+		<div class="g1-row-background">
+		</div>
+		<div class="g1-row-inner">
+
+			<div class="g1-column g1-column-2of3" id="primary">
+				<div id="content" role="main">
+
+					
+
+<article id="post-33448" class="entry-tpl-classic post-33448 post type-post status-publish format-standard has-post-thumbnail category-flu-colds category-immune-system category-supplements category-uncategorized tag-immunity tag-supplement" itemscope="&quot;&quot;" itemtype="http://schema.org/Article" >
+	<div class="entry-inner">
+		
+		<header class="entry-header entry-header-01">
+			<div class="entry-before-title">
+				
+								</div>
+
+			<h1 class="g1-mega g1-mega-1st entry-title" itemprop="headline">The Impressive Benefits of Nigella Sativa (Black Seed Oil)</h1>
+						
+			
+			
+		</header>
+
+		<div class="entry-featured-media entry-featured-media-main"  itemprop="image"  itemscope=""  itemtype="http://schema.org/ImageObject" ><div class="g1-frame"><div class="g1-frame-inner"><img data-perfmatters-preload width="758" height="397" src="https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-758x397.jpg" class="attachment-bimber-grid-2of3 size-bimber-grid-2of3 colorbox-33448  wp-post-image" alt="Black Seed Oil Horizontal" itemprop="contentUrl" decoding="async" fetchpriority="high" srcset="https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-758x397.jpg 758w, https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-300x157.jpg 300w, https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-1024x536.jpg 1024w, https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-768x402.jpg 768w, https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-320x167.jpg 320w, https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal-640x335.jpg 640w, https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal.jpg 1200w" sizes="(max-width: 758px) 100vw, 758px" loading="eager" /><span class="g1-frame-icon g1-frame-icon-"></span></div></div><meta itemprop="url" content="https://www.ahealthblog.com/wp-content/uploads/Black-Seed-Oil-Horizontal.jpg" /><meta itemprop="width" content="1200" /><meta itemprop="height" content="628" /></div>
+		<div class="g1-content-narrow g1-typography-xl entry-content" itemprop="articleBody" >
+			
+<p>Cleopatra used them for beauty. King Tut was buried with them. </p>
+
+
+
+<p><strong>What if I told you there was an ancient seed oil that could enhance your health in over 12 amazing ways?&nbsp;</strong></p><div align="center">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1996645330154952"
+     crossorigin="anonymous"></script>
+<!-- In content1-Horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1996645330154952"
+     data-ad-slot="7094029607"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+
+
+<p>From antioxidant support to immune-boosting effects, this oil has been valued for thousands of years, yet modern science is only now unlocking its full potential.</p>
+
+
+
+<p>For centuries, healers have touted black cumin seeds as a magical, cure-all remedy. Black seed oil, derived from the Nigella sativa plant, contains a unique blend of plant-based compounds and nutrients that provide intriguing benefits.&nbsp;</p>
+
+
+
+<p>Modern science is now revealing that this ancient wisdom is right. Nigella sativa lives up to the hype—these tiny black seeds can work wonders for your health.</p><div class="adace-slot-wrapper adace-after-paragraph  adace-slot-wrapper-main" >
+	<div class="adace-disclaimer">
+			</div>
+	<div class="adace-slot">
+			<div class="adace-loader adace-loader-67ff857fc2987">
+		<script type="rocketlazyloadscript">
+			(function ($) {
+			var $self = $('.adace-loader-67ff857fc2987');
+			var $wrapper = $self.closest('.adace-slot-wrapper');
+
+			"use strict";
+			var adace_load_67ff857fc2987 = function(){
+				var viewport = $(window).width();
+				var tabletStart = 601;
+				var landscapeStart = 801;
+				var tabletEnd = 961;
+				var content = '%09%3Cdiv%20class%3D%22adace_ad_67ff857fc28aa%22%3E%0A%0A%09%09%0A%09%09%09%0A%09%09%09%3Cdiv%20align%3D%22center%22%3E%0D%0A%3Cdiv%20id%3D%22adx_native_ad_111089%22%3E%3C%2Fdiv%3E%3Cscript%20type%3D%22text%2Fjavascript%22%3E%28function%28%29%20%7Bvar%20a%3D%22%22%2Cb%3D%5B%22aid%3D111089%22%5D%3Bfor%20%28var%20c%3D0%3Bc%3Cb.length%3B%2B%2Bc%29%7Ba%2B%3Db%5Bc%5D%2B%22%26%22%3B%7Da%2B%3D%22r%3D%22%2BMath.random%28%29%2A1e16%2B%22%26url%3D%22%2BencodeURIComponent%28window.location.href%29%3Bvar%20x%3D%22https%3A%2F%2Fcontent.tapnative.com%2Ftn%2F%3F%22%2Ba%3Bvar%20y%3Ddocument.createElement%28%22script%22%29%3By.type%3D%22text%2Fjavascript%22%3By.async%3Dtrue%3By.src%3Dx%3Bvar%20z%3Ddocument.getElementsByTagName%28%22script%22%29%5B0%5D%3Bz.parentNode.insertBefore%28y%2C%20z%29%3B%7D%29%28%29%3B%3C%2Fscript%3E%0A%09%09%09%3C%2Fdiv%3E%0A%09';
+				var unpack = true;
+				if(viewport<tabletStart){
+										if ($wrapper.hasClass('.adace-hide-on-mobile')){
+						$wrapper.remove();
+					}
+				}
+				if(viewport>=tabletStart && viewport<landscapeStart){
+										if ($wrapper.hasClass('.adace-hide-on-portrait')){
+						$wrapper.remove();
+					}
+				}
+				if(viewport>=landscapeStart && viewport<tabletEnd){
+										if ($wrapper.hasClass('.adace-hide-on-landscape')){
+						$wrapper.remove();
+					}
+				}
+				if(viewport>=tabletStart && viewport<tabletEnd){
+										if ($wrapper.hasClass('.adace-hide-on-tablet')){
+						$wrapper.remove();
+					}
+				}
+				if(viewport>=tabletEnd){
+										if ($wrapper.hasClass('.adace-hide-on-desktop')){
+						$wrapper.remove();
+					}
+				}
+				if(unpack) {
+					$self.replaceWith(decodeURIComponent(content));
+				}
+			}
+			if($wrapper.css('visibility') === 'visible' ) {
+				adace_load_67ff857fc2987();
+			} else {
+				//fire when visible.
+				var refreshIntervalId = setInterval(function(){
+					if($wrapper.css('visibility') === 'visible' ) {
+						adace_load_67ff857fc2987();
+						clearInterval(refreshIntervalId);
+					}
+				}, 999);
+			}
+
+
+			})(jQuery);
+		</script>
+	</div>
+		</div>
+</div>
+
+
+
+
+
+
+
+<p>Keep reading to discover the science behind this traditional remedy and how it can improve your overall wellbeing.</p>
+
+
+
+<div id="ez-toc-container" class="ez-toc-v2_0_71 counter-hierarchy ez-toc-counter ez-toc-grey ez-toc-container-direction">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title" style="cursor:inherit">Quick Navigation</p>
+<span class="ez-toc-title-toggle"><a href="#" class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle" aria-label="Toggle Table of Content"><span class="ez-toc-js-icon-con"><span class=""><span class="eztoc-hide" style="display:none;">Toggle</span><span class="ez-toc-icon-toggle-span"><svg style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg" class="list-377408" width="20px" height="20px" viewBox="0 0 24 24" fill="none"><path d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z" fill="currentColor"></path></svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013" xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 24 24" version="1.2" baseProfile="tiny"><path d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z"/></svg></span></span></span></a></span></div>
+<nav><ul class='ez-toc-list ez-toc-list-level-1 ' ><li class='ez-toc-page-1 ez-toc-heading-level-2'><a class="ez-toc-link ez-toc-heading-1" href="#What_is_Black_Seed_Oil" title="What is Black Seed Oil?">What is Black Seed Oil?</a></li><li class='ez-toc-page-1 ez-toc-heading-level-2'><a class="ez-toc-link ez-toc-heading-2" href="#The_Possible_Benefits_of_Black_Seed_Oil" title="The Possible Benefits of Black Seed Oil">The Possible Benefits of Black Seed Oil</a></li><li class='ez-toc-page-1 ez-toc-heading-level-2'><a class="ez-toc-link ez-toc-heading-3" href="#How_to_Take_Black_Seed_Oil" title="How to Take Black Seed Oil">How to Take Black Seed Oil</a></li><li class='ez-toc-page-1 ez-toc-heading-level-2'><a class="ez-toc-link ez-toc-heading-4" href="#Experience_the_Nutrition_of_Black_Seeds" title="Experience the Nutrition of Black Seeds">Experience the Nutrition of Black Seeds</a></li></ul></nav></div>
+<h2 class="wp-block-heading"><span class="ez-toc-section" id="What_is_Black_Seed_Oil"></span><strong>What is Black Seed Oil?</strong><span class="ez-toc-section-end"></span></h2>
+
+
+
+<p>Black seed oil comes from the small black seeds of the <em>Nigella sativa</em> plant, native to Southwest Asia and the Mediterranean. Historically, it has been used as both a natural remedy and a flavorful spice.</p><div id="waldo-tag-11590"></div>
+
+
+
+<p>The tiny matte-black seeds have a slightly curved shape and ridges on their surface. They provide a bitter, pungent flavor described as a mix of oregano, onion, black pepper, and nutmeg.</p>
+
+
+
+<p><em>Nigella sativa seeds and oil contain:</em></p>
+
+
+
+<ul class="wp-block-list">
+<li>Thymoquinone—A potent antioxidant</li>
+
+
+
+<li>Thymol—An antioxidant with antimicrobial activity</li>
+
+
+
+<li>Unsaturated fatty acids —Omega-6 and omega-9 fatty acids</li>
+
+
+
+<li>Vitamin E—A vital antioxidant nutrient</li>
+
+
+
+<li>B-Vitamins—Support energy metabolism and cell function</li>
+
+
+
+<li>Minerals—Including calcium, potassium, iron and zinc</li>
+</ul>
+
+
+
+<p>With this broad blend of active plant compounds and nutrients, black seed oil may offer versatile effects. But more research is still needed to better understand its potential.</p>
+
+
+
+<h2 class="wp-block-heading"><span class="ez-toc-section" id="The_Possible_Benefits_of_Black_Seed_Oil"></span><strong>The Possible Benefits of Black Seed Oil</strong><span class="ez-toc-section-end"></span></h2>
+
+
+
+<p>Here is an overview of some of the main health benefits proposed for black seed oil in research:</p>
+
+
+
+<h3 class="wp-block-heading">1. Antioxidant Effects</h3>
+
+
+
+<p><em>Nigella sativa</em> oil contains antioxidants like thymoquinone and thymol that may help protect cells against oxidative stress and free radical damage. As an antioxidant-rich oil, it could support overall health.</p><div id="waldo-tag-11589"></div>
+
+
+
+<h3 class="wp-block-heading">2. Anti-Inflammatory Properties</h3>
+
+
+
+<p>The active compound thymoquinone in black seed oil exhibits anti-inflammatory effects in studies. By regulating inflammatory markers, the oil may aid chronic inflammatory conditions when used as a supplement.</p>
+
+
+
+<h3 class="wp-block-heading">3. Immune System Support</h3>
+
+
+
+<p>Some research indicates <em>Nigella sativa</em> may enhance immune cell function and activity. Its antioxidant content may also shield immune cells against excessive oxidative damage. More studies are needed, but the oil shows potential immune-enhancing properties.</p>
+
+
+
+<h3 class="wp-block-heading">4. Digestive Aid</h3>
+
+
+
+<p>Traditionally used to support digestion, black seed oil contains compounds that may ease gut inflammation and discomfort. Thymol offers antimicrobial effects against unhealthy gut microbes as well. More studies are needed to confirm the effects.</p>
+
+
+
+<h3 class="wp-block-heading">5. Skin Hydration</h3>
+
+
+
+<p>With its blend of omega fatty acids and vitamin E, black seed oil may nourish, moisturize, and soothe dry, damaged skin when applied topically and used internally. It may optimize skin tone and texture.</p>
+
+
+
+<h3 class="wp-block-heading">6. Hair Health</h3>
+
+
+
+<p>Through its nutritional content, black seed oil is thought to boost shine, softness and moisture retention when used on hair. Applying it may improve hair strength, thickness, and growth.</p>
+
+
+
+<h3 class="wp-block-heading">7. Mental Well-Being</h3>
+
+
+
+<p>Early studies suggest black seed oil may offer calming, stress-relieving effects. Compounds like melanthin may provide anxiety-reducing and mood-lifting benefits, according to some research.</p>
+
+
+
+<h3 class="wp-block-heading">8. Metabolic Aid</h3>
+
+
+
+<p><em>Nigella sativa</em> oil shows potential for optimizing appetite, blood sugar, weight management, and metabolism in some studies. Through multiple mechanisms, it may support a healthy metabolic profile.</p>
+
+
+
+<h3 class="wp-block-heading">9. Liver Support</h3>
+
+
+
+<p>The antioxidant thymoquinone seems to protect liver tissue and cells against oxidative damage in animal models. More studies are needed, but the oil may help maintain healthy liver function.</p>
+
+
+
+<h3 class="wp-block-heading">10. Lung Function</h3>
+
+
+
+<p>One study showed <em>Nigella sativa</em> improved asthma symptoms like wheezing, perhaps due to its anti-inflammatory effects. As an antioxidant-rich oil, it may shield lung tissue against toxins and pollution as well.</p>
+
+
+
+<h3 class="wp-block-heading">11. Joint Discomfort</h3>
+
+
+
+<p>Applying black seed oil topically together with internal use may alleviate joint aches and soreness due to its combination of active antioxidants and plant nutrients. More studies are needed.</p>
+
+
+
+<h3 class="wp-block-heading">12. Heart Health</h3>
+
+
+
+<p>Black seed oil improved some heart health markers in animal research. The antioxidant activity may support overall cardiovascular function when supplemented regularly.</p>
+
+
+
+<p>As shown above, black seed oil could offer wide-ranging therapeutic effects based on the antioxidant, anti-inflammatory, and antimicrobial properties shown in its key compounds. However, human studies are still limited, and more research is needed.</p>
+
+
+
+<h2 class="wp-block-heading"><span class="ez-toc-section" id="How_to_Take_Black_Seed_Oil"></span><strong>How to Take Black Seed Oil</strong><span class="ez-toc-section-end"></span></h2>
+
+
+
+<p>Always talk to your doctor before taking any supplement, and none of this should be considered medical advice.&nbsp;</p>
+
+
+
+<p>Due to its strong, bitter taste, black seed oil should be diluted before consumption. Try these simple ways to use it:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Mix with honey and take as a tonic</li>
+
+
+
+<li>Take it straight, like a shot</li>
+
+
+
+<li>Apply diluted oil directly to the skin, hair and nails</li>
+</ul>
+
+
+
+<p><strong>Dosing:&nbsp;</strong></p>
+
+
+
+<p>1/2 to 1 teaspoon daily.&nbsp;</p>
+
+
+
+<p>If sick, 2-3 tablespoons can be considered based on the safety profile in the studies.</p>
+
+
+
+<p>To preserve optimal freshness, store black seed oil in dark glass bottles in the refrigerator after opening them. It may keep for over a year refrigerated.</p>
+
+
+
+<p>When purchasing oil, choose a high-quality, pure product from a reputable supplier. Ideal oil has a rich black color. The seeds should be organically grown and cold-pressed.</p>
+
+
+
+<h2 class="wp-block-heading"><span class="ez-toc-section" id="Experience_the_Nutrition_of_Black_Seeds"></span><strong>Experience the Nutrition of Black Seeds</strong><span class="ez-toc-section-end"></span></h2>
+
+
+
+<p>The rich nutrient profile of black seed oil allows it to impact health in diverse, fascinating ways, from enhancing skin hydration to supporting respiratory function. Though more research is still needed, the possibilities seem endless.</p>
+
+
+
+<p>Don&#8217;t miss out on the potential of this traditional seed oil. Add it to your health regimen today and experience for yourself its versatile, plant-powered benefits.&nbsp;</p>
+
+
+
+<p>With black seed oil, you can give your wellness an intriguing boost from nature&#8217;s own pharmacy.</p>
+		</div>
+	</div><!-- .todo -->
+
+	
+
+<aside id="bimber-mc4wp-form-counter-1" class="g1-box g1-box-tpl-frame g1-newsletter g1-newsletter-horizontal g1-box g1-newsletter g1-newsletter-after-post-content g1-newsletter-horizontal">
+	<div class="g1-box-icon">
+	</div>
+	<div class="g1-box-inner">
+		<header>
+			<h2 class="g1-delta g1-delta-2nd"><span>Newsletter</span></h2>		</header>
+
+		
+		<p class="g1-mega g1-mega-1st">Join 1200+ transforming their health!</p>
+
+		
+		<script type="rocketlazyloadscript">(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.9.20 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-26844" method="post" data-id="26844" data-name="Old HB" ><div class="mc4wp-form-fields"><p><input name="EMAIL" required="" type="email" placeholder="Your email address" /></p>
+<p><input type="submit" value="SUBSCRIBE" /></p>
+<div class="mc4wp_notice"> You can unsubscribe anytime.</div>
+</div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1744799103" /><input type="hidden" name="_mc4wp_form_id" value="26844" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /><div class="mc4wp-response"></div><p class="g1-meta g1-newsletter-privacy"></p></form><!-- / Mailchimp for WordPress Plugin -->	</div>
+
+	<div class="g1-box-background g1-current-background">
+	</div>
+</aside>
+
+	<div class="g1-advertisement g1-advertisement-before-related-entries">
+
+		<div class="adace-slot-wrapper bimber_before_related_entries adace-align-center adace-slot-wrapper-main" style="text-align:center;">
+	<div class="adace-disclaimer">
+			</div>
+	<div class="adace-slot">
+			<div class="adace-loader adace-loader-67ff857fc3b20">
+		<script type="rocketlazyloadscript">
+			(function ($) {
+			var $self = $('.adace-loader-67ff857fc3b20');
+			var $wrapper = $self.closest('.adace-slot-wrapper');
+
+			"use strict";
+			var adace_load_67ff857fc3b20 = function(){
+				var viewport = $(window).width();
+				var tabletStart = 601;
+				var landscapeStart = 801;
+				var tabletEnd = 961;
+				var content = '%09%3Cdiv%20class%3D%22adace_ad_67ff857fc3b08%22%3E%0A%0A%09%09%0A%09%09%09%0A%09%09%09%3Cdiv%20class%3D%22blabla%22%3E%0D%0A%09%3Cdiv%20align%3D%22center%22%3E%0D%0A%3Cdiv%20id%3D%22adx_native_ad_111088%22%3E%3C%2Fdiv%3E%3Cscript%20type%3D%22text%2Fjavascript%22%3E%28function%28%29%20%7Bvar%20a%3D%22%22%2Cb%3D%5B%22aid%3D111088%22%5D%3Bfor%20%28var%20c%3D0%3Bc%3Cb.length%3B%2B%2Bc%29%7Ba%2B%3Db%5Bc%5D%2B%22%26%22%3B%7Da%2B%3D%22r%3D%22%2BMath.random%28%29%2A1e16%2B%22%26url%3D%22%2BencodeURIComponent%28window.location.href%29%3Bvar%20x%3D%22https%3A%2F%2Fcontent.tapnative.com%2Ftn%2F%3F%22%2Ba%3Bvar%20y%3Ddocument.createElement%28%22script%22%29%3By.type%3D%22text%2Fjavascript%22%3By.async%3Dtrue%3By.src%3Dx%3Bvar%20z%3Ddocument.getElementsByTagName%28%22script%22%29%5B0%5D%3Bz.parentNode.insertBefore%28y%2C%20z%29%3B%7D%29%28%29%3B%3C%2Fscript%3E%0D%0A%09%09%3Cbr%3E%0D%0A%09%09%3Cbr%3E%0D%0A%3Cdiv%20align%3D%22left%22%3E%0D%0A%3Cdiv%20class%3D%22pubexchange_module%22%20id%3D%22pubexchange_below_content_3%22%20data-pubexchange-module-id%3D%222452%22%3E%3C%2Fdiv%3E%0D%0A%3C%2Fdiv%3E%0D%0A%09%09%0D%0A%09%3C%2Fdiv%3E%0D%0A%0D%0A%0D%0A%3C%2Fdiv%3E%0A%09%09%09%3C%2Fdiv%3E%0A%09';
+				var unpack = true;
+				if(viewport<tabletStart){
+										if ($wrapper.hasClass('.adace-hide-on-mobile')){
+						$wrapper.remove();
+					}
+				}
+				if(viewport>=tabletStart && viewport<landscapeStart){
+										if ($wrapper.hasClass('.adace-hide-on-portrait')){
+						$wrapper.remove();
+					}
+				}
+				if(viewport>=landscapeStart && viewport<tabletEnd){
+										if ($wrapper.hasClass('.adace-hide-on-landscape')){
+						$wrapper.remove();
+					}
+				}
+				if(viewport>=tabletStart && viewport<tabletEnd){
+										if ($wrapper.hasClass('.adace-hide-on-tablet')){
+						$wrapper.remove();
+					}
+				}
+				if(viewport>=tabletEnd){
+										if ($wrapper.hasClass('.adace-hide-on-desktop')){
+						$wrapper.remove();
+					}
+				}
+				if(unpack) {
+					$self.replaceWith(decodeURIComponent(content));
+				}
+			}
+			if($wrapper.css('visibility') === 'visible' ) {
+				adace_load_67ff857fc3b20();
+			} else {
+				//fire when visible.
+				var refreshIntervalId = setInterval(function(){
+					if($wrapper.css('visibility') === 'visible' ) {
+						adace_load_67ff857fc3b20();
+						clearInterval(refreshIntervalId);
+					}
+				}, 999);
+			}
+
+
+			})(jQuery);
+		</script>
+	</div>
+		</div>
+</div>
+
+
+
+
+	</div>
+
+
+
+	<meta itemprop="mainEntityOfPage" content="https://www.ahealthblog.com/the-impressive-benefits-of-nigella-sativa-black-seed-oil.html"/>
+
+			<meta itemprop="datePublished"
+		      content="2023-11-10T16:34:26"/>
+	
+			<meta itemprop="dateModified"
+		      content="2023-11-10T16:45:47"/>
+	
+	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+		<meta itemprop="name" content="AHealthBlog" />
+		<meta itemprop="url" content="https://www.ahealthblog.com" />
+		<span itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+			<meta itemprop="url" content="https://www.ahealthblog.com/wp-content/uploads/2021/01/hb-logo-2018-green81.png" />
+		</span>
+	</span>
+			<span class="entry-author" itemscope="" itemprop="author" itemtype="http://schema.org/Person">
+			<meta itemprop="name" content="Louis Dewitt-Hoeger" >
+		</span>
+	</article>
+
+
+				</div><!-- #content -->
+			</div><!-- #primary -->
+
+			<div id="secondary" class="g1-sidebar g1-sidebar-padded g1-column g1-column-1of3">
+	<div class="g1-sticky-widget-wrapper"><div class="g1-sticky-widget" style="top: 10px"><aside id="mc4wp_form_widget-7" class="widget widget_mc4wp_form_widget"><header><h2 class="g1-delta g1-delta-2nd widgettitle"><span>Newsletter</span></h2></header><script type="rocketlazyloadscript">(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.9.20 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-2" class="mc4wp-form mc4wp-form-26844" method="post" data-id="26844" data-name="Old HB" ><p class="g1-alpha g1-alpha-1st">Join 1200+ subscribers transforming their health!</p><div class="mc4wp-form-fields"><p><input name="EMAIL" required="" type="email" placeholder="Your email address" /></p>
+<p><input type="submit" value="SUBSCRIBE" /></p>
+<div class="mc4wp_notice"> You can unsubscribe anytime.</div>
+</div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1744799103" /><input type="hidden" name="_mc4wp_form_id" value="26844" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-2" /><div class="mc4wp-response"></div><p class="g1-meta g1-newsletter-privacy"></p></form><!-- / Mailchimp for WordPress Plugin --></aside><aside id="enhancedtextwidget-5" class="widget widget_text enhanced-text-widget"><div class="textwidget widget-text"><div align="center"><div id="waldo-tag-11592"></div></div></div></aside><aside id="enhancedtextwidget-3" class="widget widget_text enhanced-text-widget"><div class="textwidget widget-text"><div align="center"><div id="waldo-tag-11591"></div></div></div></aside></div></div><!-- End of sticky widgets combined wrapper --></div><!-- #secondary -->
+
+		</div>
+	</div><!-- .g1-row -->
+
+
+<div class="g1-row g1-row-layout-page g1-newsletter-as-row g1-newsletter-as-row-before_footer g1-before_footer g1-dark">
+	<div class="g1-row-background"></div>
+
+	<div class="g1-row-inner">
+		<div class="g1-column">
+			
+<aside id="bimber-mc4wp-form-counter-2" class="g1-newsletter g1-newsletter-horizontal g1-newsletter-block ">
+	<header>
+		<h2 class="g1-delta g1-delta-2nd"><span>Newsletter</span></h2>	</header>
+
+			<div class="g1-newsletter-avatar">
+					</div>
+	
+	<p class="g1-mega g1-mega-1st">Join 1200+ subscribers improving their health</p>
+
+	
+	<script type="rocketlazyloadscript">(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.9.20 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-3" class="mc4wp-form mc4wp-form-26844" method="post" data-id="26844" data-name="Old HB" ><div class="mc4wp-form-fields"><p><input name="EMAIL" required="" type="email" placeholder="Your email address" /></p>
+<p><input type="submit" value="SUBSCRIBE" /></p>
+<div class="mc4wp_notice"> You can unsubscribe anytime.</div>
+</div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1744799103" /><input type="hidden" name="_mc4wp_form_id" value="26844" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-3" /><div class="mc4wp-response"></div><p class="g1-meta g1-newsletter-privacy"></p></form><!-- / Mailchimp for WordPress Plugin --></aside>
+		</div>
+	</div>
+</div>
+
+
+
+		<div class="g1-footer g1-row g1-row-layout-page">
+			<div class="g1-row-inner">
+				<div class="g1-column">
+
+					<p class="g1-footer-text"><div class="footer-content"><p> </p>   <p><a rel="nofollow" href="https://www.ahealthblog.com/dmca-notice">DMCA</a> |      <a rel="nofollow" href="https://www.ahealthblog.com/privacy-policy-2">Privacy Policy</a></br>The information on ahealthblog.com is only intended for reference purposes and not as medical or professional advice. If you use ahealthblog.com it means that you agree to these terms. <br>   Copyright © 2025</p> </div></p>
+
+					
+					
+					
+				</div><!-- .g1-column -->
+			</div>
+			<div class="g1-row-background">
+			</div>
+		</div><!-- .g1-row -->
+
+			</div><!-- #page -->
+
+<div class="g1-canvas-overlay">
+</div>
+
+</div><!-- .g1-body-inner -->
+
+<div id="g1-breakpoint-desktop">
+</div>
+
+
+<div class="g1-canvas g1-canvas-global g1-canvas-no-js">
+	<div class="g1-canvas-inner">
+		<div class="g1-canvas-content">
+			<a class="g1-canvas-toggle" href="#">Close</a>
+
+			
+
+<div role="search" class="search-form-wrapper">
+	<form method="get"
+	      class="g1-searchform-tpl-default search-form"
+	      action="https://www.ahealthblog.com/">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input type="search" class="search-field"
+			       placeholder="Search &hellip;"
+			       value="" name="s"
+			       title="Search for:" />
+		</label>
+		<button class="search-submit">Search</button>
+	</form>
+
+	</div>
+	<!-- BEGIN .g1-primary-nav -->
+	<nav id="g1-canvas-primary-nav" class="g1-primary-nav"><ul id="g1-canvas-primary-nav-menu" class="g1-primary-nav-menu g1-menu-v"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29901"><a href="https://www.ahealthblog.com/?page_id=29715">About</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28064"><a href="#">Articles</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-30779"><a href="https://www.ahealthblog.com/category/aging">Aging</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-28066"><a href="https://www.ahealthblog.com/category/immune-system">Immune System</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26848"><a href="https://www.ahealthblog.com/category/fitness">Fitness</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28065"><a href="https://www.ahealthblog.com/category/mood-disorders">Mental Health</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28067"><a href="https://www.ahealthblog.com/category/nutrition">Nutrition</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29148"><a href="https://www.ahealthblog.com/category/sleep">Sleep</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-30780"><a href="https://www.ahealthblog.com/category/supplements">Supplements</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28034"><a href="https://www.ahealthblog.com/contact-us">Contact</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33393"><a target="_blank" href="http://eepurl.com/iCf1AM">Newsletter</a></li>
+</ul></nav>		<!-- END .g1-primary-nav -->
+	<ul id="g1-social-icons-3" class="g1-socials-items g1-socials-items-tpl-grid g1-socials-s">
+			<li class="g1-socials-item g1-socials-item-facebook">
+	   <a class="g1-socials-item-link" href="https://www.facebook.com/AHealthBlog/" target="_blank" rel="noopener">
+		   <span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-facebook"></span>
+		   <span class="g1-socials-item-tooltip">
+			   <span class="g1-socials-item-tooltip-inner">Facebook</span>
+		   </span>
+	   </a>
+	</li>
+			<li class="g1-socials-item g1-socials-item-pinterest">
+	   <a class="g1-socials-item-link" href="https://pinterest.com/ahealthblog9/" target="_blank" rel="noopener">
+		   <span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-pinterest"></span>
+		   <span class="g1-socials-item-tooltip">
+			   <span class="g1-socials-item-tooltip-inner">Pinterest</span>
+		   </span>
+	   </a>
+	</li>
+			<li class="g1-socials-item g1-socials-item-twitter">
+	   <a class="g1-socials-item-link" href="https://twitter.com/AHealthBlog" target="_blank" rel="noopener">
+		   <span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-twitter"></span>
+		   <span class="g1-socials-item-tooltip">
+			   <span class="g1-socials-item-tooltip-inner">Twitter</span>
+		   </span>
+	   </a>
+	</li>
+			<li class="g1-socials-item g1-socials-item-instagram">
+	   <a class="g1-socials-item-link" href="https://www.instagram.com/ahealthblog/" target="_blank" rel="noopener">
+		   <span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-instagram"></span>
+		   <span class="g1-socials-item-tooltip">
+			   <span class="g1-socials-item-tooltip-inner">Instagram</span>
+		   </span>
+	   </a>
+	</li>
+	</ul>
+		</div>
+							<div class="g1-canvas-background">
+			</div>
+			</div>
+</div>
+<script type="rocketlazyloadscript">(function(){var advanced_ads_ga_UID="G-JSF4JVNNXD",advanced_ads_ga_anonymIP=!!1;function AdvAdsAdBlockCounterGA(t){this.UID=t,this.analyticsObject="function"==typeof gtag;var n=this;return this.count=function(){gtag("event","AdBlock",{event_category:"Advanced Ads",event_label:"Yes",non_interaction:!0,send_to:n.UID})},function(){if(!n.analyticsObject){var e=document.createElement("script");e.src="https://www.googletagmanager.com/gtag/js?id="+t,e.async=!0,document.body.appendChild(e),window.dataLayer=window.dataLayer||[],window.gtag=function(){dataLayer.push(arguments)},n.analyticsObject=!0,gtag("js",new Date)}var a={send_page_view:!1,transport_type:"beacon"};window.advanced_ads_ga_anonymIP&&(a.anonymize_ip=!0),gtag("config",t,a)}(),this}window.advanced_ads_check_adblocker=function(t){var n=[],e=null;function a(t){(window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||function(t){return setTimeout(t,16)}).call(window,t)}return a((function(){var t=document.createElement("div");t.innerHTML="&nbsp;",t.setAttribute("class","ad_unit ad-unit text-ad text_ad pub_300x250"),t.setAttribute("style","width: 1px !important; height: 1px !important; position: absolute !important; left: 0px !important; top: 0px !important; overflow: hidden !important;"),document.body.appendChild(t),a((function(){var a=window.getComputedStyle&&window.getComputedStyle(t),o=a&&a.getPropertyValue("-moz-binding");e=a&&"none"===a.getPropertyValue("display")||"string"==typeof o&&-1!==o.indexOf("about:");for(var i=0,d=n.length;i<d;i++)n[i](e);n=[]}))})),function(t){null!==e?t(e):n.push(t)}}(),advanced_ads_check_adblocker((function(t){t&&new AdvAdsAdBlockCounterGA(advanced_ads_ga_UID).count()}));})();</script><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/bimber-child-theme\/*","\/wp-content\/themes\/bimber\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+				<div id="rs-ih-dialogBoxWrapper" data-id=33448 style="position: fixed; bottom: 0; right: 0;">
+					<div class="row">
+						<div class="push-two eight columns">
+							<div id="rs-ih-popup">
+								<div id="rs-ih-popup-header">
+									<a href="javascript: void(0);" title="Close" id="ih_close">close</a>
+									
+									<div class="popup-header-title">
+										<p><strong>Want to use this image on your site?</strong></p>
+									</div>
+								</div>
+								<div id="rs-ih-content">
+									<p>Simply copy and paste the code below to embed the image on your page</p>
+                                
+									<div id="rs-ih-dialogBox"></div>						
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+					<style type="text/css">
+		@media only screen and (max-width: 600px ) {
+			.adace-hide-on-mobile{
+				display:none !important;
+			}
+			.adace-hide-on-phone{
+				display:none !important;
+			}
+		}
+		@media only screen and (min-width: 601px  ) and  (max-width: 800px ){
+			.adace-hide-on-portrait{
+				display:none !important;
+			}
+		}
+		@media only screen and (min-width: 801px  ) and  (max-width: 960px ){
+			.adace-hide-on-landscape{
+				display:none !important;
+			}
+		}
+		@media only screen and (min-width: 601px  ) and  (max-width: 960px ){
+			.adace-hide-on-tablet{
+				display:none !important;
+			}
+		}
+		@media only screen and (min-width: 961px  ){
+			.adace-hide-on-desktop{
+				display:none !important;
+			}
+		}
+	</style>
+		<style>.edd-js-none .edd-has-js, .edd-js .edd-no-js, body.edd-js input.edd-no-js { display: none; }</style>
+	<script type="rocketlazyloadscript">/* <![CDATA[ */(function(){var c = document.body.classList;c.remove('edd-js-none');c.add('edd-js');})();/* ]]> */</script>
+	<script type="rocketlazyloadscript">(function() {function maybePrefixUrlField () {
+  const value = this.value.trim()
+  if (value !== '' && value.indexOf('http') !== 0) {
+    this.value = 'http://' + value
+  }
+}
+
+const urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]')
+for (let j = 0; j < urlFields.length; j++) {
+  urlFields[j].addEventListener('blur', maybePrefixUrlField)
+}
+})();</script><div class="aheal-mobile-footer mystickyad aheal-sticky" style="margin-left: auto; margin-right: auto; text-align: center; position: fixed; bottom: 0; left: 0; right: 0; background-color: #2e2e2e; z-index: 10000; display: none; " id="aheal-1400124079"><div id="waldo-tag-15458"></div></div><script>( window.advanced_ads_ready || jQuery( document ).ready ).call( null, function() {var wrapper_id = "#aheal-1400124079"; var $wrapper = jQuery( wrapper_id );advads.move( wrapper_id, "", {  });window.advanced_ads_sticky_items = window.advanced_ads_sticky_items || {};advanced_ads_sticky_items[ "aheal-1400124079" ] = { "can_convert_to_abs": "1", "initial_css": $wrapper.attr( "style" ), "modifying_func": function() { $wrapper.css({ textAlign: "center", display: "none", width: "auto" });$wrapper.fadeIn(2).css( 'display', 'block' );}};
+if ( advads.wait_for_images ) { 
+    var sticky_wait_for_images_time = new Date().getTime();
+    $wrapper.data( "sticky_wait_for_images_time", sticky_wait_for_images_time );
+    advads.wait_for_images( $wrapper, function() {
+        // At the moment when this function is called, it is possible that 
+        // the placement has been updated using "Reload ads on resize" feature of Responsive add-on 
+        if ( $wrapper.data( "sticky_wait_for_images_time" ) === sticky_wait_for_images_time ) {
+            advanced_ads_sticky_items[ "aheal-1400124079" ]["modifying_func"]();
+        } 
+    } );
+} else { 
+    advanced_ads_sticky_items[ "aheal-1400124079" ]["modifying_func"]();
+};
+});</script>
+
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/plugins/affiliate-products-blocks/utilities/assets/js/plugin.js?ver=1723242120" id="afpb-plugin-js-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/plugins/WP-Image-Embeds/assets/js/script.js?ver=1723242091" id="script-name-js" defer></script>
+<script type="text/javascript" id="pt-cv-content-views-script-js-extra">
+/* <![CDATA[ */
+var PT_CV_PUBLIC = {"_prefix":"pt-cv-","page_to_show":"5","_nonce":"dd6263a007","is_admin":"","is_mobile":"","ajaxurl":"https:\/\/www.ahealthblog.com\/wp-admin\/admin-ajax.php","lang":"","loading_image_src":"data:image\/gif;base64,R0lGODlhDwAPALMPAMrKygwMDJOTkz09PZWVla+vr3p6euTk5M7OzuXl5TMzMwAAAJmZmWZmZszMzP\/\/\/yH\/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgAPACwAAAAADwAPAAAEQvDJaZaZOIcV8iQK8VRX4iTYoAwZ4iCYoAjZ4RxejhVNoT+mRGP4cyF4Pp0N98sBGIBMEMOotl6YZ3S61Bmbkm4mAgAh+QQFCgAPACwAAAAADQANAAAENPDJSRSZeA418itN8QiK8BiLITVsFiyBBIoYqnoewAD4xPw9iY4XLGYSjkQR4UAUD45DLwIAIfkEBQoADwAsAAAAAA8ACQAABC\/wyVlamTi3nSdgwFNdhEJgTJoNyoB9ISYoQmdjiZPcj7EYCAeCF1gEDo4Dz2eIAAAh+QQFCgAPACwCAAAADQANAAAEM\/DJBxiYeLKdX3IJZT1FU0iIg2RNKx3OkZVnZ98ToRD4MyiDnkAh6BkNC0MvsAj0kMpHBAAh+QQFCgAPACwGAAAACQAPAAAEMDC59KpFDll73HkAA2wVY5KgiK5b0RRoI6MuzG6EQqCDMlSGheEhUAgqgUUAFRySIgAh+QQFCgAPACwCAAIADQANAAAEM\/DJKZNLND\/kkKaHc3xk+QAMYDKsiaqmZCxGVjSFFCxB1vwy2oOgIDxuucxAMTAJFAJNBAAh+QQFCgAPACwAAAYADwAJAAAEMNAs86q1yaWwwv2Ig0jUZx3OYa4XoRAfwADXoAwfo1+CIjyFRuEho60aSNYlOPxEAAAh+QQFCgAPACwAAAIADQANAAAENPA9s4y8+IUVcqaWJ4qEQozSoAzoIyhCK2NFU2SJk0hNnyEOhKR2AzAAj4Pj4GE4W0bkJQIAOw==","is_mobile_tablet":"","sf_no_post_found":"No posts found.","lf__separator":","};
+var PT_CV_PAGINATION = {"first":"\u00ab","prev":"\u2039","next":"\u203a","last":"\u00bb","goto_first":"Go to first page","goto_prev":"Go to previous page","goto_next":"Go to next page","goto_last":"Go to last page","current_page":"Current page is","goto_page":"Go to page"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/plugins/content-views-query-and-display-post-page/public/assets/js/cv.js?ver=1723242091" id="pt-cv-content-views-script-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/plugins/pt-content-views-pro5861/public/assets/js/cvpro.min.js?ver=5.8.6.1" id="pt-cv-public-pro-script-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/plugins/dominant-colors-lazy-loading/public/js/dominant-colors-lazy-loading-public.js?ver=1723242091" id="dominant-colors-lazy-loading-js" defer></script>
+<script type="text/javascript" id="mace-gallery-js-extra">
+/* <![CDATA[ */
+var macegallery = {"i18n":{"of":"of"},"html":"\n<div class=\"g1-gallery-wrapper g1-gallery-dark\">\n\t<div class=\"g1-gallery\">\n\t\t<div class=\"g1-gallery-header\">\n\t\t\t<div class=\"g1-gallery-header-left\">\n\t\t\t\t<div class=\"g1-gallery-logo\">\n\t\t\t\t\t\t\t\t<\/div>\n\t\t\t\t<div class=\"g1-gallery-title g1-gamma g1-gamma-1st\">{title}<\/div>\n\t\t\t<\/div>\n\t\t\t<div class=\"g1-gallery-header-right\">\n\t\t\t\t<div class=\"g1-gallery-back-to-slideshow\">Back to slideshow<\/div>\n\t\t\t\t<div class=\"g1-gallery-thumbs-button\"><\/div>\n\t\t\t\t<div class=\"g1-gallery-numerator\">{numerator}<\/div>\n\t\t\t\t<div class=\"g1-gallery-close-button\"><\/div>\n\t\t\t<\/div>\n\t\t<\/div>\n\t\t<div class=\"g1-gallery-body\">\n\t\t\t<div class=\"g1-gallery-frames\">\n\t\t\t\t{frames}\n\t\t\t<\/div>\n\t\t\t<div class=\"g1-gallery-thumbnails32\">\n\t\t\t\t<div class=\"g1-gallery-thumbnails-collection\">\n\t\t\t\t\t{thumbnails32}\n\t\t\t\t<\/div>\n\t\t\t<\/div>\n\t\t\t<div class=\"g1-gallery-sidebar\">\n\t\t\t\t\t<div class=\"g1-gallery-shares\">\n\t\t\t\t\t<\/div>\n\t\t\t\t\t<div class=\"g1-gallery-ad\"><\/div>\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"g1-gallery-thumbnails\">\n\t\t\t\t\t\t\t<div class=\"g1-gallery-thumbnails-up\"><\/div>\n\t\t\t\t\t\t\t<div class=\"g1-gallery-thumbnails-collection\">{thumbnails}<\/div>\n\t\t\t\t\t\t\t<div class=\"g1-gallery-thumbnails-down\"><\/div>\n\t\t\t\t\t\t<\/div>\n\t\t\t\t\t\t\t\t<\/div>\n\t\t<\/div>\n\t<\/div>\n<\/div>\n","shares":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/plugins/media-ace/includes/gallery/js/gallery.js?ver=1723242091" id="mace-gallery-js" defer></script>
+<script type="text/javascript" id="edd-ajax-js-extra">
+/* <![CDATA[ */
+var edd_scripts = {"ajaxurl":"https:\/\/www.ahealthblog.com\/wp-admin\/admin-ajax.php","position_in_cart":"","has_purchase_links":"0","already_in_cart_message":"You have already added this item to your cart","empty_cart_message":"Your cart is empty","loading":"Loading","select_option":"Please select an option","is_checkout":"0","default_gateway":"stripe","redirect_to_checkout":"0","checkout_page":"https:\/\/www.ahealthblog.com\/checkout","permalinks":"1","quantities_enabled":"","taxes_enabled":"1","current_page":"33448"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/plugins/easy-digital-downloads/assets/js/edd-ajax.js?ver=1723242091" id="edd-ajax-js" defer></script>
+<script type="text/javascript" id="advanced-ads-sticky-footer-js-js-extra">
+/* <![CDATA[ */
+var advanced_ads_sticky_settings = {"check_position_fixed":"","sticky_class":"aheal-sticky","placements":["ehs-footer","mobile-footer"]};
+/* ]]> */
+</script>
+<script data-minify="1" type="text/javascript" src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/plugins/advanced-ads-sticky-ads/public/assets/js/sticky.js?ver=1723242091" id="advanced-ads-sticky-footer-js-js" defer></script>
+<script type="text/javascript" id="ez-toc-scroll-scriptjs-js-extra">
+/* <![CDATA[ */
+var eztoc_smooth_local = {"scroll_offset":"30","add_request_uri":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/plugins/easy-table-of-contents/assets/js/smooth_scroll.min.js?ver=2.0.71" id="ez-toc-scroll-scriptjs-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js?ver=2.2.1" id="ez-toc-js-cookie-js" defer></script>
+<script type="text/javascript" src="https://www.ahealthblog.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?ver=1.9.2" id="ez-toc-jquery-sticky-kit-js" defer></script>
+<script type="text/javascript" id="ez-toc-js-js-extra">
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","visibility_hide_by_default":"","scroll_offset":"30","fallbackIcon":"<span class=\"\"><span class=\"eztoc-hide\" style=\"display:none;\">Toggle<\/span><span class=\"ez-toc-icon-toggle-span\"><svg style=\"fill: #999;color:#999\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" class=\"list-377408\" width=\"20px\" height=\"20px\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z\" fill=\"currentColor\"><\/path><\/svg><svg style=\"fill: #999;color:#999\" class=\"arrow-unsorted-368013\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"10px\" height=\"10px\" viewBox=\"0 0 24 24\" version=\"1.2\" baseProfile=\"tiny\"><path d=\"M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z\"\/><\/svg><\/span><\/span>","chamomile_theme_is_on":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?ver=2.0.71-1735304419" id="ez-toc-js-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/checkout(.*)|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.ahealthblog.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.ahealthblog.com/wp-content/plugins/advanced-ads-pro/assets/js/advanced-ads-pro.min.js?ver=2.17.0" id="advanced-ads-pro/front-js" defer></script>
+<script type="text/javascript" id="bimber-shares-js-extra">
+/* <![CDATA[ */
+var bimber_shares_config = {"debug_mode":"","facebook_sdk":{"url":"https:\/\/connect.facebook.net\/en_US\/sdk.js","app_id":"","version":"v5.0"},"microshares":{"tpl":"<div class=\"bimber-microshare-item-share\">\n\t<a class=\"bimber-microshare-item-share-toggle\" href=\"#\">Share<\/a>\n\t<div class=\"bimber-microshare-item-share-content\">\n\t\t<a class=\"bimber-microshare bimber-microshare-pinterest bimber-share-pinterest\" href=\"https:\/\/pinterest.com\/pin\/create\/button?url=https:\/\/www.ahealthblog.com\/the-impressive-benefits-of-nigella-sativa-black-seed-oil.html&#038;description=The%20Impressive%20Benefits%20of%20Nigella%20Sativa%20(Black%20Seed%20Oil)&#038;media=bimber_share_media_url_placeholder\" title=\"Share on Pinterest\" target=\"_blank\" rel=\"nofollow\">Share on Pinterest<\/a>\t<\/div>\n<\/div>\n","domain":"https:\/\/www.ahealthblog.com\/"},"i18n":{"fb_app_id_not_set":"Facebook App Id not set in Theme Options > Shares"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/themes/bimber/js/shares.min.js?ver=9.2.3" id="bimber-shares-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/themes/bimber/js/stickyfill/stickyfill.min.js?ver=2.0.3" id="stickyfill-js" defer></script>
+<script type="text/javascript" src="https://www.ahealthblog.com/wp-content/themes/bimber/js/jquery.placeholder/placeholders.jquery.min.js?ver=4.0.1" id="jquery-placeholder-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/themes/bimber/js/matchmedia/matchmedia.js?ver=1723242091" id="match-media-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/themes/bimber/js/matchmedia/matchmedia.addlistener.js?ver=1723242091" id="match-media-add-listener-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/themes/bimber/js/picturefill/picturefill.min.js?ver=2.3.1" id="picturefill-js" defer></script>
+<script type="text/javascript" src="https://www.ahealthblog.com/wp-content/themes/bimber/js/jquery.waypoints/jquery.waypoints.min.js?ver=4.0.0" id="jquery-waypoints-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/themes/bimber/js/enquire/enquire.min.js?ver=2.1.2" id="enquire-js" defer></script>
+<script type="text/javascript" id="bimber-global-js-extra">
+/* <![CDATA[ */
+var bimber_front_config = {"debug_mode":"","ajax_url":"https:\/\/www.ahealthblog.com\/wp-admin\/admin-ajax.php","timeago":"on","sharebar":"off","i18n":{"menu":{"go_to":"Go to"},"newsletter":{"subscribe_mail_subject_tpl":"Check out this great article: %subject%"},"bp_profile_nav":{"more_link":"More"}},"comment_types":["wp"],"auto_load_limit":"0","auto_play_videos":"","use_gif_player":"","setTargetBlank":"","useWaypoints":"1","stack":"original-2018"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/themes/bimber/js/global.js?ver=1723242091" id="bimber-global-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/themes/bimber/js/single.js?ver=1723242120" id="bimber-single-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/themes/bimber-child-theme/modifications.js?ver=1723242091" id="bimber-child-js" defer></script>
+<script type="text/javascript" id="pprh_prefetch_flying_pages-js-extra">
+/* <![CDATA[ */
+var pprh_fp_data = {"testing":"false","delay":"0","maxRPS":"3","hoverDelay":"50","maxPrefetches":"10","ignoreKeywords":[""]};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/plugins/pre-party-browser-hints/js/flying-pages.min.js?ver=1.8.11" id="pprh_prefetch_flying_pages-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" async data-no-optimize="1" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/plugins/perfmatters/vendor/instant-page/instantpage.js?ver=1723242091" id="perfmatters-instant-page-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/sdks/web/v16/OneSignalSDK.page.js?ver=1735304776" id="remote_sdk-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="ih-handle-js-extra">
+/* <![CDATA[ */
+var ih_ajax = {"page_permalink":"https:\/\/www.ahealthblog.com\/the-impressive-benefits-of-nigella-sativa-black-seed-oil.html","page_title":"The Impressive Benefits of Nigella Sativa (Black Seed Oil)","size-full":["https:\/\/www.ahealthblog.com\/wp-content\/uploads\/Black-Seed-Oil-Horizontal.jpg",1200,628,false]};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/plugins/WP-Image-Embeds/assets/js/ih-script.js?ver=1723242091" id="ih-handle-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" defer data-rocket-src="https://www.ahealthblog.com/wp-content/cache/min/1/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js?ver=1723242091" id="mc4wp-forms-api-js"></script>
+<!--noptimize--><script type="rocketlazyloadscript">window.advads_admin_bar_items = [{"title":"In Content paragraph 4","type":"placement"},{"title":"Content","type":"placement"},{"title":"Content 2","type":"placement"},{"title":"Content 3","type":"placement"},{"title":"EHS footer","type":"placement"},{"title":"mobile footer","type":"placement"},{"title":"newormedia 15458 sticky footer","type":"ad"}];</script><!--/noptimize--><!--noptimize--><script>!function(){window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[],advanced_ads_ready_queue.push=window.advanced_ads_ready;for(var d=0,a=advanced_ads_ready_queue.length;d<a;d++)advanced_ads_ready(advanced_ads_ready_queue[d])}();</script><!--/noptimize--><div class="g1-popup g1-popup-newsletter">
+	<div class="g1-popup-overlay">
+	</div>
+
+	<div class="g1-popup-inner">
+		
+<div id="bimber-mc4wp-form-counter-3" class="g1-newsletter g1-newsletter-vertical ">
+	<div class="g1-newsletter-cover">
+									<div class="g1-newsletter-cover-background" style="background-image:url(https://www.ahealthblog.com/wp-content/uploads/Big-red-apple.png);">
+			
+
+			</div>
+			</div>
+
+	<div class="g1-newsletter-content">
+		<h3 class="g1-mega g1-mega-1st">Join 1200+ subscribers who are improving their health</h3>
+
+					<p>Subscribe to our newsletter!</p>
+		
+		<div class="g1-newsletter-form-wrap">
+			<script type="rocketlazyloadscript">(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.9.20 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-4" class="mc4wp-form mc4wp-form-26844" method="post" data-id="26844" data-name="Old HB" ><div class="mc4wp-form-fields"><p><input name="EMAIL" required="" type="email" placeholder="Your email address" /></p>
+<p><input type="submit" value="SUBSCRIBE" /></p>
+<div class="mc4wp_notice"> You can unsubscribe anytime.</div>
+</div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1744799103" /><input type="hidden" name="_mc4wp_form_id" value="26844" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-4" /><div class="mc4wp-response"></div><p class="g1-meta g1-newsletter-privacy"></p></form><!-- / Mailchimp for WordPress Plugin -->		</div>
+	</div>
+</div><!-- .g1-newsletter -->
+
+		<a href="#" class="g1-popup-closer">Close</a>
+	</div>
+</div><!-- .g1-popup -->
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1744799103 -->

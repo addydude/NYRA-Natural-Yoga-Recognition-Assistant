@@ -139,3 +139,58 @@
 .group-2{
     display: flex;
 }
+.group-3{
+    display: flex;
+    margin-top: 2%;
+}
+.group-4{
+    display: flex;
+    margin-top: 2%;
+    justify-content: center;
+}
+.card-7{
+    width: 15rem;
+    border-style: solid;
+    border-width: 1.2px;
+    border-radius: 3%;
+    height: 19rem;
+    margin-left: 16%;
+    margin-top: 0.5%;
+}
+.card-8{
+    width: 15rem;
+    border-style: solid;
+    border-width: 1.2px;
+    border-radius: 3%;
+    height: 19rem;
+    margin-left: 10%;
+    margin-top: 0.5%;
+}
+.card-9{
+    width: 15rem;
+    border-style: solid;
+    border-width: 1.2px;
+    border-radius: 3%;
+    height: 19rem;
+    margin-left: 10%;
+    margin-top: 0.5%;
+}
+.card-10{
+    width: 15rem;
+    border-style: solid;
+    border-width: 1.2px;
+    border-radius: 3%;
+    height: 19rem;
+    margin-left: 10%;
+    margin-top: 0.5%;
+    margin-right: 5%;
+}
+.card-11{
+    width: 15rem;
+    border-style: solid;
+    border-width: 1.2px;
+    border-radius: 3%;
+    height: 19rem;
+    margin-left: 10%;
+    margin-top: 0.5%;
+}
