@@ -31,9 +31,14 @@ However, without proper knowledge about correct posture, people may suffer from 
 ## Features
 
 - 🧘 **Real-time Posture Guidance**: Guides users to perform asanas correctly through AI voice assistant and webcam tracking
+- 🧠 **Advanced AI Models**: Utilizes both MediaPipe and custom fine-tuned HuggingFace models for superior pose detection accuracy
+- 🗣️ **Audio Cues**: Provides breathing guidance with inhale/exhale audio prompts during poses
 - 📊 **Progress Tracking**: Shows accuracy data for each asana in the form of graphs and charts
 - ⏱️ **Pose Timer**: Tracks how long a user can hold a specific pose
 - 📈 **Usage Analytics**: Keeps track of time invested and provides visual representation of progress
+- 🔄 **Hybrid Mode**: Switch between different AI models for best performance based on your system capabilities
+- 🌐 **WebSocket Support**: Enhanced real-time communications for smoother experience
+- 🔥 **Firebase Integration**: Cloud storage for user progress and analytics
 - 🎨 **Engaging Interface**: Designed to inspire consistency and regular practice
 - 👥 **Future Feature**: Invite friends for yoga challenges and friendly competitions
 
@@ -43,6 +48,7 @@ However, without proper knowledge about correct posture, people may suffer from 
 - 🔄 **Consistency Builder**: Rewards system helps maintain regular practice
 - 🏫 **Learning Environments**: Can be used to build dedicated yoga learning spaces
 - 🩺 **Health Monitoring**: Track progress and improvements in flexibility and form
+- 🧘‍♀️ **Customized Routines**: Follow guided yoga sessions with correct form feedback
 
 ## Tech Stack Used
 
@@ -59,7 +65,10 @@ However, without proper knowledge about correct posture, people may suffer from 
 - Flask web framework
 - OpenCV for computer vision
 - Mediapipe for pose detection
+- HuggingFace Transformers for advanced pose classification
 - TensorFlow Hub for AI models
+- WebSockets for real-time communication
+- Firebase for cloud storage and deployment
 - Matplotlib for data visualization
 
 ## Installation
@@ -68,6 +77,7 @@ However, without proper knowledge about correct posture, people may suffer from 
 - Python 3.10 or higher
 - Node.js (v16+) and npm for UI enhancements
 - Webcam
+- Firebase account (optional, for cloud features)
 
 ### Setup Instructions
 
@@ -100,13 +110,16 @@ However, without proper knowledge about correct posture, people may suffer from 
    ```
 
 6. Run the application
-   ```bash
-   python app.py
-   ```
+   - Standard mode: `python app.py`
+   - HuggingFace mode: `python app_hf.py`
+   - Hybrid mode: `python app_hybrid.py`
+   - Windows quick start: `run_yoga.bat`
 
 7. Open your browser and go to `http://127.0.0.1:5000`
 
 For Python 3.12 users, please refer to [PYTHON312.md](./PYTHON312.md) for specific instructions.
+
+If you encounter any issues, check the [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) guide.
 
 ### UI Development Mode
 
@@ -118,6 +131,12 @@ npm run dev
 ```
 
 This will start the Vite development server with hot module replacement.
+
+### Application Modes
+
+- **Standard Mode**: Uses MediaPipe for pose detection (faster, works on most systems)
+- **HuggingFace Mode**: Uses custom fine-tuned transformer models for higher accuracy (requires more computational resources)
+- **Hybrid Mode**: Combines both approaches for optimal performance
 
 ## Screenshots
 
