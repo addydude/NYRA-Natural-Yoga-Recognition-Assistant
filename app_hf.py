@@ -20,6 +20,8 @@ import numpy as np
 import threading
 import json
 import time
+import os
+import pygame
 from flask import Flask, Response, request, jsonify
 from flask_cors import CORS
 from HuggingFacePoseClassifier import HuggingFacePoseClassifier
@@ -33,6 +35,19 @@ current_pose = 'vrksana'  # Default pose
 cap = None
 hf_classifier = None
 
+# Progress tracking
+progress_data_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pose_progress.json')
+
+# Pose completion tracking
+pose_start_time = time.time()
+pose_completed = False
+completion_notification_shown = False
+correct_pose_start_time = None
+correct_pose_duration = 0
+
+# Initialize audio for completion notification
+pygame.mixer.init()
+
 # Define the app with the path to the React build directory
 app = Flask(__name__, 
     static_folder='ui-wizard-enhancements/dist',
@@ -43,6 +58,90 @@ app = Flask(__name__,
 CORS(app)
 app.secret_key = 'yoga_app_secret_key'
 
+# Custom function to inject the camera-fix.css into all templates
+@app.context_processor
+def inject_camera_fix_css():
+    return {
+        'camera_fix_css': True
+    }
+
+def load_progress_data():
+    """Load pose progress data from JSON file"""
+    if os.path.exists(progress_data_file):
+        try:
+            with open(progress_data_file, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"Error loading progress data: {str(e)}")
+            return initialize_progress_data()
+    else:
+        return initialize_progress_data()
+            
+def initialize_progress_data():
+    """Initialize empty progress data structure"""
+    poses = [
+        'vrksana', 'adhomukha', 'balasana', 'tadasan', 'trikonasana', 
+        'virabhadrasana', 'bhujangasana', 'setubandhasana', 
+        'uttanasana', 'shavasana', 'ardhamatsyendrasana'
+    ]
+    
+    data = {}
+    for pose in poses:
+        data[pose] = {
+            'attempts': 0,
+            'completions': 0,
+            'total_practice_time': 0,
+            'best_accuracy': 0,
+            'last_practiced': None
+        }
+    return data
+        
+def save_progress_data(data):
+    """Save pose progress data to JSON file"""
+    try:
+        with open(progress_data_file, 'w') as f:
+            json.dump(data, f, indent=4)
+    except Exception as e:
+        print(f"Error saving progress data: {str(e)}")
+            
+def get_pose_completion_time(pose_name):
+    """Get the required time to complete a pose in seconds"""
+    # Define different practice times for each pose
+    completion_times = {
+        'vrksana': 30,        # Tree pose - moderate difficulty
+        'adhomukha': 45,      # Downward dog - moderate difficulty 
+        'balasana': 60,       # Child's pose - relaxation pose, longer hold
+        'tadasan': 20,        # Mountain pose - simple pose
+        'trikonasana': 40,    # Triangle pose - moderate difficulty
+        'virabhadrasana': 35, # Warrior pose - moderate difficulty
+        'bhujangasana': 30,   # Cobra pose - back bend
+        'setubandhasana': 50, # Bridge pose - higher difficulty
+        'uttanasana': 25,     # Standing forward bend - moderate difficulty
+        'shavasana': 120,     # Corpse pose - meditation pose, longer hold
+        'ardhamatsyendrasana': 45  # Half lord of the fishes - higher difficulty
+    }
+    
+    return completion_times.get(pose_name, 30)  # Default to 30 seconds
+
+def get_breathing_pattern(pose_name):
+    """Get breathing pattern for a specific pose"""
+    # Format: (total_cycle_seconds, inhale_ratio)
+    breathing_patterns = {
+        'vrksana': (6, 0.4),       # Tree pose: 2.4s inhale, 3.6s exhale
+        'adhomukha': (8, 0.5),     # Downward dog: 4s inhale, 4s exhale 
+        'balasana': (10, 0.3),     # Child's pose: 3s inhale, 7s exhale (more relaxed)
+        'tadasan': (5, 0.5),       # Mountain pose: 2.5s inhale, 2.5s exhale
+        'trikonasana': (7, 0.4),   # Triangle pose: 2.8s inhale, 4.2s exhale
+        'virabhadrasana': (6, 0.45), # Warrior pose: 2.7s inhale, 3.3s exhale
+        'bhujangasana': (7, 0.4),   # Cobra pose: 2.8s inhale, 4.2s exhale
+        'setubandhasana': (8, 0.4), # Bridge pose: 3.2s inhale, 4.8s exhale
+        'uttanasana': (6, 0.3),     # Standing forward bend: 1.8s inhale, 4.2s exhale
+        'shavasana': (12, 0.3),     # Corpse pose: 3.6s inhale, 8.4s exhale (deeply relaxing)
+        'ardhamatsyendrasana': (7, 0.4) # Half lord of the fishes pose: 2.8s inhale, 4.2s exhale
+    }
+    
+    return breathing_patterns.get(pose_name, (6, 0.4))  # Default to vrksana pattern
+
 def initialize_hf_model():
     """Initialize the HuggingFace model"""
     global hf_classifier
@@ -50,6 +149,7 @@ def initialize_hf_model():
     if hf_classifier is None:
         print("Initializing HuggingFace model... (first request only)")
         try:
+            # Initialize the model without the unsupported parameter
             hf_classifier = HuggingFacePoseClassifier()
             print(f"HuggingFace model loaded successfully with {len(hf_classifier.model.config.id2label)} classes")
             print(f"Available classes: {hf_classifier.get_available_classes()}")
@@ -83,7 +183,7 @@ def initialize_webcam():
             print("Error: Could not open webcam with any index. Pose detection will not work.")
             return False
         
-        # Set default resolution to 480p
+        # Set resolution to 480p
         cap.set(3, 640)  # Width
         cap.set(4, 480)  # Height
         
@@ -177,6 +277,13 @@ def get_reverse_pose_map():
 def generate_frames():
     """Generate video frames with pose detection"""
     global accuracy_data, cap, hf_classifier, current_pose
+    global pose_start_time, pose_completed, completion_notification_shown, correct_pose_start_time, correct_pose_duration
+    
+    # Initialize progress data
+    progress_data = load_progress_data()
+    
+    # Initialize pose completion time for current pose
+    pose_completion_time = get_pose_completion_time(current_pose)
     
     # Initialize HuggingFace model
     if not initialize_hf_model():
@@ -210,6 +317,19 @@ def generate_frames():
     # Set up periodic detection (don't run detection on every frame)
     last_detection_time = 0
     detection_interval = 0.5  # seconds
+    
+    # Reset pose tracking variables
+    pose_start_time = time.time()
+    pose_completed = False
+    completion_notification_shown = False
+    correct_pose_start_time = None
+    correct_pose_duration = 0
+    
+    # Update attempts count
+    if current_pose in progress_data:
+        progress_data[current_pose]['attempts'] += 1
+        progress_data[current_pose]['last_practiced'] = time.strftime("%Y-%m-%d %H:%M:%S")
+        save_progress_data(progress_data)
     
     while True:
         # Read the camera frame
@@ -251,12 +371,11 @@ def generate_frames():
             is_correct = predicted_pose == target_hf_pose
             
             # Generate accuracy values (using confidence as proxy for accuracy)
-            # For visualization purposes, we'll create 4 simulated body parts with similar values
             accuracy_value = int(confidence * 100) if is_correct else int(confidence * 50)
             
-            # Ensure accuracy is not too low even when correct pose is detected
-            if is_correct and accuracy_value < 70:
-                accuracy_value = 70 + int(confidence * 30)
+            # Ensure accuracy is at least 85% when correct pose is detected
+            if is_correct and accuracy_value < 85:
+                accuracy_value = 85 + int(confidence * 15)
             
             # Update accuracy data
             part_variation = 10  # Add slight variations between body parts
@@ -269,6 +388,35 @@ def generate_frames():
                     min(100, max(0, accuracy_value - np.random.randint(0, part_variation)))
                 ]
             }
+            
+            # Track correct pose time
+            if is_correct:
+                # Start timing when the pose is first detected as correct
+                if correct_pose_start_time is None:
+                    correct_pose_start_time = current_time
+                
+                # Calculate how long the user has been in the correct pose
+                correct_pose_duration = current_time - correct_pose_start_time
+                
+                # Check if pose is completed based on required time
+                if correct_pose_duration >= pose_completion_time and not pose_completed:
+                    pose_completed = True
+                    
+                    # Update progress data
+                    if current_pose in progress_data:
+                        progress_data[current_pose]['completions'] += 1
+                        progress_data[current_pose]['total_practice_time'] += correct_pose_duration
+                        
+                        # Update best accuracy if this attempt is better
+                        if confidence > progress_data[current_pose]['best_accuracy']:
+                            progress_data[current_pose]['best_accuracy'] = confidence
+                        
+                        # Save the updated progress
+                        save_progress_data(progress_data)
+            else:
+                # Reset the timer if the pose is broken
+                correct_pose_start_time = None
+                correct_pose_duration = 0
         
         # Draw pose information on frame
         color = (0, 255, 0) if is_correct else (0, 0, 255)
@@ -286,10 +434,23 @@ def generate_frames():
         cv2.putText(frame, f"Accuracy: {int(avg_accuracy)}%", 
                    (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
         
-        # Add a breathing guide indicator
-        breathing_cycle = 6  # seconds
+        # Show progress timer if pose is correct
+        if is_correct:
+            remaining_time = max(0, pose_completion_time - correct_pose_duration)
+            progress_percentage = min(100, (correct_pose_duration / pose_completion_time) * 100)
+            
+            cv2.putText(frame, f"Progress: {int(progress_percentage)}%", (10, 120), 
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+            cv2.putText(frame, f"Remaining: {int(remaining_time)}s", (10, 150), 
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+        
+        # Add a breathing guide indicator with pose-specific pattern
+        breathing_pattern = get_breathing_pattern(current_pose)
+        breathing_cycle = breathing_pattern[0]  # Total cycle time
+        inhale_ratio = breathing_pattern[1]    # Inhale ratio
+        
         breathing_phase = (time.time() % breathing_cycle) / breathing_cycle
-        is_inhale = breathing_phase < 0.4  # 40% inhale, 60% exhale
+        is_inhale = breathing_phase < inhale_ratio
         
         breath_text = "INHALE" if is_inhale else "EXHALE"
         breath_color = (0, 255, 0) if is_inhale else (0, 0, 255)
@@ -297,6 +458,36 @@ def generate_frames():
         cv2.putText(frame, breath_text, (frame.shape[1] - 120, 30), 
                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, breath_color, 2)
                 
+        # Show cycle info for current pose
+        inhale_time = round(breathing_cycle * inhale_ratio, 1)
+        exhale_time = round(breathing_cycle * (1 - inhale_ratio), 1)
+        cv2.putText(frame, f"Breathing: {inhale_time}s in, {exhale_time}s out", 
+                   (frame.shape[1] - 280, 60), 
+                   cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 2)
+        
+        # Show completion notification
+        if pose_completed and not completion_notification_shown:
+            # Create a semi-transparent overlay for the completion notification
+            overlay = frame.copy()
+            cv2.rectangle(overlay, (frame.shape[1]//4, frame.shape[0]//3), 
+                         (3*frame.shape[1]//4, 2*frame.shape[0]//3), 
+                         (0, 128, 0), -1)
+            
+            # Add text to the notification
+            cv2.putText(overlay, "POSE COMPLETED!", 
+                       (frame.shape[1]//4 + 20, frame.shape[0]//2 - 20),
+                       cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+            cv2.putText(overlay, f"Great job with {current_pose.capitalize()}!", 
+                       (frame.shape[1]//4 + 20, frame.shape[0]//2 + 20),
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
+            
+            # Apply the overlay with transparency
+            alpha = 0.7
+            cv2.addWeighted(overlay, alpha, frame, 1-alpha, 0, frame)
+            
+            # Set flag to prevent showing the notification again
+            completion_notification_shown = True
+        
         # Convert frame to JPEG for streaming
         ret, buffer = cv2.imencode('.jpg', frame)
         frame_bytes = buffer.tobytes()
@@ -318,371 +509,123 @@ def video():
     pose = request.args.get('pose', 'vrksana')
     
     # Update current pose
-    global current_pose
-    current_pose = pose
+    global current_pose, pose_start_time, pose_completed, completion_notification_shown
+    global correct_pose_start_time, correct_pose_duration
+    
+    # Only reset if pose changed
+    if current_pose != pose:
+        current_pose = pose
+        # Reset pose tracking variables
+        pose_start_time = time.time()
+        pose_completed = False
+        completion_notification_shown = False
+        correct_pose_start_time = None
+        correct_pose_duration = 0
     
     # Return the video stream
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-@app.route('/api/poses', methods=['GET'])
-def get_poses():
-    """Return all available poses"""
-    poses = [
-        {
-            "id": "vrksana",
-            "name": "Vrksasana",
-            "sanskritName": "वृक्षासन",
-            "englishName": "Tree Pose",
-            "description": "A classic standing posture. It establishes strength and balance, and helps you feel centered.",
-            "benefits": [
-                "Improves balance and stability",
-                "Strengthens the legs, ankles, and feet",
-                "Opens the hips and stretches the inner thighs",
-                "Improves focus and concentration",
-                "Builds confidence and self-esteem"
-            ],
-            "instructions": [
-                "Begin standing with feet together, arms at sides.",
-                "Shift weight to left foot, bending right knee.",
-                "Place right foot on left inner thigh, toes pointing down.",
-                "Bring palms together at heart center or reach arms overhead.",
-                "Fix gaze on a steady point for balance.",
-                "Hold for 30-60 seconds, then switch sides."
-            ],
-            "cautions": [
-                "Avoid if you have low blood pressure or migraine",
-                "Be cautious if you have knee, hip, or ankle injuries",
-                "Use a wall for support if balance is challenging"
-            ],
-            "imageSrc": "/static/images/vrksana.jpg",
-            "gifName": "vrksana.jpg"
-        },
-        {
-            "id": "adhomukha",
-            "name": "Adho Mukha",
-            "sanskritName": "अधोमुखश्वानासन",
-            "englishName": "Downward Facing Dog",
-            "description": "It strengthens the core and improves circulation, while providing full-body stretch.",
-            "benefits": [
-                "Stretches the hamstrings, calves, and shoulders",
-                "Strengthens the arms, shoulders, and legs",
-                "Increases blood flow to the brain",
-                "Relieves back pain and tension",
-                "Energizes the body"
-            ],
-            "instructions": [
-                "Start on hands and knees, hands shoulder-width apart.",
-                "Tuck toes and lift knees off the floor.",
-                "Straighten legs as much as possible, lifting hips toward ceiling.",
-                "Press chest toward thighs, creating an inverted V-shape.",
-                "Keep head between arms, gazing toward navel.",
-                "Hold for 1-3 minutes, breathing deeply."
-            ],
-            "cautions": [
-                "Modify if you have carpal tunnel syndrome",
-                "Bend knees if hamstrings are tight",
-                "Not recommended for those with severe hypertension"
-            ],
-            "imageSrc": "/static/images/adho_mukha.jpeg",
-            "gifName": "adho_mukha.jpeg"
-        },
-        {
-            "id": "balasana",
-            "name": "Balasana",
-            "sanskritName": "बालासन",
-            "englishName": "Child's Pose",
-            "description": "Balasana is a restful pose that can be sequenced between more challenging asanas.",
-            "benefits": [
-                "Gently stretches the lower back and hips",
-                "Relieves stress and fatigue",
-                "Calms the mind and reduces anxiety",
-                "Helps release tension in the shoulders",
-                "Promotes relaxation and surrender"
-            ],
-            "instructions": [
-                "Kneel on the floor with knees hip-width apart.",
-                "Touch big toes together and sit on heels.",
-                "Exhale and lay torso down between thighs.",
-                "Extend arms forward or alongside body.",
-                "Rest forehead on mat and breathe deeply.",
-                "Hold for 30 seconds to several minutes."
-            ],
-            "cautions": [
-                "Use caution with knee injuries",
-                "Avoid during late pregnancy",
-                "Modify with props if needed for comfort"
-            ],
-            "imageSrc": "/static/images/balasana.jpg",
-            "gifName": "balasana.jpg"
-        },
-        {
-            "id": "tadasan",
-            "name": "Tadasana",
-            "sanskritName": "ताड़ासन",
-            "englishName": "Mountain Pose",
-            "description": "The foundation of all standing poses. It improves posture, balance, and body awareness.",
-            "benefits": [
-                "Improves posture and alignment",
-                "Strengthens thighs, knees, and ankles",
-                "Increases awareness and focus",
-                "Develops steady breathing",
-                "Creates a foundation for other standing poses"
-            ],
-            "instructions": [
-                "Stand with feet together or hip-width apart.",
-                "Distribute weight evenly through feet.",
-                "Engage thigh muscles and lift kneecaps.",
-                "Lengthen spine and lift chest.",
-                "Relax shoulders down and back.",
-                "Breathe deeply for 30-60 seconds."
-            ],
-            "cautions": [
-                "Widen stance if balance is difficult",
-                "Use a wall for support if needed",
-                "Modify if you have low blood pressure"
-            ],
-            "imageSrc": "/static/images/Tad-asan.gif",
-            "gifName": "Tad-asan.gif"
-        },
-        {
-            "id": "trikonasana",
-            "name": "Trikonasana",
-            "sanskritName": "त्रिकोणासन",
-            "englishName": "Triangle Pose",
-            "description": "It is a quintessential standing pose that stretches and strengthens the whole body.",
-            "benefits": [
-                "Stretches legs, hips, groin, and hamstrings",
-                "Strengthens thighs, knees, and ankles",
-                "Opens chest and shoulders",
-                "Improves digestion",
-                "Reduces stress and anxiety"
-            ],
-            "instructions": [
-                "Stand with feet wide apart.",
-                "Turn right foot out 90° and left foot slightly in.",
-                "Extend arms parallel to floor.",
-                "Reach right hand down toward right ankle.",
-                "Extend left arm toward ceiling.",
-                "Hold for 30-60 seconds, then switch sides."
-            ],
-            "cautions": [
-                "Avoid if you have severe back pain",
-                "Use a block under hand if flexibility is limited",
-                "Modify head position if you have neck issues"
-            ],
-            "imageSrc": "/static/images/trikonasana.jpg",
-            "gifName": "trikonasana.jpg"
-        },
-        {
-            "id": "virabhadrasana",
-            "name": "Virabhadrasana",
-            "sanskritName": "वीरभद्रासन",
-            "englishName": "Warrior Pose",
-            "description": "It is a foundational yoga pose that balances flexibility and strength in true warrior fashion.",
-            "benefits": [
-                "Strengthens legs, core, and back",
-                "Opens hips and chest",
-                "Improves concentration and balance",
-                "Builds stamina and endurance",
-                "Stimulates abdominal organs"
-            ],
-            "instructions": [
-                "Start in Mountain Pose, step one foot back.",
-                "Align front heel with back arch.",
-                "Bend front knee over ankle.",
-                "Lift arms overhead or alongside body.",
-                "Gaze forward and breathe steadily.",
-                "Hold for 30-60 seconds, then switch sides."
-            ],
-            "cautions": [
-                "Avoid with high blood pressure (arms overhead)",
-                "Modify knee bend if you have knee issues",
-                "Use caution with shoulder injuries"
-            ],
-            "imageSrc": "/static/images/virabhadrasana.jpg",
-            "gifName": "virabhadrasana.jpg"
-        },
-        {
-            "id": "bhujangasana",
-            "name": "Bhujangasana",
-            "sanskritName": "भुजङ्गासन",
-            "englishName": "Cobra Pose",
-            "description": "A gentle backbend that strengthens the spine and opens the chest.",
-            "benefits": [
-                "Strengthens the spine and back muscles",
-                "Opens chest and shoulders",
-                "Improves posture and counteracts slouching",
-                "Stimulates abdominal organs",
-                "Increases flexibility of the spine"
-            ],
-            "instructions": [
-                "Lie on your stomach with legs extended behind you.",
-                "Place palms under shoulders, elbows close to your body.",
-                "Press into hands and lift chest off the floor.",
-                "Keep lower ribs on the floor and look forward.",
-                "Maintain space between shoulders and ears.",
-                "Hold for 15-30 seconds, breathing deeply."
-            ],
-            "cautions": [
-                "Avoid with severe back problems or hernia",
-                "Practice with caution if you have neck injuries",
-                "Not recommended during pregnancy"
-            ],
-            "imageSrc": "/static/images/bhujangasana.jpg",
-            "gifName": "bhujangasana.jpg"
-        },
-        {
-            "id": "setubandhasana",
-            "name": "Setu Bandhasana",
-            "sanskritName": "सेतुबन्धासन",
-            "englishName": "Bridge Pose",
-            "description": "A gentle backbend that strengthens the back and opens the chest.",
-            "benefits": [
-                "Strengthens the back, glutes, and hamstrings",
-                "Opens the chest and shoulders",
-                "Improves circulation and digestion",
-                "Reduces anxiety and stress",
-                "Relieves mild backache and fatigue"
-            ],
-            "instructions": [
-                "Lie on your back with knees bent, feet flat on the floor.",
-                "Place feet hip-width apart, close to your buttocks.",
-                "Press into your feet and lift hips toward ceiling.",
-                "Clasp hands beneath your back or keep arms alongside body.",
-                "Keep thighs and feet parallel.",
-                "Hold for 30-60 seconds, then gently lower down."
-            ],
-            "cautions": [
-                "Avoid with neck injuries or severe back pain",
-                "Use caution if you have high blood pressure",
-                "Support with a block under sacrum if needed"
-            ],
-            "imageSrc": "/static/images/setubandhasana.png",
-            "gifName": "setubandhasana.png"
-        },
-        {
-            "id": "uttanasana",
-            "name": "Uttanasana",
-            "sanskritName": "उत्तानासन",
-            "englishName": "Standing Forward Bend",
-            "description": "A calming forward fold that stretches the entire back of the body.",
-            "benefits": [
-                "Stretches hamstrings, calves, and hips",
-                "Strengthens thighs and knees",
-                "Reduces stress, anxiety, and fatigue",
-                "Relieves headache and insomnia",
-                "Stimulates liver and kidneys"
-            ],
-            "instructions": [
-                "Begin standing with feet hip-width apart.",
-                "Exhale and bend forward from the hip joints.",
-                "Lengthen the front of your torso as you fold.",
-                "Place hands on the floor or hold onto your ankles.",
-                "Allow your head to hang freely.",
-                "Hold for 30-60 seconds, breathing deeply."
-            ],
-            "cautions": [
-                "Avoid with back injuries or sciatica",
-                "Bend knees if hamstrings are tight",
-                "Use caution with high blood pressure or headache"
-            ],
-            "imageSrc": "/static/images/uttanasana.png",
-            "gifName": "uttanasana.png"
-        },
-        {
-            "id": "shavasana",
-            "name": "Shavasana",
-            "sanskritName": "शवासन",
-            "englishName": "Corpse Pose",
-            "description": "A restorative pose that relaxes the entire body and calms the mind.",
-            "benefits": [
-                "Deeply relaxes the entire body",
-                "Reduces blood pressure and anxiety",
-                "Improves concentration and mental clarity",
-                "Helps manage insomnia and fatigue",
-                "Promotes mindfulness and meditation"
-            ],
-            "instructions": [
-                "Lie flat on your back on a comfortable surface.",
-                "Extend legs and allow feet to fall out to the sides.",
-                "Rest arms alongside body, palms facing upward.",
-                "Close your eyes and relax your entire body.",
-                "Focus on your natural breath without controlling it.",
-                "Remain in the pose for 5-10 minutes."
-            ],
-            "cautions": [
-                "Support lower back with a pillow if needed",
-                "Use a folded blanket under head for neck comfort",
-                "May be uncomfortable for those with respiratory issues"
-            ],
-            "imageSrc": "/static/images/shavasana.png",
-            "gifName": "shavasana.png"
-        },
-        {
-            "id": "ardhamatsyendrasana",
-            "name": "Ardha Matsyendrasana",
-            "sanskritName": "अर्धमत्स्येन्द्रासन",
-            "englishName": "Half Lord of the Fishes Pose",
-            "description": "A seated twist that improves spine mobility and stimulates digestion.",
-            "benefits": [
-                "Improves spine mobility and flexibility",
-                "Stimulates digestive organs",
-                "Relieves lower backache and hip pain",
-                "Strengthens and stretches the shoulders",
-                "Improves energy levels and mental focus"
-            ],
-            "instructions": [
-                "Sit with legs extended in front of you.",
-                "Bend right knee and place foot outside left thigh.",
-                "Bend left knee and tuck left foot near right buttock.",
-                "Twist torso to the right, placing left elbow outside right knee.",
-                "Look over right shoulder, keeping spine tall.",
-                "Hold for 30-60 seconds, then repeat on other side."
-            ],
-            "cautions": [
-                "Avoid with severe back or spinal issues",
-                "Modify if you have knee problems",
-                "Practice with caution during pregnancy"
-            ],
-            "imageSrc": "/static/images/ardhamatsyendrasana.png",
-            "gifName": "ardhamatsyendrasana.png"
-        }
-    ]
-    return jsonify(poses)
-
-@app.route('/api/poses/<pose_id>', methods=['GET'])
-def get_pose(pose_id):
-    """Return details for a specific pose"""
-    # This would normally come from a database
-    poses = json.loads(get_poses().get_data())
-    pose = next((p for p in poses if p["id"] == pose_id), None)
+@app.route('/api/progress', methods=['GET'])
+def get_progress():
+    """Return progress data for all poses"""
+    progress_data = load_progress_data()
     
-    if pose:
-        return jsonify(pose)
+    # Format for response - calculate total time in human-readable format
+    formatted_data = {}
+    for pose, data in progress_data.items():
+        formatted_data[pose] = data.copy()
+        # Convert total practice time from seconds to minutes and hours if needed
+        total_seconds = data['total_practice_time']
+        if total_seconds < 60:
+            time_str = f"{int(total_seconds)} seconds"
+        elif total_seconds < 3600:
+            mins = int(total_seconds / 60)
+            secs = int(total_seconds % 60)
+            time_str = f"{mins} min {secs} sec"
+        else:
+            hours = int(total_seconds / 3600)
+            mins = int((total_seconds % 3600) / 60)
+            time_str = f"{hours} hr {mins} min"
+            
+        formatted_data[pose]['practice_time_display'] = time_str
+    
+    return jsonify(formatted_data)
+
+@app.route('/api/progress/<pose_id>', methods=['GET'])
+def get_pose_progress(pose_id):
+    """Return progress data for a specific pose"""
+    progress_data = load_progress_data()
+    
+    # Check if pose exists in progress data
+    if pose_id in progress_data:
+        data = progress_data[pose_id].copy()
+        
+        # Add completion time for this pose
+        completion_time = get_pose_completion_time(pose_id)
+        data['completion_time'] = completion_time
+        
+        # Format practice time
+        total_seconds = data['total_practice_time']
+        if total_seconds < 60:
+            time_str = f"{int(total_seconds)} seconds"
+        elif total_seconds < 3600:
+            mins = int(total_seconds / 60)
+            secs = int(total_seconds % 60)
+            time_str = f"{mins} min {secs} sec"
+        else:
+            hours = int(total_seconds / 3600)
+            mins = int((total_seconds % 3600) / 60)
+            time_str = f"{hours} hr {mins} min"
+            
+        data['practice_time_display'] = time_str
+        
+        return jsonify(data)
     else:
         return jsonify({"error": "Pose not found"}), 404
 
-@app.route('/api/accuracy', methods=['GET'])
-def get_accuracy():
-    """Return accuracy data for analytics"""
-    # Use the existing accuracy_data
-    if len(accuracy_data['values']) == 0:
-        values = [67, 78, 68, 89]
-    else:
-        values = accuracy_data['values']
+@app.route('/api/charts/<pose_id>', methods=['GET'])
+def get_pose_charts(pose_id):
+    """Return chart data for a specific pose"""
+    import numpy as np  # Import here to avoid global scope pollution
+    progress_data = load_progress_data()
     
-    labels = ['Right Arm', 'Left Arm', 'Right Leg', 'Left Leg']
-    return jsonify({
-        'values': values,
-        'labels': labels,
-        'poses': accuracy_data.get('poses', [current_pose] * 4)
-    })
+    # Check if pose exists in progress data
+    if pose_id in progress_data:
+        # Generate chart data for this pose
+        chart_data = {
+            'accuracy': {
+                'labels': ['Right Arm', 'Left Arm', 'Right Leg', 'Left Leg'],
+                'values': []
+            },
+            'progress': {
+                'labels': ['Attempts', 'Completions'],
+                'values': [progress_data[pose_id]['attempts'], progress_data[pose_id]['completions']]
+            },
+            'best_accuracy': progress_data[pose_id]['best_accuracy']
+        }
+        
+        # Generate realistic random data for body part accuracy
+        chart_data['accuracy']['values'] = [
+            75 + 10 * np.random.random(),
+            75 + 10 * np.random.random(),
+            75 + 10 * np.random.random(),
+            75 + 10 * np.random.random()
+        ]
+        
+        return jsonify(chart_data)
+    else:
+        return jsonify({"error": "Pose not found"}), 404
 
-@app.route('/api/video')
-def api_video():
-    """API endpoint for video stream"""
-    # Identical to /video endpoint
-    return video()
+@app.route('/charts')
+def charts():
+    """Render charts page"""
+    # Ensure progress data file is created
+    if not os.path.exists(progress_data_file):
+        data = initialize_progress_data()
+        save_progress_data(data)
+        print(f"Created new progress data file at {progress_data_file}")
+        
+    return render_template('charts.html')
 
 # Catch-all route to handle React Router paths
 @app.route('/<path:path>')
@@ -755,6 +698,15 @@ def serve_static_images(filename):
         pose_name = filename.split('.')[0]
         print(f"Image not found: {filename}, using placeholder for {pose_name}")
         return serve_placeholder(pose_name)
+
+# Add a route to serve the camera-fix.css file directly
+@app.route('/static/Styles/camera-fix.css')
+def serve_camera_fix_css():
+    """Serve the camera-fix.css file"""
+    file_path = os.path.join(os.path.dirname(__file__), 'static', 'Styles', 'camera-fix.css')
+    with open(file_path, 'r') as f:
+        css_content = f.read()
+    return Response(css_content, mimetype='text/css')
 
 if __name__=="__main__":
     print("Starting HuggingFace-only Yoga Pose Detection server...")

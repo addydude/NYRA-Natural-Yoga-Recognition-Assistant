@@ -76,6 +76,7 @@ firebase-config.ts
 firebase-config.json
 **/src/lib/firebase-credentials.ts
 **/src/lib/firebase-credentials.js
+
 # Python
 __pycache__/
 *.py[cod]
@@ -99,6 +100,14 @@ Yoga-82/
 *.onnx
 *.tflite
 *.weights
+*.safetensors
+model.safetensors
+
+# Specific HuggingFace model directories
+finetuned-for-YogaPosesv6/
+local_models/mediapipe/
+**/huggingface-models/
+**/pretrained_models/
 
 # Sensitive information
 *secret*

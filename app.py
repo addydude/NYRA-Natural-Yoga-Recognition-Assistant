@@ -1,6 +1,7 @@
 # Apply JAX-NumPy compatibility fix before imports
 import sys
 import os
+import threading
 
 # Add the current directory to the path to ensure imports work
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -24,6 +25,7 @@ import matplotlib.pyplot as plt
 import threading
 import json
 import pygame
+from websocket_handler import start_websocket_server, broadcast_pose_status
 
 # Import CORS to handle cross-origin requests during development
 from flask_cors import CORS
@@ -79,8 +81,12 @@ accuracy_data = {
     'values': []
 }
 
-# Global variable to store the current pose
+# Global variables for pose tracking
 current_pose = 'vrksana'  # Default to vrksana
+pose_hold_start_time = None
+pose_correct_duration = 0
+pose_completed = False
+correct_pose_threshold = 0.85  # 85% accuracy for pose to be considered correct
 
 # Initialize webcam capture
 cap = cv2.VideoCapture(0)
@@ -102,6 +108,21 @@ except ImportError:
         {'Name': 'virabhadrasana', 'right_arm': 167, 'left_arm': 166, 'right_leg':273,'left_leg':178},
         {'Name': 'adhomukha', 'right_arm': 176, 'left_arm': 171, 'right_leg':177,'left_leg':179},
     ]
+
+# Define required hold times in seconds for pose completion
+pose_completion_times = {
+    'vrksana': 30,        # Tree pose
+    'adhomukha': 45,      # Downward dog
+    'balasana': 60,       # Child's pose
+    'tadasan': 20,        # Mountain pose
+    'trikonasana': 40,    # Triangle pose
+    'virabhadrasana': 35, # Warrior pose
+    'bhujangasana': 40,   # Cobra pose
+    'setubandhasana': 50, # Bridge pose
+    'uttanasana': 35,     # Standing forward bend
+    'shavasana': 120,     # Corpse pose
+    'ardhamatsyendrasana': 45  # Half lord of the fishes
+}
 
 # Check if the webcam is opened correctly
 if not cap.isOpened():
@@ -206,7 +227,7 @@ def compare_left_leg(left_leg):
 arr = np.array([])
     
 def generate_frames(arr):
-    global accuracy_data
+    global accuracy_data, pose_hold_start_time, pose_correct_duration, pose_completed
     count = 0
     timeout = 20
     timeout_start = time.time()
@@ -223,55 +244,212 @@ def generate_frames(arr):
             # resize the image
             img = frame.copy()
              
-            # Use our PoseDetector
+            # Use our PoseDetector - draw landmarks but don't show breathing guide inside camera view
             frame = detector.findPose(frame, draw=True)
             lmlist = detector.getPosition(frame, draw=False)
             
+            # Get breathing info for external UI without drawing on camera frame
+            breathing_info = detector.getBreathingInfo()
+            
             # Check if we have a person in frame
             if len(lmlist) != 0:
-                # Add breathing guidance
-                frame = detector.showBreathingGuide(frame)
-                
-                # Continue with angle-based measurements
-                # Right arm
-                RightArmAngle = int(detector.findAngle(frame, 12, 14, 16))
-                accuracy = compare_right_arm(RightArmAngle)
-                if (count <= 16 and accuracy != 0):
-                    arr = np.append(arr, accuracy)
+                # Continue with angle-based measurements - all with draw=False to prevent extra blue lines
+                RightArmAngle = int(detector.findAngle(frame, 12, 14, 16, draw=False))
+                right_arm_accuracy = compare_right_arm(RightArmAngle)
+                if (count <= 16 and right_arm_accuracy != 0):
+                    arr = np.append(arr, right_arm_accuracy)
                     count = count + 1
                     accuracy_data['poses'].append('Right Arm')
-                    accuracy_data['values'].append(accuracy)
+                    accuracy_data['values'].append(right_arm_accuracy)
 
-                # Left arm
-                angle = int(detector.findAngle(frame, 11, 13, 15))
-                accuracy = compare_left_arm(angle)
-                if (count <= 16 and accuracy != 0):
-                    arr = np.append(arr, accuracy)
+                # Left arm - set draw=False
+                LeftArmAngle = int(detector.findAngle(frame, 11, 13, 15, draw=False))
+                left_arm_accuracy = compare_left_arm(LeftArmAngle)
+                if (count <= 16 and left_arm_accuracy != 0):
+                    arr = np.append(arr, left_arm_accuracy)
                     count = count + 1
                     accuracy_data['poses'].append('Left Arm')
-                    accuracy_data['values'].append(accuracy)
+                    accuracy_data['values'].append(left_arm_accuracy)
                 
-                # Right leg
-                angle = int(detector.findAngle(frame, 24, 26, 28))
-                accuracy = compare_right_leg(angle)
-                if (count <= 16 and accuracy != 0):
-                    arr = np.append(arr, accuracy)
+                # Right leg - set draw=False
+                RightLegAngle = int(detector.findAngle(frame, 24, 26, 28, draw=False))
+                right_leg_accuracy = compare_right_leg(RightLegAngle)
+                if (count <= 16 and right_leg_accuracy != 0):
+                    arr = np.append(arr, right_leg_accuracy)
                     count = count + 1
                     accuracy_data['poses'].append('Right Leg')
-                    accuracy_data['values'].append(accuracy)
+                    accuracy_data['values'].append(right_leg_accuracy)
                
-                # Left leg
-                angle = int(detector.findAngle(frame, 23, 25, 27))
-                accuracy = compare_left_leg(angle)
-                if (count <= 16 and accuracy != 0):
-                    arr = np.append(arr, accuracy)
+                # Left leg - set draw=False
+                LeftLegAngle = int(detector.findAngle(frame, 23, 25, 27, draw=False))
+                left_leg_accuracy = compare_left_leg(LeftLegAngle)
+                if (count <= 16 and left_leg_accuracy != 0):
+                    arr = np.append(arr, left_leg_accuracy)
                     count = count + 1
                     accuracy_data['poses'].append('Left Leg')
-                    accuracy_data['values'].append(accuracy)
+                    accuracy_data['values'].append(left_leg_accuracy)
                 elif(count > 16):
                     print("entering")
                     print("accuracy: ", accuracyCalculation(arr))
+                
+                # Calculate overall pose accuracy for WebSocket feedback and timer
+                # Filter zeros to avoid skewing the calculation
+                accuracies = [a for a in [right_arm_accuracy, left_arm_accuracy, right_leg_accuracy, left_leg_accuracy] if a > 0]
+                
+                # Make sure we have at least one valid accuracy value
+                if accuracies:
+                    overall_accuracy = sum(accuracies) / len(accuracies)
                     
+                    # Lower the accuracy threshold to make pose detection more lenient
+                    is_correct_pose = overall_accuracy >= 70  # Lowered threshold for TensorFlow model
+                    
+                    # Debug output to help diagnose issues
+                    if count % 30 == 0:  # Print only occasionally to avoid spamming the console
+                        print(f"Accuracy: {overall_accuracy:.1f}%, Is correct: {is_correct_pose}")
+                    
+                    # Track pose hold time
+                    current_time = time.time()
+                    if is_correct_pose:
+                        # First time in correct pose
+                        if pose_hold_start_time is None:
+                            pose_hold_start_time = current_time
+                            print(f"Starting timer for correct pose: {current_pose}")
+                            
+                            # Increment the attempts counter when starting a new pose attempt
+                            try:
+                                progress_data_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pose_progress.json')
+                                if os.path.exists(progress_data_file):
+                                    with open(progress_data_file, 'r') as f:
+                                        progress_data = json.load(f)
+                                    
+                                    if current_pose in progress_data:
+                                        progress_data[current_pose]['attempts'] += 1
+                                        progress_data[current_pose]['last_practiced'] = time.strftime("%Y-%m-%d %H:%M:%S")
+                                        
+                                        with open(progress_data_file, 'w') as f:
+                                            json.dump(progress_data, f, indent=4)
+                                        print(f"Incremented attempts for {current_pose}")
+                            except Exception as e:
+                                print(f"Error updating attempts count: {str(e)}")
+                        
+                        # Calculate how long they've held the correct pose
+                        pose_correct_duration = current_time - pose_hold_start_time
+                        
+                        # Check if pose has been held long enough to be completed
+                        required_time = pose_completion_times.get(current_pose, 30)  # Default 30s
+                        if pose_correct_duration >= required_time and not pose_completed:
+                            pose_completed = True
+                            
+                            # Update progress data with calculated accuracy values
+                            try:
+                                # Load current progress data
+                                progress_data_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pose_progress.json')
+                                if os.path.exists(progress_data_file):
+                                    with open(progress_data_file, 'r') as f:
+                                        progress_data = json.load(f)
+                                        
+                                    # Update completion count
+                                    if current_pose in progress_data:
+                                        progress_data[current_pose]['completions'] += 1
+                                        
+                                        # Update practice time
+                                        progress_data[current_pose]['total_practice_time'] += pose_correct_duration
+                                        
+                                        # Update best accuracy if this attempt was better
+                                        if overall_accuracy > progress_data[current_pose]['best_accuracy']:
+                                            progress_data[current_pose]['best_accuracy'] = overall_accuracy
+                                        
+                                        # Update last practiced time
+                                        progress_data[current_pose]['last_practiced'] = time.strftime("%Y-%m-%d %H:%M:%S")
+                                        
+                                        # Save the updated progress data
+                                        with open(progress_data_file, 'w') as f:
+                                            json.dump(progress_data, f, indent=4)
+                                            
+                                        print(f"Updated progress for {current_pose}: completions={progress_data[current_pose]['completions']}")
+                            except Exception as e:
+                                print(f"Error updating progress data: {str(e)}")
+                            
+                            broadcast_pose_status(is_correct_pose, pose_completed)
+                            print(f"Pose completed! Held for {pose_correct_duration:.1f} seconds")
+                    else:
+                        # Reset hold timer if pose is incorrect (with longer grace period for TensorFlow model)
+                        if pose_hold_start_time is not None and (current_time - pose_hold_start_time) > 2.0:  # Extended grace period
+                            pose_hold_start_time = None
+                            pose_correct_duration = 0
+                            print("Pose incorrect - resetting timer")
+                    
+                    # Add visual feedback for pose status - don't add breathing UI here
+                    h, w, c = frame.shape
+                    
+                    # Add overlay showing completion status when pose is completed
+                    if pose_completed:
+                        # Create expanded image with 100 pixels at the bottom for completion notification
+                        expanded_h = h + 100
+                        expanded_img = np.zeros((expanded_h, w, 3), dtype=np.uint8)
+                        
+                        # Copy the original image to the top portion of the expanded image
+                        expanded_img[0:h, 0:w] = frame
+                        
+                        # Create bottom area with semi-transparent green background
+                        cv2.rectangle(expanded_img, (0, h), (w, expanded_h), (0, 200, 0), -1)
+                        
+                        # Add text
+                        font = cv2.FONT_HERSHEY_DUPLEX
+                        text = "Pose Completed!"
+                        text_size = cv2.getTextSize(text, font, 1.5, 2)[0]
+                        text_x = (w - text_size[0]) // 2
+                        text_y = h + 60
+                        cv2.putText(expanded_img, text, (text_x, text_y), font, 1.5, (255, 255, 255), 2)
+                        
+                        frame = expanded_img
+                    
+                    # Add progress indicator if not completed yet but pose is correct  
+                    # This is the part that shows the hold pose prompt
+                    elif pose_correct_duration > 0:
+                        # Calculate required time to complete pose
+                        required_time = pose_completion_times.get(current_pose, 30)  # Default 30s
+                        
+                        # Calculate progress as a percentage
+                        progress = (pose_correct_duration / required_time) * 100
+                        progress = min(100, max(0, progress))  # Limit to 0-100%
+                        
+                        # Create expanded image with 60 pixels at the bottom for progress bar
+                        expanded_h = h + 60
+                        expanded_img = np.zeros((expanded_h, w, 3), dtype=np.uint8)
+                        
+                        # Copy the original image to the top portion of the expanded image
+                        expanded_img[0:h, 0:w] = frame
+                        
+                        # Create bottom area with dark background
+                        cv2.rectangle(expanded_img, (0, h), (w, expanded_h), (50, 50, 50), -1)
+                        
+                        # Background of bar
+                        bar_height = 20
+                        bar_y = h + 20
+                        bar_width = int(w * 0.8)
+                        bar_x = (w - bar_width) // 2
+                        cv2.rectangle(expanded_img, (bar_x, bar_y), (bar_x + bar_width, bar_y + bar_height), (200, 200, 200), -1)
+                        
+                        # Filled portion
+                        filled_width = int(bar_width * (progress / 100))
+                        cv2.rectangle(expanded_img, (bar_x, bar_y), (bar_x + filled_width, bar_y + bar_height), (0, 255, 0), -1)
+                        
+                        # Text showing percentage and time remaining
+                        text = f"{int(progress)}% - Hold for {int(required_time-pose_correct_duration)}s more"
+                        text_size = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 1)[0]
+                        text_x = (w - text_size[0]) // 2
+                        text_y = h + 15
+                        cv2.putText(expanded_img, text, (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 1, cv2.LINE_AA, False)
+                        
+                        frame = expanded_img
+                    
+                    # Add a small indicator in the corner even when not holding a correct pose
+                    else:
+                        # Add a small text indicator in the corner
+                        cv2.putText(frame, "Adjust pose to match", (10, h-20), cv2.FONT_HERSHEY_SIMPLEX, 
+                                   0.6, (0, 0, 255), 1, cv2.LINE_AA)
+                
             cv2.waitKey(1)
             ret, buffer = cv2.imencode('.jpg', frame)
             frame = buffer.tobytes()
@@ -391,8 +569,13 @@ def index():
     english_name = english_names.get(pose, '')
     
     # Store the selected pose in global variable
-    global current_pose
+    global current_pose, pose_hold_start_time, pose_correct_duration, pose_completed
     current_pose = pose
+    
+    # Reset pose tracking when pose changes
+    pose_hold_start_time = None
+    pose_correct_duration = 0
+    pose_completed = False
     
     # Also update the detector's pose name
     global detector
@@ -419,6 +602,36 @@ def charts():
         
     labels = ['Right Arm', 'Left Arm', 'Right Leg', 'Left Leg']
     colors = ['#ff0000','#0000ff','#ffffe0','#008000','#800080','#FFA500', '#FF2554']
+    
+    # Initialize progress data tracking if not already present
+    progress_data_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pose_progress.json')
+    
+    # Create progress data file if it doesn't exist
+    if not os.path.exists(progress_data_file):
+        poses = [
+            'vrksana', 'adhomukha', 'balasana', 'tadasan', 'trikonasana', 
+            'virabhadrasana', 'bhujangasana', 'setubandhasana', 
+            'uttanasana', 'shavasana', 'ardhamatsyendrasana'
+        ]
+        
+        data = {}
+        for pose in poses:
+            data[pose] = {
+                'attempts': 0,
+                'completions': 0,
+                'total_practice_time': 0,
+                'best_accuracy': 0,
+                'last_practiced': None
+            }
+        
+        # Save initial progress data
+        try:
+            with open(progress_data_file, 'w') as f:
+                json.dump(data, f, indent=4)
+            print("Initial progress data file created")
+        except Exception as e:
+            print(f"Error creating progress data file: {str(e)}")
+    
     return render_template('charts.html', values=values, labels=labels, colors=colors)
 
 @app.route('/video')
@@ -427,8 +640,13 @@ def video():
     pose = request.args.get('pose', 'vrksana')
     
     # Update global detector with the selected pose
-    global detector
+    global detector, pose_hold_start_time, pose_correct_duration, pose_completed
     detector.setPose(pose)
+    
+    # Reset pose tracking
+    pose_hold_start_time = None
+    pose_correct_duration = 0
+    pose_completed = False
     
     return Response(generate_frames(arr), mimetype='multipart/x-mixed-replace; boundary=frame')
 
@@ -526,7 +744,7 @@ def get_poses():
         },
         {
             "id": "tadasan",
-            "name": "Tadasana",
+            "name": "Tadasan",
             "sanskritName": "ताड़ासन",
             "englishName": "Mountain Pose",
             "description": "The foundation of all standing poses. It improves posture, balance, and body awareness.",
@@ -644,9 +862,21 @@ def get_accuracy():
 def api_video():
     """API endpoint for video stream"""
     pose = request.args.get('pose', 'vrksana')
-    global detector
+    global detector, pose_hold_start_time, pose_correct_duration, pose_completed
     detector.setPose(pose)
+    
+    # Reset pose tracking
+    pose_hold_start_time = None
+    pose_correct_duration = 0
+    pose_completed = False
+    
     return Response(generate_frames(arr), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+# WebSocket route
+@app.route('/ws/pose_feedback')
+def pose_feedback_ws():
+    """WebSocket endpoint for pose feedback"""
+    return "WebSocket endpoint for pose feedback. Connect with a WebSocket client."
 
 # Serve static images with fallback to placeholder
 @app.route('/static/images/<path:filename>')
@@ -663,6 +893,23 @@ def serve_static_images(filename):
         print(f"Image not found: {filename}")
         return "Image not found", 404
 
+def start_websocket_background():
+    """Start WebSocket server in a background thread"""
+    # Start the WebSocket server in a daemon thread
+    # The actual asyncio loop initialization is now handled within start_websocket_server
+    websocket_thread = threading.Thread(target=start_websocket_server, daemon=True)
+    websocket_thread.name = "WebSocketThread"  # Name the thread for easier debugging
+    websocket_thread.start()
+    print("WebSocket server thread started")
+    
+    # Give the thread a moment to initialize
+    time.sleep(0.5)
+
 if __name__ == "__main__":
     print(f"Static folder path: {app.static_folder}")
+    
+    # Start WebSocket server in the background
+    start_websocket_background()
+    
+    # Start the Flask app
     app.run(host="127.0.0.1", debug=True)

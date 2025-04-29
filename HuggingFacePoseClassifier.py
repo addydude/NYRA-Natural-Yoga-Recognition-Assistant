@@ -20,7 +20,8 @@ class HuggingFacePoseClassifier:
         
         # Load model with standard image preprocessing approach
         try:
-            # Try to load the model
+            # Load the model directly from HuggingFace
+            print(f"Loading model from HuggingFace")
             self.model = AutoModelForImageClassification.from_pretrained(model_name)
             
             # Set model to evaluation mode

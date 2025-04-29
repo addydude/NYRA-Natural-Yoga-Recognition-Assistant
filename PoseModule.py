@@ -8,7 +8,7 @@ import pygame  # For audio playback
 
 
 class PoseDetector:
-    def __init__(self, mode = False, maxHands=1, modelComplexity=1, upBody = False, smooth=True, detectionCon = 0.5, trackCon = 0.5, pose_name="vrksana"):
+    def __init__(self, mode = False, maxHands=1, modelComplexity=1, upBody = False, smooth=True, detectionCon = 0.5, trackCon = 0.5, pose_name="vrksana", use_local_model=True):
 
         self.mode = mode
         self.maxHands = maxHands
@@ -18,25 +18,26 @@ class PoseDetector:
         self.detectionCon = detectionCon
         self.trackCon = trackCon
         self.pose_name = pose_name
+        self.use_local_model = use_local_model
 
         self.mpDraw = mp.solutions.drawing_utils
         self.mpPose = mp.solutions.pose
-        self.pose = self.mpPose.Pose(self.mode,self.maxHands, self.modelComplex,  self.upBody, self.smooth, self.detectionCon, self.trackCon)
+        self.pose = self.mpPose.Pose(self.mode, self.maxHands, self.modelComplex, self.upBody, self.smooth, self.detectionCon, self.trackCon)
         
         # Define breathing patterns for different yoga poses
         self.breathing_patterns = {
             # Format: 'pose_name': (total_cycle_seconds, inhale_ratio)
-            'vrksana': (6, 0.4),       # Tree pose: 2.4s inhale, 3.6s exhale
-            'adhomukha': (8, 0.5),     # Downward dog: 4s inhale, 4s exhale 
-            'balasana': (10, 0.3),     # Child's pose: 3s inhale, 7s exhale (more relaxed)
-            'tadasan': (5, 0.5),       # Mountain pose: 2.5s inhale, 2.5s exhale
-            'trikonasana': (7, 0.4),   # Triangle pose: 2.8s inhale, 4.2s exhale
-            'virabhadrasana': (6, 0.45), # Warrior pose: 2.7s inhale, 3.3s exhale
-            'bhujangasana': (7, 0.4),   # Cobra pose: 2.8s inhale, 4.2s exhale
-            'setubandhasana': (8, 0.4), # Bridge pose: 3.2s inhale, 4.8s exhale
-            'uttanasana': (6, 0.3),     # Standing forward bend: 1.8s inhale, 4.2s exhale
-            'shavasana': (12, 0.3),     # Corpse pose: 3.6s inhale, 8.4s exhale (deeply relaxing)
-            'ardhamatsyendrasana': (7, 0.4) # Half lord of the fishes pose: 2.8s inhale, 4.2s exhale
+            'vrksana': (10, 0.4),       # Tree pose: 4s inhale, 6s exhale (was 6s total)
+            'adhomukha': (12, 0.5),     # Downward dog: 6s inhale, 6s exhale (was 8s total)
+            'balasana': (15, 0.3),      # Child's pose: 4.5s inhale, 10.5s exhale (was 10s total)
+            'tadasan': (8, 0.5),        # Mountain pose: 4s inhale, 4s exhale (was 5s total)
+            'trikonasana': (12, 0.4),   # Triangle pose: 4.8s inhale, 7.2s exhale (was 7s total)
+            'virabhadrasana': (10, 0.45), # Warrior pose: 4.5s inhale, 5.5s exhale (was 6s total)
+            'bhujangasana': (12, 0.4),   # Cobra pose: 4.8s inhale, 7.2s exhale (was 7s total)
+            'setubandhasana': (12, 0.4), # Bridge pose: 4.8s inhale, 7.2s exhale (was 8s total)
+            'uttanasana': (10, 0.3),     # Standing forward bend: 3s inhale, 7s exhale (was 6s total)
+            'shavasana': (20, 0.3),      # Corpse pose: 6s inhale, 14s exhale (was 12s total)
+            'ardhamatsyendrasana': (12, 0.4) # Half lord of the fishes pose: 4.8s inhale, 7.2s exhale (was 7s total)
         }
         
         # Get breathing pattern for current pose
@@ -183,10 +184,7 @@ class PoseDetector:
             if angle < 0:
                 angle += 360
             
-            # Only print angle if in reasonable range (avoid spam)
-            if 0 <= angle <= 360:
-                print(f"Angle {p1}-{p2}-{p3}: {angle:.1f}")
-
+            # Only draw if explicitly requested with draw=True parameter
             if draw and img is not None and img.size > 0:
                 # Make sure we have a contiguous array before drawing
                 if not img.flags['C_CONTIGUOUS']:
@@ -196,7 +194,8 @@ class PoseDetector:
                 cv2.circle(img, (x1, y1), 5, (255, 0, 0), cv2.FILLED)
                 cv2.circle(img, (x2, y2), 5, (255, 0, 0), cv2.FILLED)
                 cv2.circle(img, (x3, y3), 5, (255, 0, 0), cv2.FILLED)
-                cv2.line(img, (x1, y1), (x2, y2), (255, 255, 255), 2)
+                # Draw lines
+                cv2.line(img, (x1, y1), (x2, y2), (255, 255, 255), 2)  
                 cv2.line(img, (x3, y3), (x2, y2), (255, 255, 255), 2)
                 cv2.putText(img, str(int(angle)), (x2-50, y2+50),
                             cv2.FONT_HERSHEY_PLAIN, 2, (0, 0, 255), 2)
@@ -253,17 +252,26 @@ class PoseDetector:
             # Limit progress to range [0, 1]
             progress = max(0, min(1, progress))
             
-            # Create a fresh copy of the image for overlay
-            overlay = img.copy()
+            # Create a new canvas that's larger than the original image to place UI elements outside
+            # Add 120 pixels at the top for breathing guide
+            expanded_h = h + 120
+            expanded_img = np.zeros((expanded_h, w, 3), dtype=np.uint8)
             
-            # Position and size of breathing indicator
+            # Copy the original image to the bottom portion of the expanded image
+            expanded_img[120:expanded_h, 0:w] = img
+            
+            # Create background for breathing guide in the new top area
+            cv2.rectangle(expanded_img, (0, 0), (w, 120), (240, 240, 240), -1)
+            
+            # Position of breathing indicator in the top area
             box_width = 300
-            box_height = 100
-            box_x = w - box_width - 20
+            box_height = 80
+            box_x = (w - box_width) // 2
             box_y = 20
             
             # Draw background box with rounded corners
-            cv2.rectangle(overlay, (box_x, box_y), (box_x + box_width, box_y + box_height), (255, 255, 255), -1)
+            cv2.rectangle(expanded_img, (box_x, box_y), (box_x + box_width, box_y + box_height), (255, 255, 255), -1)
+            cv2.rectangle(expanded_img, (box_x, box_y), (box_x + box_width, box_y + box_height), (200, 200, 200), 1)
             
             # Text to display
             text = "INHALE" if self.is_inhaling else "EXHALE"
@@ -272,34 +280,29 @@ class PoseDetector:
             # Draw text centered in box
             text_size = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, 1.5, 2)[0]
             text_x = box_x + (box_width - text_size[0]) // 2
-            text_y = box_y + (box_height + text_size[1]) // 2
-            cv2.putText(overlay, text, (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, 1.5, text_color, 2)
+            text_y = box_y + 50
+            cv2.putText(expanded_img, text, (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, 1.5, text_color, 2)
             
             # Add current pose name
             pose_text = f"Pose: {self.pose_name.capitalize()}"
             pose_text_size = cv2.getTextSize(pose_text, cv2.FONT_HERSHEY_SIMPLEX, 0.7, 1)[0]
             pose_text_x = box_x + (box_width - pose_text_size[0]) // 2
-            pose_text_y = box_y + 25
-            cv2.putText(overlay, pose_text, (pose_text_x, pose_text_y), 
+            pose_text_y = box_y + 20
+            cv2.putText(expanded_img, pose_text, (pose_text_x, pose_text_y), 
                       cv2.FONT_HERSHEY_SIMPLEX, 0.7, (100, 100, 100), 1)
             
             # Progress bar with smoother look
-            bar_height = 15
-            bar_y = box_y + box_height - bar_height - 10
+            bar_height = 10
+            bar_y = box_y + box_height + 5
             # Background of bar (light gray)
-            cv2.rectangle(overlay, (box_x + 10, bar_y), (box_x + box_width - 10, bar_y + bar_height), 
+            cv2.rectangle(expanded_img, (w//4, bar_y), (3*w//4, bar_y + bar_height), 
                         (220, 220, 220), -1)
             # Filled portion of bar
-            cv2.rectangle(overlay, (box_x + 10, bar_y), 
-                        (int(box_x + 10 + progress * (box_width - 20)), bar_y + bar_height), 
+            cv2.rectangle(expanded_img, (w//4, bar_y), 
+                        (int(w//4 + progress * (w//2)), bar_y + bar_height), 
                         text_color, -1)
             
-            # Apply overlay with transparency - ensure result is contiguous
-            alpha = 0.8  # Slightly more opaque for better visibility
-            result = np.zeros_like(img)
-            cv2.addWeighted(overlay, alpha, img, 1 - alpha, 0, result)
-            
-            return np.ascontiguousarray(result)
+            return np.ascontiguousarray(expanded_img)
             
         except Exception as e:
             print(f"Error in showBreathingGuide: {e}")
@@ -349,6 +352,54 @@ class PoseDetector:
             visibility['left_leg'] = True
             
         return visibility
+    
+    def getBreathingInfo(self):
+        """
+        Return breathing information without modifying the image
+        Used for external breathing UI like the one in the web interface
+        """
+        current_time = time.time()
+        elapsed_time = current_time - self.breathing_start_time
+        
+        # Reset cycle when complete
+        if elapsed_time >= self.breathing_cycle:
+            self.breathing_start_time = current_time
+            elapsed_time = 0
+        
+        # Determine if inhaling or exhaling based on position in cycle
+        self.is_inhaling = elapsed_time < (self.breathing_cycle * self.inhale_ratio)
+        
+        # Play audio cue when transitioning between inhale and exhale
+        if self.audio_initialized and self.is_inhaling != self.prev_is_inhaling:
+            try:
+                if pygame.mixer.music.get_busy():
+                    pygame.mixer.music.stop()
+                pygame.mixer.music.load(self.inhale_sound if self.is_inhaling else self.exhale_sound)
+                pygame.mixer.music.play()
+            except Exception as e:
+                print(f"Audio playback error: {str(e)}")
+        
+        # Update previous state
+        self.prev_is_inhaling = self.is_inhaling
+        
+        # Calculate progress percentage through current breath phase
+        if self.is_inhaling:
+            progress = elapsed_time / (self.breathing_cycle * self.inhale_ratio)
+            instruction = "Breathe in deeply through your nose"
+        else:
+            progress = (elapsed_time - self.breathing_cycle * self.inhale_ratio) / (self.breathing_cycle * (1 - self.inhale_ratio))
+            instruction = "Breathe out slowly through your mouth"
+        
+        # Limit progress to range [0, 1]
+        progress = max(0, min(1, progress)) * 100  # Convert to percentage
+        
+        return {
+            "is_inhaling": self.is_inhaling,
+            "progress": progress,  # As percentage 0-100
+            "text": "INHALE" if self.is_inhaling else "EXHALE",
+            "instruction": instruction,
+            "pose_name": self.pose_name
+        }
 
 
 def main():

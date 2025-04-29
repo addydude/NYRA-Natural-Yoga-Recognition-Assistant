@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pose_name }} Yoga Pose</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/index.css') }}">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    {% if camera_fix_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/camera-fix.css') }}">
+    {% endif %}
+</head>
+<body>
+    <div class="upper-container">
+        <div class="header">
+            <h1 class="logo">NYRA</h1>
+            <div class="nav-links">
+                <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="/yoga" class="nav-link"><i class="fas fa-book"></i> Poses</a>
+                <a href="#" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="pose-header">
+            <h1>{{ english_name }}</h1>
+            <h2>{{ sanskrit_name }}</h2>
+        </div>
+
+        <div class="practice-container">
+            <!-- Left Container (Pose Image and Info) -->
+            <div class="pose-info-container">
+                <div class="pose-image-wrapper">
+                    <img src="{{ url_for('static', filename='images/' + gif_name) }}" alt="{{ pose_name }}" class="pose-image">
+                </div>
+                
+                <div class="breathing-guide-container">
+                    <h3><i class="fas fa-lungs"></i> Breathing Guide</h3>
+                    <p>Sync your breath with the animation below. Inhale as it expands, exhale as it contracts.</p>
+                    
+                    <div class="breathing-visualization">
+                        <div id="breathing-circle" class="breathing-circle">
+                            <div class="inner-circle"></div>
+                        </div>
+                    </div>
+                    
+                    <p class="breathing-text">Inhale</p>
+                    <p class="breathing-instructions">{{ inhale_time }}s inhale, {{ exhale_time }}s exhale cycle for optimal performance</p>
+                </div>
+                
+                <div class="pose-stats">
+                    <div class="timer-container">
+                        <h3><i class="fas fa-stopwatch"></i> Practice Timer</h3>
+                        <div class="timer-display" id="timer">00:00</div>
+                        <div class="timer-controls">
+                            <button class="timer-btn" id="timer-start"><i class="fas fa-play"></i></button>
+                            <button class="timer-btn" id="timer-reset"><i class="fas fa-redo"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="completion-container">
+                        <h3><i class="fas fa-chart-line"></i> Progress</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="completion-progress"></div>
+                        </div>
+                        <p id="completion-status">0% complete - Keep holding!</p>
+                        <p id="completion-time"></p>
+                    </div>
+                </div>
+
+                <a href="/charts" class="analytics-button">
+                    <i class="fas fa-chart-pie"></i> View Analytics
+                </a>
+            </div>
+            
+            <!-- Right Container (Camera Feed) -->
+            <div class="camera-container">
+                <div class="live-badge">LIVE</div>
+                <div class="pose-status" id="pose-status">Getting ready...</div>
+                
+                <!-- Accuracy indicators -->
+                <div class="indicators-container">
+                    <div class="accuracy-indicator">
+                        <span class="accuracy-value" id="accuracy-right-arm">0%</span>
+                        <span class="accuracy-label">R Arm</span>
+                    </div>
+                    <div class="accuracy-indicator">
+                        <span class="accuracy-value" id="accuracy-left-arm">0%</span>
+                        <span class="accuracy-label">L Arm</span>
+                    </div>
+                    <div class="accuracy-indicator">
+                        <span class="accuracy-value" id="accuracy-right-leg">0%</span>
+                        <span class="accuracy-label">R Leg</span>
+                    </div>
+                    <div class="accuracy-indicator">
+                        <span class="accuracy-value" id="accuracy-left-leg">0%</span>
+                        <span class="accuracy-label">L Leg</span>
+                    </div>
+                </div>
+                
+                <div class="camera-wrapper">
+                    <img src="{{ url_for('video') }}?pose={{ pose_param }}" class="camera-feed" id="video-feed">
+                </div>
+                
+                <!-- Achievement overlay -->
+                <div class="achievement-overlay" id="achievement-overlay">
+                    <div class="achievement-content">
+                        <i class="fas fa-trophy achievement-icon"></i>
+                        <h2>Pose Completed!</h2>
+                        <p>Well done! You've successfully held the pose.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Breathing animation
+        const breathingCircle = document.getElementById('breathing-circle');
+        const breathingText = document.querySelector('.breathing-text');
+        const innerCircle = document.querySelector('.inner-circle');
+        let isInhaling = true;
+        
+        // Get breathing times from template
+        const inhaleTime = {{ inhale_time }} * 1000; // convert to ms
+        const exhaleTime = {{ exhale_time }} * 1000; // convert to ms
+        
+        function animateBreathing() {
+            if (isInhaling) {
+                breathingCircle.style.transform = 'scale(1.4)';
+                breathingCircle.style.boxShadow = '0 0 20px rgba(74, 210, 149, 0.6)';
+                innerCircle.style.transform = 'scale(1)';
+                breathingText.style.color = '#4ad295';
+                breathingText.textContent = 'Inhale';
+                setTimeout(() => {
+                    isInhaling = false;
+                    animateBreathing();
+                }, inhaleTime);
+            } else {
+                breathingCircle.style.transform = 'scale(1)';
+                breathingCircle.style.boxShadow = '0 0 15px rgba(74, 210, 149, 0.3)';
+                innerCircle.style.transform = 'scale(0.7)';
+                breathingText.style.color = '#555';
+                breathingText.textContent = 'Exhale';
+                setTimeout(() => {
+                    isInhaling = true;
+                    animateBreathing();
+                }, exhaleTime);
+            }
+        }
+        
+        // Start breathing animation
+        animateBreathing();
+        
+        // Connect to backend to monitor pose status
+        let poseCompletionTime;
+        let poseStatus = 'waiting';
+        let progressInterval;
+        
+        // First, get the required time for this pose
+        fetch(`/api/progress/{{ pose_param }}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.completion_time) {
+                    poseCompletionTime = data.completion_time;
+                    document.getElementById('completion-time').textContent = 
+                        `Hold for ${poseCompletionTime} seconds to complete`;
+                } else {
+                    poseCompletionTime = 30; // Default if not specified
+                }
+            })
+            .catch(err => {
+                console.error('Error getting pose data:', err);
+                poseCompletionTime = 30; // Default if error
+            });
+
+        // Function to poll for pose status
+        function checkPoseStatus() {
+            const videoFeed = document.getElementById('video-feed');
+            
+            // Extract completion information from video frame if available
+            // This is a client-side way to detect when the pose is completed
+            // by looking for the celebration overlay on the video feed
+            
+            // Poll for pose status every 1 second
+            progressInterval = setInterval(() => {
+                // Mock the pose progress and accuracy data for now
+                // In a real implementation, this would come from the server
+                updateAccuracy();
+                checkForCompletion();
+            }, 1000);
+        }
+        
+        // Start monitoring pose status
+        checkPoseStatus();
+        
+        // Update accuracy values
+        function updateAccuracy() {
+            // In a real implementation, this would get data from the server
+            // For now, generate semi-random values that trend upward
+            const rightArm = document.getElementById('accuracy-right-arm');
+            const leftArm = document.getElementById('accuracy-left-arm');
+            const rightLeg = document.getElementById('accuracy-right-leg');
+            const leftLeg = document.getElementById('accuracy-left-leg');
+            
+            const currentRight = parseInt(rightArm.textContent) || 0;
+            const currentLeft = parseInt(leftArm.textContent) || 0;
+            const currentRightLeg = parseInt(rightLeg.textContent) || 0;
+            const currentLeftLeg = parseInt(leftLeg.textContent) || 0;
+            
+            // Gradually increase accuracy to simulate improvement
+            rightArm.textContent = Math.min(99, currentRight + Math.floor(Math.random() * 5)) + '%';
+            leftArm.textContent = Math.min(99, currentLeft + Math.floor(Math.random() * 5)) + '%';
+            rightLeg.textContent = Math.min(99, currentRightLeg + Math.floor(Math.random() * 5)) + '%';
+            leftLeg.textContent = Math.min(99, currentLeftLeg + Math.floor(Math.random() * 5)) + '%';
+        }
+        
+        // Check if the pose has been completed (green overlay appears)
+        function checkForCompletion() {
+            if (poseStatus === 'waiting') {
+                // Simulate progressive completion over time
+                const progressBar = document.getElementById('completion-progress');
+                const status = document.getElementById('completion-status');
+                const currentWidth = parseFloat(progressBar.style.width || '0%');
+                const newWidth = Math.min(100, currentWidth + (100/poseCompletionTime) * 1); // 1% every second
+                
+                progressBar.style.width = newWidth + '%';
+                status.textContent = `${Math.round(newWidth)}% complete - Keep holding!`;
+                
+                // Detect completion
+                if (newWidth >= 100) {
+                    poseStatus = 'completed';
+                    clearInterval(progressInterval);
+                    showAchievement();
+                }
+            }
+        }
+        
+        function showAchievement() {
+            const overlay = document.getElementById('achievement-overlay');
+            overlay.style.display = 'flex';
+            
+            // Update status
+            document.getElementById('pose-status').textContent = 'Pose completed!';
+            document.getElementById('completion-status').textContent = '100% complete - Well done!';
+            
+            // Play celebration sound (if available)
+            try {
+                const audio = new Audio('/static/audio/achievement.mp3');
+                audio.play();
+            } catch(e) {
+                console.log('Achievement sound not available');
+            }
+            
+            // Hide after 5 seconds
+            setTimeout(() => {
+                overlay.style.opacity = '0';
+                // Remove from DOM after fade
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    overlay.style.opacity = '1';
+                }, 1000);
+            }, 5000);
+        }
+        
+        // Timer functionality
+        const timerDisplay = document.getElementById('timer');
+        const startBtn = document.getElementById('timer-start');
+        const resetBtn = document.getElementById('timer-reset');
+        let timerInterval;
+        let seconds = 0;
+        let isTimerRunning = false;
+        
+        startBtn.addEventListener('click', toggleTimer);
+        resetBtn.addEventListener('click', resetTimer);
+        
+        function toggleTimer() {
+            if (isTimerRunning) {
+                clearInterval(timerInterval);
+                startBtn.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                startBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isTimerRunning = !isTimerRunning;
+        }
+        
+        function resetTimer() {
+            clearInterval(timerInterval);
+            seconds = 0;
+            timerDisplay.textContent = '00:00';
+            startBtn.innerHTML = '<i class="fas fa-play"></i>';
+            isTimerRunning = false;
+        }
+        
+        function updateTimer() {
+            seconds++;
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            timerDisplay.textContent = `${mins}:${secs}`;
+        }
+    </script>
+</body>
+</html>

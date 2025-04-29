@@ -1,0 +1,79 @@
+{
+    "vrksana": {
+        "attempts": 11,
+        "completions": 5,
+        "total_practice_time": 119.9441454410553,
+        "best_accuracy": 92.59867476422998,
+        "last_practiced": "2025-04-29 21:43:19"
+    },
+    "adhomukha": {
+        "attempts": 0,
+        "completions": 0,
+        "total_practice_time": 0,
+        "best_accuracy": 0,
+        "last_practiced": null
+    },
+    "balasana": {
+        "attempts": 0,
+        "completions": 0,
+        "total_practice_time": 0,
+        "best_accuracy": 0,
+        "last_practiced": null
+    },
+    "tadasan": {
+        "attempts": 2,
+        "completions": 0,
+        "total_practice_time": 0,
+        "best_accuracy": 0,
+        "last_practiced": "2025-04-29 20:39:36"
+    },
+    "trikonasana": {
+        "attempts": 0,
+        "completions": 0,
+        "total_practice_time": 0,
+        "best_accuracy": 0,
+        "last_practiced": null
+    },
+    "virabhadrasana": {
+        "attempts": 0,
+        "completions": 0,
+        "total_practice_time": 0,
+        "best_accuracy": 0,
+        "last_practiced": null
+    },
+    "bhujangasana": {
+        "attempts": 0,
+        "completions": 0,
+        "total_practice_time": 0,
+        "best_accuracy": 0,
+        "last_practiced": null
+    },
+    "setubandhasana": {
+        "attempts": 0,
+        "completions": 0,
+        "total_practice_time": 0,
+        "best_accuracy": 0,
+        "last_practiced": null
+    },
+    "uttanasana": {
+        "attempts": 0,
+        "completions": 0,
+        "total_practice_time": 0,
+        "best_accuracy": 0,
+        "last_practiced": null
+    },
+    "shavasana": {
+        "attempts": 0,
+        "completions": 0,
+        "total_practice_time": 0,
+        "best_accuracy": 0,
+        "last_practiced": null
+    },
+    "ardhamatsyendrasana": {
+        "attempts": 0,
+        "completions": 0,
+        "total_practice_time": 0,
+        "best_accuracy": 0,
+        "last_practiced": null
+    }
+}
