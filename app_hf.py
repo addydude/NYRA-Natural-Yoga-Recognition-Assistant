@@ -50,8 +50,8 @@ pygame.mixer.init()
 
 # Define the app with the path to the React build directory
 app = Flask(__name__, 
-    static_folder='ui-wizard-enhancements/dist',
-    static_url_path='/'
+    static_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static'),
+    static_url_path='/static'
 )
 
 # Enable CORS for development
