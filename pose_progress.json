@@ -1,17 +1,17 @@
 {
     "vrksana": {
-        "attempts": 27,
+        "attempts": 31,
         "completions": 5,
         "total_practice_time": 119.9441454410553,
         "best_accuracy": 92.59867476422998,
-        "last_practiced": "2025-04-30 09:36:08"
+        "last_practiced": "2025-05-23 00:41:52"
     },
     "adhomukha": {
-        "attempts": 3,
+        "attempts": 6,
         "completions": 0,
         "total_practice_time": 0,
         "best_accuracy": 0,
-        "last_practiced": "2025-04-30 09:32:02"
+        "last_practiced": "2025-05-23 00:37:37"
     },
     "balasana": {
         "attempts": 0,

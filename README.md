@@ -89,17 +89,21 @@ However, without proper knowledge about correct posture, people may suffer from 
 
 2. Create a virtual environment
    ```bash
-   python -m venv venv
+   python -m venv .venv
    ```
 
 3. Activate the virtual environment
-   - Windows: `venv\Scripts\activate`
-   - Mac/Linux: `source venv/bin/activate`
+   - Windows: `.venv\Scripts\activate`
+   - Mac/Linux: `source .venv/bin/activate`
 
 4. Install Python dependencies
    ```bash
    pip install -r requirements.txt
    ```
+
+5. Fix potential WebSocket server issues (if you encounter them)
+   - The WebSocket server is now more resilient and will provide fallback functionality
+   - If you experience WebSocket errors, the main application will still work correctly
 
 5. Set up UI components (optional but recommended)
    ```bash
@@ -110,12 +114,14 @@ However, without proper knowledge about correct posture, people may suffer from 
    ```
 
 6. Run the application
+   - **Easiest method (Windows)**: Run `run_yoga.bat` to choose your detection mode through a simple menu
    - Standard mode: `python app.py`
    - HuggingFace mode: `python app_hf.py`
    - Hybrid mode: `python app_hybrid.py`
-   - Windows quick start: `run_yoga.bat`
 
 7. Open your browser and go to `http://127.0.0.1:5000`
+   - The Flask development server should automatically launch this in your default browser
+   - The application will display the home page where you can choose different yoga modes
 
 For Python 3.12 users, please refer to [PYTHON312.md](./PYTHON312.md) for specific instructions.
 

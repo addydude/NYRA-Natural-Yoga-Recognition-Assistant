@@ -190,24 +190,32 @@ async def broadcast_pose_status(is_correct_pose, pose_completed=False):
 
 def start_websocket_server(host='0.0.0.0', port=8765):
     """Start WebSocket server"""
-    # Create a new event loop for this thread
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    
-    # Create the server coroutine
-    start_server = websockets.serve(handle_websocket, host, port)
-    print(f"WebSocket server starting on {host}:{port}")
-    
     try:
-        # Schedule the server to run in the loop
-        loop.run_until_complete(start_server)
-        # Run the loop forever
-        loop.run_forever()
+        # Create a new event loop for this thread
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        
+        print(f"WebSocket server starting on {host}:{port}")
+        
+        # Start the server
+        async def start_server():
+            server = await websockets.serve(handle_websocket, host, port)
+            print(f"WebSocket server successfully started on {host}:{port}")
+            await server.wait_closed()
+        
+        # Run the server
+        loop.run_until_complete(start_server())
+        
+    except Exception as e:
+        print(f"WebSocket server error: {e}")
+        print("WebSocket functionality will be disabled, but the main app will continue to work")
     except KeyboardInterrupt:
         print("WebSocket server stopped")
     finally:
-        # Close the loop properly when done
-        loop.close()
+        try:
+            loop.close()
+        except:
+            pass
 
 if __name__ == "__main__":
     start_websocket_server()

@@ -23,6 +23,9 @@ If you're using Python 3.12 and experiencing issues, follow these special instru
    pip install pygame==2.5.2
    pip install pyttsx3==2.90
    pip install gtts==2.3.2
+   pip install websockets==11.0.3
+   pip install playsound==1.3.0
+   pip install flask-cors==4.0.0
    ```
 
 4. Install TensorFlow (CPU version recommended for Python 3.12):
